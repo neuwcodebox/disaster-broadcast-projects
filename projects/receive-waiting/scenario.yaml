@@ -1,0 +1,1070 @@
+version: 1
+title: 수신 대기
+fictionNotice: 이 영상은 창작된 재난방송 호러입니다. 실제 사건·재난문자·보도가 아닙니다.
+timezone: Asia/Seoul
+seed: 731
+agencies:
+  cw: 철원군
+  hw: 화천군
+  pc: 포천시
+  gg: 경기도
+  gw: 강원특별자치도
+  hq: 중앙재난안전대책본부
+  news: 새벽뉴스
+  line: 수신대기
+  msit: 과학기술정보통신부
+assets:
+  bed:
+    path: audio/room.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    license: CC0 1.0
+  receiver:
+    path: audio/receiver.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    license: CC0 1.0
+  carrier:
+    path: audio/carrier.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    license: CC0 1.0
+map:
+  camera:
+    center:
+      - 127.55
+      - 37.85
+    zoom: 7.65
+cuts:
+  - id: first
+    duration: 100
+    storyTime: 2031-11-16T02:13:00+09:00
+  - id: second
+    duration: 105
+    storyTime: 2031-11-16T02:48:00+09:00
+    clockTransition: 4.2
+  - id: third
+    duration: 105
+    storyTime: 2031-11-16T03:31:00+09:00
+    clockTransition: 4.2
+events:
+  - id: room
+    type: audio
+    cut: first
+    at: 0
+    duration: 310
+    carry: true
+    asset: bed
+    volume: 0.9
+    fadeIn: 4
+    fadeOut: 3
+  - id: n01
+    type: news
+    cut: first
+    at: 4
+    duration: 25
+    source: news
+    headline: 철원·화천 유선전화 통화 장애…자정부터 신고 잇따라
+  - id: a01
+    type: alert
+    cut: first
+    at: 7
+    sender: cw
+    text: "[철원군] 현재 관내 일부 유선전화에 통화장애가 발생해 복구 중입니다. 긴급상황 시 휴대전화로 112·119 문자신고를 이용해 주시기 바랍니다."
+    regions:
+      - "51780"
+    level: 안전안내
+  - id: key-initial
+    type: legend
+    cut: first
+    at: 7
+    duration: 83
+    items:
+      - text: 재난문자 발송 지역
+        color: "#8ba7bb"
+        symbol: fill
+  - id: sms-51780
+    type: region
+    cut: first
+    at: 7
+    duration: 303
+    carry: true
+    regions:
+      - "51780"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: n02
+    type: news
+    cut: first
+    at: 29
+    duration: 24
+    source: news
+    headline: 통신사 “유선전화 장애 복구 중…휴대전화는 정상”
+  - id: a02
+    type: alert
+    cut: first
+    at: 32
+    sender: hw
+    text: "[화천군] 같은 음성이 반복되는 전화 관련 신고가 접수되고 있습니다. 해당 전화를 받으신 경우 통화를 종료하고 휴대전화 문자신고를 이용해 주십시오."
+    regions:
+      - "51790"
+    level: 안전안내
+  - id: sms-51790
+    type: region
+    cut: first
+    at: 32
+    duration: 278
+    carry: true
+    regions:
+      - "51790"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: n03
+    type: news
+    cut: first
+    at: 53
+    duration: 24
+    source: news
+    headline: “수화기서 내 목소리가”…철원·화천 주민들 잇단 신고
+  - id: a03
+    type: alert
+    cut: first
+    at: 57
+    sender: cw
+    text: "[철원군] 전화에서 이름이나 주소를 묻더라도 답하지 마시고 즉시 통화를 종료해 주십시오. 함께 계신 가족의 안전을 확인하고 외출을 자제해 주시기 바랍니다."
+    regions:
+      - "51780"
+    level: 긴급재난
+  - id: ring1
+    type: audio
+    cut: first
+    at: 73
+    duration: 4
+    asset: receiver
+    volume: 0.55
+  - id: n04
+    type: news
+    cut: first
+    at: 77
+    duration: 13
+    source: news
+    headline: 철원·화천 심야 순찰 강화…경찰, 신고 경위 확인
+  - id: s01
+    type: status
+    cut: first
+    at: 78
+    duration: 26.5
+    items:
+      - text: 경계강화
+        color: "#b3a080"
+    carry: true
+  - id: a04
+    type: alert
+    cut: first
+    at: 81
+    sender: gw
+    text: "[강원특별자치도] 철원·화천 주민께서는 출입문을 잠그고 실내에 머물러 주십시오. 전화나 방송에서 이름을 불러도 대답하지 마십시오."
+    regions:
+      - "51780"
+      - "51790"
+    level: 긴급재난
+  - id: warning-news-first
+    type: news
+    cut: first
+    at: 90
+    duration: 14.5
+    source: news
+    headline: 과기정통부, 철원·화천 통신재난 위기경보 ‘주의’ 발령
+    carry: true
+  - id: w1
+    type: region
+    cut: first
+    at: 90
+    duration: 14.5
+    regions:
+      - "51780"
+      - "51790"
+    color: "#c6b16c"
+    fillOpacity: 0
+    strokeColor: "#c6b16c"
+    strokeWidth: 3
+    carry: true
+  - id: key-w1
+    type: legend
+    cut: first
+    at: 90
+    duration: 14.5
+    items:
+      - text: 재난문자 발송 지역
+        color: "#8ba7bb"
+        symbol: fill
+      - text: 통신재난 위기경보 ‘주의’ 발령 지역
+        color: "#c6b16c"
+        symbol: outline
+    carry: true
+  - id: warning-notice-first
+    type: alert
+    cut: first
+    at: 90
+    sender: msit
+    level: 안전안내
+    text: "[과학기술정보통신부] 철원·화천 통신재난 위기경보 ‘주의’ 발령. 통화장애 복구작업 중이니 지자체 안내를 확인해 주시기 바랍니다."
+    regions:
+      - "51780"
+      - "51790"
+  - id: s02
+    type: status
+    cut: second
+    at: 4.5
+    duration: 105
+    items:
+      - text: 을호비상
+        color: "#bea47b"
+      - text: 소방동원령 1호
+        color: "#ba8265"
+    carry: true
+  - id: n05
+    type: news
+    cut: second
+    at: 4.5
+    duration: 19.5
+    source: news
+    headline: 경기북부·강원으로 통신장애 확산…위기경보 ‘경계’
+  - id: w2
+    type: region
+    cut: second
+    at: 4.5
+    duration: 105
+    regions:
+      - "51780"
+      - "51790"
+      - "41800"
+      - "41650"
+    color: "#cb9266"
+    fillOpacity: 0
+    strokeColor: "#cb9266"
+    strokeWidth: 3
+    carry: true
+  - id: key-w2
+    type: legend
+    cut: second
+    at: 4.5
+    duration: 105
+    items:
+      - text: 재난문자 발송 지역
+        color: "#8ba7bb"
+        symbol: fill
+      - text: 통신재난 위기경보 ‘경계’ 발령 지역
+        color: "#cb9266"
+        symbol: outline
+    carry: true
+  - id: sms-41800
+    type: region
+    cut: second
+    at: 4.9
+    duration: 205.1
+    carry: true
+    regions:
+      - "41800"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: sms-41650
+    type: region
+    cut: second
+    at: 4.9
+    duration: 205.1
+    carry: true
+    regions:
+      - "41650"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: warning-notice-second
+    type: alert
+    cut: second
+    at: 4.9
+    sender: msit
+    level: 안전안내
+    text: "[과학기술정보통신부] 철원·화천·연천·포천 통신재난 위기경보 ‘경계’ 발령. 통신시설을 점검 중이니 지자체 안내를 확인해 주시기 바랍니다."
+    regions:
+      - "51780"
+      - "51790"
+      - "41800"
+      - "41650"
+  - id: a05
+    type: alert
+    cut: second
+    at: 13.5
+    sender: pc
+    text: "[포천시] 전화나 인터폰에서 낯선 목소리가 들려도 대답하지 마시고 실내에 머물러 주십시오. 상대방을 확인하려고 가족의 이름을 말하지 마십시오."
+    regions:
+      - "41650"
+    level: 긴급재난
+  - id: n06
+    type: news
+    cut: second
+    at: 24
+    duration: 23
+    source: news
+    headline: 해지된 번호로 전화 수신…통신사 “발신 기록 없어”
+  - id: a06
+    type: alert
+    cut: second
+    at: 27
+    sender: gg
+    text: "[경기도] 연천·포천 지역에서 주민 연락두절 신고가 접수되고 있습니다. 가족을 찾으러 혼자 외출하지 마시고 112 문자신고를 이용해 주십시오."
+    regions:
+      - "41800"
+      - "41650"
+    level: 긴급재난
+  - id: n07
+    type: news
+    cut: second
+    at: 47
+    duration: 23
+    source: news
+    headline: 전화선 뽑았는데 벨소리…소방, 현장서 확인
+  - id: ring2
+    type: audio
+    cut: second
+    at: 52
+    duration: 4
+    asset: receiver
+    volume: 0.7
+  - id: a07
+    type: alert
+    cut: second
+    at: 53
+    sender: gw
+    text: "[강원특별자치도] 철원·화천·춘천 주민은 방문자의 신원이 확인되지 않으면 문을 열지 마십시오. 긴급상황 시 112·119 문자신고를 이용하시기 바랍니다."
+    regions:
+      - "51780"
+      - "51790"
+      - "51110"
+    level: 긴급재난
+  - id: sms-51110
+    type: region
+    cut: second
+    at: 53
+    duration: 157
+    carry: true
+    regions:
+      - "51110"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: n08
+    type: news
+    cut: second
+    at: 70
+    duration: 20
+    source: news
+    headline: 경기북부·강원 수색 인력 증원…경찰 을호비상
+  - id: quiet-instructions
+    type: alert
+    cut: second
+    at: 75
+    sender: hq
+    level: 긴급재난
+    text: "[중앙재난안전대책본부] 철원·화천·춘천·연천·포천 주민은 출입문을 잠그고 실내에 머물러 주십시오. 연락이 닿지 않는 가족을 찾으러 나가지 마시고 경찰에 문자로 신고해 주십시오."
+    regions:
+      - "51780"
+      - "51790"
+      - "51110"
+      - "41800"
+      - "41650"
+  - id: n09
+    type: news
+    cut: second
+    at: 90
+    duration: 19.5
+    source: news
+    headline: 수색대 무전에서도 정체불명 음성…현장 활동 일부 중단
+    carry: true
+  - id: a08
+    type: alert
+    cut: second
+    at: 92
+    sender: hq
+    text: "[중앙재난안전대책본부] 철원·화천·춘천·연천·포천·가평 주민은 음성통화를 중단하고 문자로 연락해 주십시오. 이름이나 주소를 묻는 질문에 답하지 마십시오."
+    regions:
+      - "51780"
+      - "51790"
+      - "51110"
+      - "41800"
+      - "41650"
+      - "41820"
+    level: 긴급재난
+  - id: sms-41820
+    type: region
+    cut: second
+    at: 92
+    duration: 118
+    carry: true
+    regions:
+      - "41820"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: distortion1
+    type: screen
+    cut: second
+    at: 100
+    duration: 1.4
+    effect: interference
+    intensity: 0.22
+    fadeIn: 0.2
+    fadeOut: 0.4
+  - id: s03
+    type: status
+    cut: third
+    at: 4.5
+    duration: 73.5
+    items:
+      - text: 갑호비상
+        color: "#c18b78"
+      - text: 소방동원령 2호
+        color: "#bf8868"
+  - id: c01
+    type: camera
+    cut: third
+    at: 4.5
+    duration: 0.016666666666666666
+    to:
+      center:
+        - 127.55
+        - 37.65
+      zoom: 7.1
+  - id: n10
+    type: news
+    cut: third
+    at: 4.5
+    duration: 18.5
+    source: news
+    headline: 경기·강원 통신재난 위기경보 ‘심각’…중대본 가동
+  - id: w3
+    type: region
+    cut: third
+    at: 4.5
+    duration: 100.5
+    regions:
+      - "51780"
+      - "51790"
+      - "41800"
+      - "41650"
+      - "51110"
+      - "41820"
+      - "41830"
+      - "51720"
+      - "51800"
+    color: "#c47670"
+    fillOpacity: 0
+    strokeColor: "#c47670"
+    strokeWidth: 3
+  - id: key-w3
+    type: legend
+    cut: third
+    at: 4.5
+    duration: 100.5
+    items:
+      - text: 재난문자 발송 지역
+        color: "#8ba7bb"
+        symbol: fill
+      - text: 통신재난 위기경보 ‘심각’ 발령 지역
+        color: "#c47670"
+        symbol: outline
+  - id: sms-41830
+    type: region
+    cut: third
+    at: 4.9
+    duration: 100.1
+    carry: true
+    regions:
+      - "41830"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: sms-51720
+    type: region
+    cut: third
+    at: 4.9
+    duration: 100.1
+    carry: true
+    regions:
+      - "51720"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: sms-51800
+    type: region
+    cut: third
+    at: 4.9
+    duration: 100.1
+    carry: true
+    regions:
+      - "51800"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: warning-notice-third
+    type: alert
+    cut: third
+    at: 4.9
+    sender: hq
+    level: 긴급재난
+    text: "[중앙재난안전대책본부] 철원·화천·춘천·연천·포천·가평·양평·홍천·양구에 통신재난 위기경보 ‘심각’ 발령. 실내에서 후속 문자 안내를 기다려 주십시오."
+    regions:
+      - "51780"
+      - "51790"
+      - "41800"
+      - "41650"
+      - "51110"
+      - "41820"
+      - "41830"
+      - "51720"
+      - "51800"
+  - id: a09
+    type: alert
+    cut: third
+    at: 13.5
+    sender: hq
+    text: "[중앙재난안전대책본부] 현재 대피 안내를 위한 방문은 하지 않습니다. 대피를 이유로 문을 두드리거나 이름을 부르더라도 문을 열지 마시고 실내에 머물러 주십시오."
+    regions:
+      - "51780"
+      - "51790"
+      - "51110"
+      - "41800"
+      - "41650"
+      - "41820"
+      - "41830"
+      - "51720"
+      - "51800"
+    level: 긴급재난
+  - id: n11
+    type: news
+    cut: third
+    at: 23
+    duration: 23
+    source: news
+    headline: 통화 직후 연락 끊겼다는 신고 잇따라…경찰 수색 중
+  - id: province-view
+    type: camera
+    cut: third
+    at: 26
+    duration: 1
+    to:
+      center:
+        - 128.05
+        - 37.8
+      zoom: 6.65
+  - id: a10
+    type: alert
+    cut: third
+    at: 27
+    sender: gw
+    text: "[강원특별자치도] 강원 전역 주민께서는 가족과 같은 공간에 머물러 주십시오. 다른 방에서 가족의 목소리가 들려도 확인하러 가지 마시고 문을 잠가 주십시오."
+    regions:
+      - "51110"
+      - "51130"
+      - "51150"
+      - "51170"
+      - "51190"
+      - "51210"
+      - "51230"
+      - "51720"
+      - "51730"
+      - "51750"
+      - "51760"
+      - "51770"
+      - "51780"
+      - "51790"
+      - "51800"
+      - "51810"
+      - "51820"
+      - "51830"
+    level: 긴급재난
+  - id: sms-gangwon
+    type: region
+    cut: third
+    at: 27
+    duration: 78
+    regions:
+      - "51110"
+      - "51130"
+      - "51150"
+      - "51170"
+      - "51190"
+      - "51210"
+      - "51230"
+      - "51720"
+      - "51730"
+      - "51750"
+      - "51760"
+      - "51770"
+      - "51780"
+      - "51790"
+      - "51800"
+      - "51810"
+      - "51820"
+      - "51830"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+    carry: true
+  - id: n12
+    type: news
+    cut: third
+    at: 46
+    duration: 24
+    source: news
+    headline: 통신망 분리 뒤에도 통화 연결…통신사 “경로 확인 안 돼”
+  - id: a11
+    type: alert
+    cut: third
+    at: 50
+    sender: hq
+    text: "[중앙재난안전대책본부] 기존 안내 지역에 인제·의정부·남양주를 추가합니다. 음성 안내에 응답하지 마시고 실내에 머물러 주십시오. 추가 안내는 재난문자로 알려드리겠습니다."
+    regions:
+      - "51110"
+      - "51130"
+      - "51150"
+      - "51170"
+      - "51190"
+      - "51210"
+      - "51230"
+      - "51720"
+      - "51730"
+      - "51750"
+      - "51760"
+      - "51770"
+      - "51780"
+      - "51790"
+      - "51800"
+      - "51810"
+      - "51820"
+      - "51830"
+      - "41800"
+      - "41650"
+      - "41820"
+      - "41830"
+      - "41150"
+      - "41360"
+    level: 긴급재난
+  - id: sms-51810
+    type: region
+    cut: third
+    at: 50
+    duration: 55
+    carry: true
+    regions:
+      - "51810"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: sms-41150
+    type: region
+    cut: third
+    at: 50
+    duration: 55
+    carry: true
+    regions:
+      - "41150"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: sms-41360
+    type: region
+    cut: third
+    at: 50
+    duration: 55
+    carry: true
+    regions:
+      - "41360"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+  - id: carrier
+    type: audio
+    cut: third
+    at: 54
+    duration: 30
+    asset: carrier
+    volume: 0.75
+    fadeIn: 3
+    fadeOut: 4
+  - id: n13
+    type: news
+    cut: third
+    at: 70
+    duration: 15
+    source: news
+    headline: 경찰 “가족 목소리 들려도 문 열지 말아야”
+  - id: distortion2
+    type: screen
+    cut: third
+    at: 77
+    duration: 0.6
+    effect: interference
+    intensity: 0.35
+  - id: silence1
+    type: silence
+    cut: third
+    at: 78
+    duration: 7
+  - id: s04
+    type: status
+    cut: third
+    at: 78
+    duration: 16
+    items:
+      - text: 수신 대기
+        color: "#9ea8ae"
+  - id: signal-notice
+    type: alert
+    cut: third
+    at: 79
+    sender: hq
+    level: 긴급재난
+    text: "[중앙재난안전대책본부] 강원 전역과 경기 연천·포천·가평·양평 주민은 추가 재난문자를 기다려 주십시오. 전화·방송·방문자의 음성 안내에는 응답하지 마십시오."
+    regions:
+      - "51110"
+      - "51130"
+      - "51150"
+      - "51170"
+      - "51190"
+      - "51210"
+      - "51230"
+      - "51720"
+      - "51730"
+      - "51750"
+      - "51760"
+      - "51770"
+      - "51780"
+      - "51790"
+      - "51800"
+      - "51810"
+      - "51820"
+      - "51830"
+      - "41800"
+      - "41650"
+      - "41820"
+      - "41830"
+  - id: sms-additional
+    type: region
+    cut: third
+    at: 79
+    duration: 26
+    regions:
+      - "41800"
+      - "41650"
+      - "41820"
+      - "41830"
+    color: "#8ba7bb"
+    fillOpacity: 0.28
+    strokeWidth: 0
+    carry: true
+  - id: n14
+    type: news
+    cut: third
+    at: 85
+    duration: 20
+    source: line
+    headline: 현재 계신 곳의 주소를 말씀해 주십시오.
+  - id: ring3
+    type: audio
+    cut: third
+    at: 85
+    duration: 4
+    asset: receiver
+    volume: 0.9
+  - id: intrusion-sms
+    type: alert
+    cut: third
+    at: 90
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    pageSeconds: 3
+  - id: signal-lines
+    type: screen
+    cut: third
+    at: 90
+    duration: 15
+    effect: scanlines
+    intensity: 0.12
+    fadeIn: 0.3
+    fadeOut: 1
+  - id: intrusion-status
+    type: status
+    cut: third
+    at: 94
+    duration: 11
+    items:
+      - text: 현재 계신 곳의 주소를 말씀해 주십시오.
+        color: "#bac3c9"
+  - id: intrusion-burst-1
+    type: alert
+    cut: third
+    at: 95
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-2
+    type: alert
+    cut: third
+    at: 95.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-3
+    type: alert
+    cut: third
+    at: 95.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-4
+    type: alert
+    cut: third
+    at: 95.75
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-5
+    type: alert
+    cut: third
+    at: 96
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-6
+    type: alert
+    cut: third
+    at: 96.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-7
+    type: alert
+    cut: third
+    at: 96.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-8
+    type: alert
+    cut: third
+    at: 96.75
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-9
+    type: alert
+    cut: third
+    at: 97
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-10
+    type: alert
+    cut: third
+    at: 97.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-11
+    type: alert
+    cut: third
+    at: 97.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-12
+    type: alert
+    cut: third
+    at: 97.75
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-13
+    type: alert
+    cut: third
+    at: 98
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-14
+    type: alert
+    cut: third
+    at: 98.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-15
+    type: alert
+    cut: third
+    at: 98.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-16
+    type: alert
+    cut: third
+    at: 98.75
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-17
+    type: alert
+    cut: third
+    at: 99
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-18
+    type: alert
+    cut: third
+    at: 99.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-19
+    type: alert
+    cut: third
+    at: 99.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-20
+    type: alert
+    cut: third
+    at: 99.75
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-21
+    type: alert
+    cut: third
+    at: 100
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: default
+    pageSeconds: 3
+  - id: intrusion-burst-22
+    type: alert
+    cut: third
+    at: 100.25
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: intrusion-burst-23
+    type: alert
+    cut: third
+    at: 100.5
+    sender: line
+    level: 긴급재난
+    text: 현재 계신 곳의 주소를 말씀해 주십시오.
+    regions: []
+    mapHighlight: false
+    sound: false
+    pageSeconds: 3
+  - id: ending-blackout
+    type: screen
+    cut: third
+    at: 100.75
+    duration: 4.25
+    effect: blackout
+  - id: ending-silence
+    type: silence
+    cut: third
+    at: 100.75
+    duration: 4.25

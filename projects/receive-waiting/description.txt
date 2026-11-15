@@ -1,0 +1,55 @@
+[가상 재난방송] 수신 대기
+
+전화 연결 이상 신고가 이어지는 밤. 안전을 알리던 화면에도 낯선 안내가 도착한다.
+
+이 영상의 사건·재난문자·보도·기관의 조치는 모두 창작입니다. 실제 재난 안내나 기관의 송출물이 아닙니다.
+
+자료 출처
+
+대한민국 행정동 경계 (2026-07-01)
+제공·가공: 통계청 통계지리정보서비스(SGIS); 가공: vuski/admdongkor
+원자료: https://sgis.kostat.go.kr
+원자료: https://github.com/vuski/admdongkor/tree/master/ver20260701
+이용조건: 공공누리 제1유형 — https://www.kogl.or.kr/info/licenseType1.do
+이용조건: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+가공: 원본 경계를 시군구·시도로 병합하고 영상 지도에 맞춰 색상과 표시 범위를 구성했습니다. 경계 좌표를 단순화하지 않았습니다.
+본 데이터는 통계청 통계지리정보서비스(SGIS, https://sgis.kostat.go.kr)에서 공공누리 제1유형으로 개방한 행정동 경계를 가공한 것이며(가공: vuski/admdongkor, https://github.com/vuski/admdongkor), CC BY 4.0으로 배포됩니다.
+
+Democratic People's Republic of Korea administrative boundary (2018)
+제공·가공: World Food Programme (WFP), OCHA Regional Office for Asia and the Pacific; 배포: geoBoundaries
+원자료: https://data.humdata.org/dataset/dpr-korea-administrative-boundaries
+원자료: https://github.com/wmgeolab/geoBoundaries/tree/9469f09/releaseData/gbOpen/PRK/ADM0
+이용조건: CC BY 3.0 IGO — https://creativecommons.org/licenses/by/3.0/igo/
+가공: 경계 좌표를 유지하고 표시용 속성·색상을 정리하여 영상 지도로 구성했습니다.
+
+Natural Earth 1:10m Admin 0 — Countries, version 5.1.2
+제공·가공: Natural Earth contributors
+원자료: https://github.com/nvkelso/natural-earth-vector/blob/v5.1.2/geojson/ne_10m_admin_0_countries.geojson
+이용조건: Public domain — https://www.naturalearthdata.com/about/terms-of-use/
+가공: 동아시아 주변국의 경계 좌표를 유지하고 영상 지도에 맞춰 속성·색상을 구성했습니다.
+
+IBM Plex Sans KR / IBM Plex Mono
+제공·가공: IBM Corp. / IBM Plex contributors
+원자료: https://github.com/IBM/plex
+원자료: https://fontsource.org/fonts/ibm-plex-sans-kr
+원자료: https://fontsource.org/fonts/ibm-plex-mono
+이용조건: SIL Open Font License 1.1 — https://github.com/IBM/plex/blob/master/LICENSE.txt
+가공: 공식 Fontsource 배포본의 글꼴을 변경 없이 오프라인 영상 본문·시각 표시에 사용했습니다.
+
+음원 bed
+출처: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+이용조건: CC0 1.0
+
+음원 receiver
+출처: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+이용조건: CC0 1.0
+
+음원 carrier
+출처: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+이용조건: CC0 1.0
+
+공통 문자 수신음
+출처: 재난방송실에서 직접 합성한 창작 알림음. 실제 재난 경보음 아님.
+이용조건: CC0 1.0
+
+원자료는 각 제공자의 조건에 따라 있는 그대로 제공됩니다. 제공기관은 이 창작물의 내용을 보증하거나 후원하지 않습니다.
