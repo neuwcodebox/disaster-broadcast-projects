@@ -26,4 +26,14 @@
 
 ## 제작 상태
 
-현재는 조사 단계다. `scenario.yaml`, 작품 음원, 렌더 산출물은 아직 없다. 시나리오 작성 시 설치된 CLI의 `dbs --help`와 `dbs schema`로 계약을 확인하고 허구 고지를 포함한다. 제작 파일과 자산이 생기면 이 문서에 검증·재출력 절차를 추가한다.
+`dbs init`으로 작업공간을 초기화했다. [scenario.yaml](scenario.yaml)에는 허구 고지와 함께 CLI의 기본 예제가 들어 있다. 예제의 날짜·기관·문안은 집필 때 작품 설정에 맞춰 바꾼다.
+
+작품 폴더에서 다음 명령으로 시나리오를 검증하고 미리 보거나 출력한다.
+
+```sh
+npx dbs validate scenario.yaml
+npx dbs preview scenario.yaml
+npx dbs render scenario.yaml --out output/film.mp4
+```
+
+로컬 음원은 `audio/`, 음원 생성 코드는 `audio-code/`, 출력과 출처 파일은 `output/`에 둔다. 시나리오 필드는 설치된 CLI의 `npx dbs schema`로 확인한다.
