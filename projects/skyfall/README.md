@@ -36,4 +36,4 @@ npx dbs preview scenario.yaml
 npx dbs render scenario.yaml --out output/film.mp4
 ```
 
-로컬 음원은 `audio/`, 음원 생성 코드는 `audio-code/`, 출력과 출처 파일은 `output/`에 둔다. 시나리오 필드는 설치된 CLI의 `npx dbs schema`로 확인한다.
+원본 음원과 음원 생성 코드는 `src/audio/`, 원본 지도와 그리드 생성 코드는 `src/maps/`에 둔다. 생성한 음원과 그리드는 각각 `output/audio/`, `output/maps/`에 저장한다. 영상과 출처 파일도 `output/`에 둔다. 시나리오 필드는 설치된 CLI의 `npx dbs schema`로 확인한다.

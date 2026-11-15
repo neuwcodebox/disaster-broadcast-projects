@@ -5,13 +5,13 @@
 ## 파일과 재출력
 
 - `scenario.yaml`: 작품과 연출의 작성 원본.
-- `audio/`, `audio-code/`: 작품 고유 배경·전화·반송음. CC0-1.0.
-- `build-audio.mjs`: 필요할 때 작품 고유 음원 세 개를 다시 생성한다. 문자 수신음과 상태 알림음은 엔진이 제공한다.
+- `src/audio/`: 작품 고유 배경·전화·반송음의 합성 코드. 음원은 CC0-1.0이며, 문자 수신음과 상태 알림음은 엔진이 제공한다.
+- `output/audio/`: 시나리오가 참조하는 무손실 FLAC 음원과 재생성한 WAV 음원을 저장하는 로컬 폴더.
 - `description.txt`: 영상 게시 설명에 포함할 허구 고지와 자료 출처.
 - `commentary.md`: 결말을 포함한 관람 후 작품 해설.
 - `output/`: 영상, 썸네일, 렌더링 메타데이터와 출처 파일을 보관하는 로컬 폴더.
 
-Node.js 22 이상에서 저장소 루트의 의존성을 설치한 뒤, 작품 폴더에서 DBS 0.3.0 이상의 CLI를 실행한다.
+Node.js 22 이상에서 저장소 루트의 `npm ci`로 DBS 의존성을 설치한 뒤, 작품 폴더에서 다음 명령을 실행한다.
 
 ```sh
 npx dbs validate scenario.yaml
@@ -19,7 +19,7 @@ npx dbs preview scenario.yaml
 npx dbs render scenario.yaml --out output/voice-phishing.mp4
 ```
 
-`dbs audio`는 필요한 작품 고유 소리를 생성할 때 사용한다. 기존 음원으로 바로 렌더링할 수 있다. 영상은 1920×1080, 60fps다.
+`output/audio/`에 기존 FLAC 파일 세 개가 있으면 바로 렌더링할 수 있다. 폴더가 비어 있으면 작품 폴더에서 `node src/audio/build-audio.mjs`를 실행해 WAV를 생성한 뒤, `scenario.yaml`에 있는 세 음원의 확장자를 `.flac`에서 `.wav`로 바꾼다. 영상은 1920×1080, 60fps다.
 
 ## 지도와 시간
 
@@ -44,6 +44,3 @@ npx dbs render scenario.yaml --out output/voice-phishing.mp4
 04:40에 중대본이 이후 대피 안내를 재난문자로만 전하겠다고 알린다. 04:43에 뉴스 띠와 음향이 사라진다. 04:50에 생방송에서 전화음이 들리며 뉴스 띠에 주소 질문이 뜬다. 질문은 재난문자와 화천 시청자의 채팅에 차례로 나타난다. 끝부분에는 같은 문자가 0.25초 간격으로 쌓이며, 05:00과 05:03에 수신음이 울린다. 마지막 문자 직후 화면과 소리가 즉시 끊기고 검은 화면으로 끝난다.
 
 배경음은 59.7/119.4Hz 사인파와 저역 잡음, 전화음은 437+483Hz, 반송음은 177/181Hz다. Tone.js와 Chromium Offline Web Audio로 직접 합성했다. 문자 수신음과 상태 알림음도 엔진의 창작 합성음이며 실제 경보음·음성·TTS·외부 음악은 없다. 유튜브에 게시할 때는 `description.txt`를 사용한다. 출력과 함께 생성되는 `.credits.txt`에는 전체 자료 출처가 기록된다.
-
-
-시나리오는 `audio/`의 무손실 FLAC 음원을 사용한다. 음원을 재생성한 경우 YAML의 해당 경로를 생성된 WAV 파일로 바꾼다.

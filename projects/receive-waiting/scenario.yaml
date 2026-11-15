@@ -18,16 +18,16 @@ agencies:
   msit: 과학기술정보통신부
 assets:
   bed:
-    path: audio/room.flac
-    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    path: output/audio/room.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. src/audio/ 참조. 실제 경보음·방송 음원·목소리 미사용.
     license: CC0 1.0
   receiver:
-    path: audio/receiver.flac
-    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    path: output/audio/receiver.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. src/audio/ 참조. 실제 경보음·방송 음원·목소리 미사용.
     license: CC0 1.0
   carrier:
-    path: audio/carrier.flac
-    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. audio-code/ 및 build-audio.mjs 참조. 실제 경보음·방송 음원·목소리 미사용.
+    path: output/audio/carrier.flac
+    source: 이 작품을 위해 Tone.js 15.1.22로 직접 합성. src/audio/ 참조. 실제 경보음·방송 음원·목소리 미사용.
     license: CC0 1.0
 map:
   camera:
