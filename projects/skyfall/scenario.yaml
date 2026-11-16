@@ -96,23 +96,43 @@ events:
   - id: live-chat
     type: chat
     cut: ordinary
-    at: 8
-    duration: 566
+    at: 0
+    duration: 574
     carry: true
   - id: news-market
     type: news
     cut: ordinary
-    at: 8
-    duration: 15
+    at: 0
+    duration: 23
     source: news
+    publishedAt: 2031-07-18T13:06:00+09:00
     headline: 괴산 주말 농산물 직거래장터…토요일 오전 10시 개장
+  - id: prior-heat-advice
+    type: alert
+    sender: county
+    cut: ordinary
+    at: 0
+    level: 안전안내
+    publishedAt: 2031-07-18T11:30:00+09:00
+    regions: ["43760"]
+    sound: false
+    mapHighlight: false
+    text: 오늘 낮 기온이 높습니다. 한낮에는 밭과 비닐하우스 작업을 피하고 물을 자주 마시며 그늘에서 쉬어 주십시오.
+  - id: chat-market-question
+    type: chat-message
+    chat: live-chat
+    cut: ordinary
+    at: 0
+    author: 제주퇴근길
+    text: 저 장터에 옥수수도 팔아요?
+    color: "#a6c4af"
   - id: chat-market
     type: chat-message
     chat: live-chat
     cut: ordinary
-    at: 12
+    at: 0
     author: 느티
-    text: 저기 옥수수 괜찮더라고요. 지난주엔 점심 전에 다 팔렸어요.
+    text: 네 저번에 샀어요. 점심 먹고 다시 가니 다 팔렸던데요.
   - id: chat-laundry
     type: chat-message
     chat: live-chat
