@@ -10,6 +10,14 @@ agencies:
   news: 동부뉴스
   central: 중앙재난안전대책본부
 assets:
+  radar-1315:
+    path: output/maps/radar-1315.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-1328:
+    path: output/maps/radar-1328.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
   radar-1340:
     path: output/maps/radar-1340.json
     source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
@@ -37,13 +45,21 @@ assets:
 map:
   camera:
     center:
-      - 127.738
-      - 36.66
-    zoom: 10.6
+      - 127.8
+      - 38.1
+    zoom: 5.2
 cuts:
+  - id: ordinary
+    duration: 40
+    storyTime: 2031-07-18T13:15:00+09:00
+  - id: shower
+    duration: 24
+    storyTime: 2031-07-18T13:28:00+09:00
+    clockTransition: 4
   - id: warning
     duration: 50
     storyTime: 2031-07-18T13:43:50+09:00
+    clockTransition: 4
   - id: access
     duration: 55
     storyTime: 2031-07-18T14:08:00+09:00
@@ -79,10 +95,70 @@ cuts:
 events:
   - id: live-chat
     type: chat
-    cut: warning
-    at: 7
-    duration: 503
+    cut: ordinary
+    at: 8
+    duration: 566
     carry: true
+  - id: news-market
+    type: news
+    cut: ordinary
+    at: 8
+    duration: 15
+    source: news
+    headline: 괴산 주말 농산물 직거래장터…토요일 오전 10시 개장
+  - id: chat-market
+    type: chat-message
+    chat: live-chat
+    cut: ordinary
+    at: 12
+    author: 느티
+    text: 저기 옥수수 괜찮더라고요. 지난주엔 점심 전에 다 팔렸어요.
+  - id: chat-laundry
+    type: chat-message
+    chat: live-chat
+    cut: ordinary
+    at: 20
+    author: 분리수거
+    text: 충주는 볕 좋아서 오랜만에 이불 널었어요.
+    color: "#c2ad91"
+  - id: news-library
+    type: news
+    cut: ordinary
+    at: 23
+    duration: 30
+    carry: true
+    source: news
+    headline: 충주, 여름방학 어린이 도서관 프로그램 다음 주 접수
+  - id: radar-1315
+    type: grid
+    cut: ordinary
+    at: 26
+    duration: 22
+    fadeIn: 0.7
+    carry: true
+    asset: radar-1315
+  - id: radar-1328
+    type: grid
+    cut: shower
+    at: 8
+    duration: 23
+    carry: true
+    asset: radar-1328
+  - id: news-shower
+    type: news
+    cut: shower
+    at: 13
+    duration: 18
+    carry: true
+    source: news
+    headline: 괴산 남부에 소나기…오후 한때 천둥·번개
+  - id: chat-ordinary-shower
+    type: chat-message
+    chat: live-chat
+    cut: shower
+    at: 17
+    author: 느티
+    text: 창문 열어놨는데 빗방울 튀어서 방금 닫았어요.
   - id: chat-jeju-weather
     type: chat-message
     chat: live-chat
@@ -120,7 +196,7 @@ events:
     cut: province
     at: 25
     author: 제주퇴근길
-    text: 점심때 괴산 뉴스인 줄 알고 켰는데 벌써 충주까지 갔네요.
+    text: 처음엔 소나기 소식이었는데 벌써 충주까지 갔네요.
     color: "#a6c4af"
   - id: chat-notice-revised
     type: chat-message
@@ -182,6 +258,14 @@ events:
     duration: 51
     carry: true
     asset: radar-1340
+  - id: camera-cheongcheon
+    type: camera
+    cut: warning
+    at: 20
+    duration: 5
+    to:
+      center: [127.738, 36.66]
+      zoom: 10.6
   - id: radar-scale
     type: legend
     cut: warning

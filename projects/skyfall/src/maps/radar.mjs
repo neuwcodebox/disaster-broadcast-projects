@@ -3,6 +3,8 @@ import { mkdir, writeFile } from 'node:fs/promises';
 // Synthetic radar frames for SKYFALL. All reflectivity and rain-rate classes are fictional.
 const output = new URL('../../output/maps/', import.meta.url);
 const scans = [
+  { name: '1315', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.732, 36.64], reach: [0.031, 0.033], rate: 18 },
+  { name: '1328', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.735, 36.65], reach: [0.046, 0.041], rate: 33 },
   { name: '1340', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.738, 36.66], reach: [0.055, 0.045], rate: 61 },
   { name: '1405', bounds: [127.40, 36.40, 128.14, 37.04], core: [127.752, 36.68], reach: [0.070, 0.074], rate: 118 },
   { name: '1740', bounds: [127.04, 36.06, 128.79, 37.59], core: [127.80, 36.79], reach: [0.19, 0.23], rate: 126 },

@@ -6,8 +6,8 @@
 
 ## 작품과 집필 근거
 
-- [scenario.yaml](scenario.yaml) — 8분 30초 시나리오와 연출 원본.
-- [broadcast-draft.md](broadcast-draft.md) — 9개 컷의 조치·보고·공개 순서와 결말.
+- [scenario.yaml](scenario.yaml) — 9분 34초 시나리오와 연출 원본.
+- [broadcast-draft.md](broadcast-draft.md) — 11개 컷의 조치·보고·공개 순서와 결말.
 - [research.md](research.md) — 낙수와 범람의 물리적 전제, 기관별 역할과 장면별 제도 근거.
 - [제도 중심 역할극 기록](src/writing/response-roleplay.md) — 역할에 전달한 정보, 제안, 후속 회신과 채택한 전개.
 
@@ -23,4 +23,4 @@ npx dbs validate scenario.yaml
 npx dbs preview scenario.yaml
 ```
 
-영상 파일이 필요한 경우 작품 폴더에서 `npx dbs render scenario.yaml --out output/film.mp4`를 실행한다. `src/maps/radar.mjs`가 `output/maps/`에 합성 레이더 격자 여섯 장을 만든다. 격자는 자체 제작 CC0이며 실제 관측값과 무관하다. 영상, 생성 자산과 출처 파일은 `output/`에 둔다.
+영상 파일이 필요한 경우 작품 폴더에서 `npx dbs render scenario.yaml --out output/film.mp4`를 실행한다. `src/maps/radar.mjs`가 `output/maps/`에 합성 레이더 격자 여덟 장을 만든다. 격자는 자체 제작 CC0이며 실제 관측값과 무관하다. 영상, 생성 자산과 출처 파일은 `output/`에 둔다.
