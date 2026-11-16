@@ -1,0 +1,58 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+
+// Synthetic radar frames for SKYFALL. All reflectivity and rain-rate classes are fictional.
+const output = new URL('../../output/maps/', import.meta.url);
+const scans = [
+  { name: '1340', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.738, 36.66], reach: [0.055, 0.045], rate: 61 },
+  { name: '1405', bounds: [127.40, 36.40, 128.14, 37.04], core: [127.752, 36.68], reach: [0.070, 0.074], rate: 118 },
+  { name: '1740', bounds: [127.04, 36.06, 128.79, 37.59], core: [127.80, 36.79], reach: [0.19, 0.23], rate: 126 },
+  { name: '2035', bounds: [126.50, 35.92, 129.32, 38.17], core: [127.86, 36.92], reach: [0.31, 0.35], rate: 132 },
+  { name: '2315', bounds: [126.27, 35.66, 129.70, 38.40], core: [127.90, 36.98], reach: [0.45, 0.47], rate: 140 },
+  { name: '0740', bounds: [125.32, 34.60, 130.32, 39.03], core: [127.91, 36.98], reach: [0.63, 0.79], rate: 148 },
+];
+
+const palette = [
+  [0.5, '#008fe9ce'], [5, '#1eae48e8'], [20, '#efd63af5'],
+  [45, '#ea482bff'], [100, '#ba54f1ff'],
+];
+
+function lattice(x, y) {
+  const hash = Math.imul(x, 374761393) + Math.imul(y, 668265263) | 0;
+  const stirred = Math.imul(hash ^ hash >>> 13, 1274126177);
+  return ((stirred ^ stirred >>> 16) >>> 0) / 4294967295;
+}
+
+function noise(x, y) {
+  const west = Math.floor(x), south = Math.floor(y);
+  const dx = x - west, dy = y - south;
+  const u = dx * dx * (3 - 2 * dx), v = dy * dy * (3 - 2 * dy);
+  const lower = lattice(west, south) * (1 - u) + lattice(west + 1, south) * u;
+  const upper = lattice(west, south + 1) * (1 - u) + lattice(west + 1, south + 1) * u;
+  return lower * (1 - v) + upper * v;
+}
+
+function cellColor(longitude, latitude, scan) {
+  const x = (longitude - scan.core[0]) / scan.reach[0];
+  const y = (latitude - scan.core[1]) / scan.reach[1];
+  const drift = x - 0.42 * y + 0.32 * (noise(x * 2.6 + 6, y * 2.6) - 0.5);
+  const envelope = Math.exp(-2.3 * drift ** 2 - 1.4 * y ** 2);
+  const tail = Math.exp(-3 * (drift - 0.52) ** 2 - 0.62 * (y + 1.12) ** 2);
+  const texture = 0.56 * noise(x * 5.2 + 15, y * 5.2) + 0.30 * noise(x * 12, y * 12 + 7)
+    + 0.14 * noise(x * 29, y * 29);
+  const body = Math.max(0, envelope * (0.72 + texture) + 0.20 * tail - (0.10 + 0.15 * (1 - texture)));
+  const estimate = scan.rate * body ** 1.75;
+  return palette.findLast(([minimum]) => estimate >= minimum)?.[1] ?? null;
+}
+
+await mkdir(output, { recursive: true });
+for (const scan of scans) {
+  const [west, south, east, north] = scan.bounds;
+  const columns = 192;
+  const rows = Math.round(columns * (north - south) / (east - west) * 1.22);
+  const cells = Array.from({ length: rows }, (_, row) => Array.from({ length: columns }, (_, column) => {
+    const longitude = west + (column + 0.5) * (east - west) / columns;
+    const latitude = north - (row + 0.5) * (north - south) / rows;
+    return cellColor(longitude, latitude, scan);
+  }));
+  await writeFile(new URL('radar-' + scan.name + '.json', output), JSON.stringify({ bounds: scan.bounds, cells }) + '\n');
+}

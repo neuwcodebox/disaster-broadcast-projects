@@ -1,23 +1,45 @@
 version: 1
 title: SKYFALL
-fictionNotice: 가상 재난방송입니다. 사건·피해·발표·재난문자는 모두 창작입니다.
+fictionNotice: 실제 행정구역을 배경으로 한 창작물입니다. 재난·관측자료·기관 발표·재난문자는 모두 허구입니다.
 timezone: Asia/Seoul
 seed: 11
 agencies:
-  county: 청림군
-  city: 해원시
-  province: 동부도 재난안전대책본부
+  county: 괴산군
+  city: 충주시
+  province: 충북도 재난안전대책본부
   news: 동부뉴스
   central: 중앙재난안전대책본부
-assets: {}
+assets:
+  radar-1340:
+    path: output/maps/radar-1340.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-1405:
+    path: output/maps/radar-1405.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-1740:
+    path: output/maps/radar-1740.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-2035:
+    path: output/maps/radar-2035.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-2315:
+    path: output/maps/radar-2315.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
+  radar-0740:
+    path: output/maps/radar-0740.json
+    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    license: CC0
 map:
   camera:
     center:
-      - 127.24
-      - 36.73
-    zoom: 11
-  regions: src/maps/fictional-regions.geojson
-  attribution: SKYFALL 창작 지도. 가상 지역과 작품 속 기관 발표를 도식화함. 자체 제작, CC0.
+      - 127.738
+      - 36.66
+    zoom: 10.6
 cuts:
   - id: warning
     duration: 50
@@ -61,49 +83,44 @@ events:
     at: 7
     duration: 27
     source: news
-    headline: 청림 북면에 호우경보…상곡천 급상승
-  - id: gauge
-    type: marker
+    headline: 괴산군 청천면에 호우경보…달천 급상승
+  - id: radar-1340
+    type: grid
     cut: warning
     at: 7
     duration: 51
     carry: true
-    position:
-      - 127.246
-      - 36.739
-    label: 상곡 관측소
-    color: "#68adc7"
-  - id: legend-warning
+    asset: radar-1340
+  - id: radar-scale
     type: legend
     cut: warning
     at: 7
-    duration: 51
+    duration: 281
     carry: true
     items:
-      - text: 가상 지역 위치도
-        color: "#68adc7"
+      - text: 강수 레이더 · mm/h
+        color: "#9caec3"
         symbol: outline
-  - id: evacuate-sanggok
+      - text: 0.5–4
+        color: "#008fe9"
+      - text: 5–19
+        color: "#1eae48"
+      - text: 20–44
+        color: "#efd63a"
+      - text: 45–99
+        color: "#ea482b"
+      - text: 100+
+        color: "#ba54f1"
+  - id: evacuate-cheongcheon
     type: alert
     cut: warning
     at: 15
     sender: county
     level: 긴급재난
     regions:
-      - sanggok-east
+      - "43760"
     publishedAt: 2031-07-18T13:44:00+09:00
-    text: 상곡리 동측 저지대 주민은 하천을 건너지 말고 북쪽 고지대로 즉시 대피하십시오. 상곡교는 통제 중입니다.
-  - id: bridge
-    type: marker
-    cut: warning
-    at: 15
-    duration: 90
-    carry: true
-    position:
-      - 127.238
-      - 36.721
-    label: 상곡교 통제
-    color: "#c4a6a0"
+    text: 괴산군 청천면 달천변 저지대 주민은 하천을 건너지 말고 가까운 고지대로 즉시 대피하십시오. 하천변 교량은 통제 중입니다.
   - id: news-2
     type: news
     cut: warning
@@ -111,24 +128,21 @@ events:
     duration: 24
     carry: true
     source: news
-    headline: 군, 상곡교 통제…구조 출동과 도청 보고 병행
+    headline: 군, 달천변 교량 통제…구조 출동과 도청 보고 병행
   - id: news-3
     type: news
     cut: access
     at: 8
     duration: 18
     source: news
-    headline: 상곡 관측소 마지막 10분 36㎜…13:38부터 수신 끊겨
-  - id: last-fix
-    type: marker
+    headline: 청천 관측소 마지막 10분 36㎜…13:38부터 수신 끊겨
+  - id: radar-1405
+    type: grid
     cut: access
     at: 8
-    duration: 47
-    position:
-      - 127.246
-      - 36.739
-    label: 13:38 관측 끊김
-    color: "#c4a6a0"
+    duration: 59
+    carry: true
+    asset: radar-1405
   - id: news-4
     type: news
     cut: access
@@ -137,61 +151,13 @@ events:
     carry: true
     source: news
     headline: 소방 “낙수가 폭포처럼 이어져”…동측 진입로 유실
-  - id: initial-fall
-    type: zone
-    cut: access
-    at: 26
-    duration: 42
-    carry: true
-    points:
-      - - 127.231
-        - 36.735
-      - - 127.254
-        - 36.747
-      - - 127.274
-        - 36.732
-      - - 127.247
-        - 36.719
-      - - 127.231
-        - 36.735
-    color: "#68adc7"
-    opacity: 0.55
-  - id: east-road-lost
-    type: line
-    cut: access
-    at: 26
-    duration: 29
-    points:
-      - - 127.239
-        - 36.721
-      - - 127.263
-        - 36.716
-      - - 127.282
-        - 36.704
-    color: "#c4a6a0"
-    width: 3
-    drawSeconds: 2
-    dashed: true
-  - id: legend-access
-    type: legend
-    cut: access
-    at: 26
-    duration: 42
-    carry: true
-    items:
-      - text: 확인 낙수
-        color: "#68adc7"
-        symbol: fill
-      - text: 유실 진입로
-        color: "#c4a6a0"
-        symbol: line
   - id: briefing-access
     type: bulletin
     cut: access
     at: 33
     duration: 19
     source: news
-    heading: 청림소방서 현장 브리핑
+    heading: 괴산소방서 현장 브리핑
     text: 북사면에서 퇴로가 확인된 구간부터 구조대가 접근합니다. 고립 신고 42건은 위치와 중복 여부를 대조 중입니다.
     sound: false
   - id: news-5
@@ -200,7 +166,7 @@ events:
     at: 8
     duration: 20
     source: news
-    headline: 범람이 세 시군으로…동부도, 구조·수송 지원 조정
+    headline: 괴산·충주·청주서 침수 보고…충북도, 구조·수송 지원 조정
   - id: camera-province
     type: camera
     cut: province
@@ -208,90 +174,16 @@ events:
     duration: 4
     to:
       center:
-        - 127.45
-        - 36.61
+        - 127.85
+        - 36.85
       zoom: 9
-  - id: provincial-fall
-    type: zone
+  - id: radar-1740
+    type: grid
     cut: province
-    at: 13
-    duration: 115
+    at: 12
+    duration: 51
     carry: true
-    points:
-      - - 127.16
-        - 36.83
-      - - 127.29
-        - 36.89
-      - - 127.4
-        - 36.82
-      - - 127.42
-        - 36.71
-      - - 127.31
-        - 36.65
-      - - 127.21
-        - 36.72
-      - - 127.16
-        - 36.83
-    color: "#68adc7"
-    opacity: 0.44
-  - id: provincial-flood
-    type: zone
-    cut: province
-    at: 13
-    duration: 115
-    carry: true
-    points:
-      - - 127.26
-        - 36.77
-      - - 127.36
-        - 36.77
-      - - 127.48
-        - 36.68
-      - - 127.62
-        - 36.62
-      - - 127.69
-        - 36.49
-      - - 127.66
-        - 36.44
-      - - 127.56
-        - 36.46
-      - - 127.49
-        - 36.54
-      - - 127.38
-        - 36.59
-      - - 127.31
-        - 36.65
-      - - 127.26
-        - 36.77
-    color: "#be8055"
-    opacity: 0.5
-  - id: gym
-    type: marker
-    cut: province
-    at: 13
-    duration: 56
-    carry: true
-    position:
-      - 127.59
-      - 36.49
-    label: 해원체육관
-    color: "#a5caad"
-  - id: legend-province
-    type: legend
-    cut: province
-    at: 13
-    duration: 56
-    carry: true
-    items:
-      - text: 확인 낙수
-        color: "#68adc7"
-        symbol: fill
-      - text: 범람 추정 범위
-        color: "#be8055"
-        symbol: fill
-      - text: 확인된 수송로
-        color: "#a5caad"
-        symbol: line
+    asset: radar-1740
   - id: news-6
     type: news
     cut: province
@@ -299,35 +191,14 @@ events:
     duration: 35
     carry: true
     source: news
-    headline: 청림에서 출발한 첫 이송차 도착…해원체육관 접수 시작
-  - id: first-transport
-    type: line
-    cut: province
-    at: 28
-    duration: 41
-    carry: true
-    points:
-      - - 127.16
-        - 36.61
-      - - 127.33
-        - 36.55
-      - - 127.44
-        - 36.43
-      - - 127.52
-        - 36.4
-      - - 127.59
-        - 36.49
-    color: "#a5caad"
-    width: 3
-    drawSeconds: 2
-    dashed: false
+    headline: 괴산에서 출발한 첫 이송차 도착…충주 임시대피소 접수 시작
   - id: briefing-province
     type: bulletin
     cut: province
     at: 34
     duration: 18
     source: city
-    heading: 해원체육관 운영 안내
+    heading: 충주 임시대피소 운영 안내
     text: 현재 기준 최대 600명을 수용할 수 있습니다. 도착할 때 실제 입소 인원을 등록합니다. 시 보건소 의료지원반이 진료와 병원 이송을 연계합니다.
     sound: false
   - id: news-7
@@ -336,7 +207,14 @@ events:
     at: 8
     duration: 33
     source: news
-    headline: 해원 상수원 취수 중단…체육관 신규 배정도 중단
+    headline: 충주 상수원 취수 중단…체육관 신규 배정도 중단
+  - id: radar-2035
+    type: grid
+    cut: shelter
+    at: 8
+    duration: 60
+    carry: true
+    asset: radar-2035
   - id: suspend-gym
     type: alert
     cut: shelter
@@ -344,42 +222,15 @@ events:
     sender: city
     level: 안전안내
     regions:
-      - haewon
-    text: 해원체육관 신규 접수를 중단합니다. 해원시 저지대 대피 대상 주민은 현장 안내에 따라 이동하고 침수도로에 진입하지 마십시오.
-  - id: gym-suspended
-    type: marker
-    cut: shelter
-    at: 14
-    duration: 54
-    carry: true
-    position:
-      - 127.59
-      - 36.49
-    label: 해원체육관 · 신규 접수 중단
-    color: "#c4a6a0"
-  - id: legend-shelter
-    type: legend
-    cut: shelter
-    at: 14
-    duration: 59
-    carry: true
-    items:
-      - text: 확인 낙수
-        color: "#68adc7"
-        symbol: fill
-      - text: 범람 추정 범위
-        color: "#be8055"
-        symbol: fill
-      - text: 이송 경로 확인 중
-        color: "#c4a6a0"
-        symbol: line
+      - "43130"
+    text: 충주 임시대피소 신규 접수를 중단합니다. 충주시 저지대 대피 대상 주민은 현장 안내에 따라 이동하고 침수도로에 진입하지 마십시오.
   - id: briefing-shelter
     type: bulletin
     cut: shelter
     at: 22
     duration: 29
     source: province
-    heading: 해원체육관 수용 정정
+    heading: 충주 임시대피소 수용 정정
     text: 17시 수용 가능 600명 → 20:38 신규 배정 중단. 입소 214명 기준 식수 약 8시간분. 북부 공공시설은 280명 수용 가능, 이동 경로 확인 중.
     sound: false
   - id: news-8
@@ -390,23 +241,6 @@ events:
     carry: true
     source: news
     headline: 지원버스 4대 중 2대 진입 불가…도, 대체 차량 요청
-  - id: north-unverified
-    type: line
-    cut: shelter
-    at: 41
-    duration: 27
-    carry: true
-    points:
-      - - 127.59
-        - 36.49
-      - - 127.73
-        - 36.57
-      - - 127.79
-        - 36.81
-    color: "#c4a6a0"
-    width: 3
-    drawSeconds: 2
-    dashed: true
   - id: news-9
     type: news
     cut: central
@@ -421,78 +255,16 @@ events:
     duration: 4
     to:
       center:
-        - 127.62
-        - 36.58
-      zoom: 7.1
-  - id: regional-fall
-    type: zone
+        - 127.98
+        - 37.08
+      zoom: 7.4
+  - id: radar-2315
+    type: grid
     cut: central
-    at: 13
+    at: 8
     duration: 110
     carry: true
-    points:
-      - - 126.96
-        - 37.23
-      - - 127.3
-        - 37.43
-      - - 127.61
-        - 37.16
-      - - 127.79
-        - 36.89
-      - - 127.57
-        - 36.49
-      - - 127.24
-        - 36.52
-      - - 127.03
-        - 36.8
-      - - 126.96
-        - 37.23
-    color: "#68adc7"
-    opacity: 0.42
-  - id: regional-flood
-    type: zone
-    cut: central
-    at: 13
-    duration: 110
-    carry: true
-    points:
-      - - 126.62
-        - 37.24
-      - - 126.96
-        - 37.3
-      - - 127.41
-        - 37.13
-      - - 127.77
-        - 37.24
-      - - 128.17
-        - 36.99
-      - - 128.22
-        - 36.65
-      - - 127.85
-        - 36.27
-      - - 127.45
-        - 36.11
-      - - 127.12
-        - 36.33
-      - - 126.87
-        - 36.57
-      - - 126.62
-        - 37.24
-    color: "#be8055"
-    opacity: 0.44
-  - id: legend-central
-    type: legend
-    cut: central
-    at: 13
-    duration: 110
-    carry: true
-    items:
-      - text: 확인 낙수
-        color: "#68adc7"
-        symbol: fill
-      - text: 범람 추정 범위
-        color: "#be8055"
-        symbol: fill
+    asset: radar-2315
   - id: briefing-central
     type: bulletin
     cut: central
@@ -509,25 +281,34 @@ events:
     duration: 26
     carry: true
     source: news
-    headline: 해원체육관 214명, 통행 확인 뒤 북부 공공시설로 이송 완료
+    headline: 충주 임시대피소 214명, 통행 확인 뒤 북부 공공시설로 이송 완료
   - id: news-11
     type: news
     cut: continuity
     at: 8
     duration: 27
     source: news
-    headline: 청림군청 전원·전산 끊겨…고지대 대체 상황실 가동
-  - id: backup-hq
-    type: marker
+    headline: 괴산군청 전원·전산 끊겨…고지대 대체 상황실 가동
+  - id: radar-stale
+    type: legend
     cut: continuity
     at: 8
     duration: 50
     carry: true
-    position:
-      - 127.21
-      - 36.95
-    label: 청림군 대체 상황실
-    color: "#a5caad"
+    items:
+      - text: 7/18 23:15 마지막 수신 · mm/h
+        color: "#9caec3"
+        symbol: outline
+      - text: 0.5–4
+        color: "#008fe9"
+      - text: 5–19
+        color: "#1eae48"
+      - text: 20–44
+        color: "#efd63a"
+      - text: 45–99
+        color: "#ea482b"
+      - text: 100+
+        color: "#ba54f1"
   - id: briefing-continuity
     type: bulletin
     cut: continuity
@@ -544,7 +325,7 @@ events:
     duration: 23
     carry: true
     source: news
-    headline: 청림군 “구조 요청·대피소 업무 재개”…두 면 연락 두절
+    headline: 괴산군 “구조 요청·대피소 업무 재개”…두 면 연락 두절
   - id: news-13
     type: news
     cut: rationing
@@ -559,108 +340,36 @@ events:
     duration: 4
     to:
       center:
-        - 127.6
-        - 36.67
+        - 127.72
+        - 36.45
       zoom: 6.5
-  - id: peak-flood
-    type: zone
+  - id: radar-0740
+    type: grid
     cut: rationing
-    at: 13
-    duration: 110
+    at: 8
+    duration: 60
     carry: true
-    points:
-      - - 126.38
-        - 37.77
-      - - 126.94
-        - 37.94
-      - - 127.62
-        - 37.71
-      - - 128.1
-        - 37.82
-      - - 128.71
-        - 37.32
-      - - 128.88
-        - 36.74
-      - - 128.53
-        - 36.36
-      - - 128.9
-        - 35.81
-      - - 128.35
-        - 35.45
-      - - 127.67
-        - 35.65
-      - - 127.01
-        - 35.82
-      - - 126.77
-        - 36.28
-      - - 126.41
-        - 36.85
-      - - 126.38
-        - 37.77
-    color: "#be8055"
-    opacity: 0.42
-  - id: last-fall
-    type: zone
-    cut: rationing
-    at: 13
-    duration: 55
-    carry: true
-    points:
-      - - 126.84
-        - 37.51
-      - - 127.3
-        - 37.65
-      - - 128.11
-        - 37.35
-      - - 128.17
-        - 36.81
-      - - 127.67
-        - 36.46
-      - - 127.01
-        - 36.62
-      - - 126.75
-        - 37.05
-      - - 126.84
-        - 37.51
-    color: "#68adc7"
-    opacity: 0.52
-  - id: single-corridor
-    type: line
-    cut: rationing
-    at: 13
-    duration: 55
-    carry: true
-    points:
-      - - 128.57
-        - 38.13
-      - - 129.03
-        - 37.67
-      - - 129.1
-        - 37.12
-      - - 129.27
-        - 36.74
-      - - 129.39
-        - 36.28
-    color: "#a5caad"
-    width: 3
-    drawSeconds: 2
-    dashed: false
-  - id: legend-rationing
+    asset: radar-0740
+  - id: radar-latest
     type: legend
     cut: rationing
-    at: 13
-    duration: 55
+    at: 8
+    duration: 60
     carry: true
     items:
-      - text: 확인 낙수
-        color: "#68adc7"
-        symbol: fill
-      - text: 범람 추정 범위
-        color: "#be8055"
-        symbol: fill
-      - text: 긴급 수송축
-        color: "#a5caad"
-        symbol: line
+      - text: 강수 레이더 · mm/h
+        color: "#9caec3"
+        symbol: outline
+      - text: 0.5–4
+        color: "#008fe9"
+      - text: 5–19
+        color: "#1eae48"
+      - text: 20–44
+        color: "#efd63a"
+      - text: 45–99
+        color: "#ea482b"
+      - text: 100+
+        color: "#ba54f1"
   - id: briefing-rationing
     type: bulletin
     cut: rationing
@@ -685,16 +394,6 @@ events:
     duration: 28
     source: news
     headline: 직접 낙수 종료 확인…무너진 제방 밖으로 범람 계속
-  - id: legend-survey
-    type: legend
-    cut: survey
-    at: 8
-    duration: 55
-    carry: true
-    items:
-      - text: 범람 추정 범위
-        color: "#be8055"
-        symbol: fill
   - id: briefing-survey
     type: bulletin
     cut: survey
@@ -718,63 +417,7 @@ events:
     at: 8
     duration: 31
     source: news
-    headline: 침수 생활권 귀환 통제 유지…청림군 임시청사서 민원 접수
-  - id: remaining-closures
-    type: zone
-    cut: recovery
-    at: 8
-    duration: 57
-    points:
-      - - 126.6
-        - 37.45
-      - - 126.99
-        - 37.63
-      - - 127.63
-        - 37.36
-      - - 127.99
-        - 36.91
-      - - 127.76
-        - 36.48
-      - - 127.27
-        - 36.36
-      - - 126.97
-        - 36.72
-      - - 126.6
-        - 37.45
-    color: "#be8055"
-    opacity: 0.45
-  - id: temporary-office
-    type: marker
-    cut: recovery
-    at: 8
-    duration: 57
-    position:
-      - 127.21
-      - 36.95
-    label: 청림군 임시청사
-    color: "#a5caad"
-  - id: supply-hub
-    type: marker
-    cut: recovery
-    at: 8
-    duration: 57
-    position:
-      - 129.14
-      - 36.39
-    label: 동해안 구호 거점
-    color: "#a5caad"
-  - id: legend-recovery
-    type: legend
-    cut: recovery
-    at: 8
-    duration: 57
-    items:
-      - text: 귀환 통제 지역 개략
-        color: "#be8055"
-        symbol: fill
-      - text: 운영 중인 거점
-        color: "#a5caad"
-        symbol: outline
+    headline: 침수 생활권 귀환 통제 유지…괴산군 임시청사서 민원 접수
   - id: briefing-recovery
     type: bulletin
     cut: recovery
@@ -782,7 +425,7 @@ events:
     duration: 36
     source: central
     heading: 제1차 복구계획 확정분
-    text: 전력과 급수는 병원·수용시설이 있는 거점부터 연결합니다. 정수장 유실 지역은 임시 정수시설을 운영합니다. 상곡리 장기 임시주거는 청림군 임시청사에서 접수합니다.
+    text: 전력과 급수는 병원·수용시설이 있는 거점부터 연결합니다. 정수장 유실 지역은 임시 정수시설을 운영합니다. 청천면 장기 임시주거는 괴산군 임시청사에서 접수합니다.
     sound: false
   - id: news-18
     type: news
