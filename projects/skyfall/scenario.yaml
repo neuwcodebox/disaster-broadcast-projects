@@ -12,35 +12,35 @@ agencies:
 assets:
   radar-1315:
     path: output/maps/radar-1315.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-1328:
     path: output/maps/radar-1328.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-1340:
     path: output/maps/radar-1340.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-1405:
     path: output/maps/radar-1405.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-1740:
     path: output/maps/radar-1740.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-2035:
     path: output/maps/radar-2035.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-2315:
     path: output/maps/radar-2315.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
   radar-0740:
     path: output/maps/radar-0740.json
-    source: SKYFALL 작품용 합성 강수 레이더, 자체 제작
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
 map:
   camera:
@@ -133,14 +133,52 @@ events:
     type: grid
     cut: ordinary
     at: 26
+    opacity: 1
     duration: 22
     fadeIn: 0.7
     carry: true
     asset: radar-1315
+  - id: radar-scale
+    type: legend
+    cut: ordinary
+    at: 26
+    duration: 436
+    carry: true
+    layout: colorbar
+    position: top-right
+    unit: mm/h
+    items:
+      - text: "110+"
+        color: "#333333"
+      - text: "90"
+        color: "#000390"
+      - text: "80"
+        color: "#4c4eb1"
+      - text: "70"
+        color: "#b3b4de"
+      - text: "50"
+        color: "#b329ff"
+      - text: "30"
+        color: "#e0a9ff"
+      - text: "20"
+        color: "#d20000"
+      - text: "10"
+        color: "#ff6600"
+      - text: "5"
+        color: "#ffe100"
+      - text: "3"
+        color: "#008c00"
+      - text: "1"
+        color: "#00ff00"
+      - text: "0.5"
+        color: "#0033f5"
+      - text: "0.1"
+        color: "#009bf5"
   - id: radar-1328
     type: grid
     cut: shower
     at: 8
+    opacity: 1
     duration: 23
     carry: true
     asset: radar-1328
@@ -255,6 +293,7 @@ events:
     type: grid
     cut: warning
     at: 7
+    opacity: 1
     duration: 51
     carry: true
     asset: radar-1340
@@ -266,26 +305,6 @@ events:
     to:
       center: [127.738, 36.66]
       zoom: 10.6
-  - id: radar-scale
-    type: legend
-    cut: warning
-    at: 7
-    duration: 281
-    carry: true
-    items:
-      - text: 강수 레이더 · mm/h
-        color: "#9caec3"
-        symbol: outline
-      - text: 0.5–4
-        color: "#008fe9"
-      - text: 5–19
-        color: "#1eae48"
-      - text: 20–44
-        color: "#efd63a"
-      - text: 45–99
-        color: "#ea482b"
-      - text: 100+
-        color: "#ba54f1"
   - id: evacuate-cheongcheon
     type: alert
     cut: warning
@@ -315,6 +334,7 @@ events:
     type: grid
     cut: access
     at: 8
+    opacity: 1
     duration: 59
     carry: true
     asset: radar-1405
@@ -356,6 +376,7 @@ events:
     type: grid
     cut: province
     at: 12
+    opacity: 1
     duration: 51
     carry: true
     asset: radar-1740
@@ -387,6 +408,7 @@ events:
     type: grid
     cut: shelter
     at: 8
+    opacity: 1
     duration: 60
     carry: true
     asset: radar-2035
@@ -437,6 +459,7 @@ events:
     type: grid
     cut: central
     at: 8
+    opacity: 1
     duration: 110
     carry: true
     asset: radar-2315
@@ -461,29 +484,16 @@ events:
     type: news
     cut: continuity
     at: 8
-    duration: 27
+    duration: 14
     source: news
     headline: 괴산군청 전원·전산 끊겨…고지대 대체 상황실 가동
-  - id: radar-stale
-    type: legend
+  - id: news-radar-stale
+    type: news
     cut: continuity
-    at: 8
-    duration: 50
-    carry: true
-    items:
-      - text: 7/18 23:15 마지막 수신 · mm/h
-        color: "#9caec3"
-        symbol: outline
-      - text: 0.5–4
-        color: "#008fe9"
-      - text: 5–19
-        color: "#1eae48"
-      - text: 20–44
-        color: "#efd63a"
-      - text: 45–99
-        color: "#ea482b"
-      - text: 100+
-        color: "#ba54f1"
+    at: 22
+    duration: 13
+    source: news
+    headline: 강수 레이더 갱신 중단…7월 18일 23시 15분 영상이 마지막
   - id: briefing-continuity
     type: bulletin
     cut: continuity
@@ -522,29 +532,10 @@ events:
     type: grid
     cut: rationing
     at: 8
+    opacity: 1
     duration: 60
     carry: true
     asset: radar-0740
-  - id: radar-latest
-    type: legend
-    cut: rationing
-    at: 8
-    duration: 60
-    carry: true
-    items:
-      - text: 강수 레이더 · mm/h
-        color: "#9caec3"
-        symbol: outline
-      - text: 0.5–4
-        color: "#008fe9"
-      - text: 5–19
-        color: "#1eae48"
-      - text: 20–44
-        color: "#efd63a"
-      - text: 45–99
-        color: "#ea482b"
-      - text: 100+
-        color: "#ba54f1"
   - id: briefing-rationing
     type: bulletin
     cut: rationing

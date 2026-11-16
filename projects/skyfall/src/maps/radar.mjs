@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 
-// Synthetic radar frames for SKYFALL. All reflectivity and rain-rate classes are fictional.
+// Synthetic radar frames for SKYFALL. Palette stops are sampled from the supplied KMA legend.
 const output = new URL('../../output/maps/', import.meta.url);
 const scans = [
   { name: '1315', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.732, 36.64], reach: [0.031, 0.033], rate: 18 },
@@ -14,8 +14,10 @@ const scans = [
 ];
 
 const palette = [
-  [0.5, '#008fe9ce'], [5, '#1eae48e8'], [20, '#efd63af5'],
-  [45, '#ea482bff'], [100, '#ba54f1ff'],
+  [0.1, '#009bf5'], [0.5, '#0033f5'], [1, '#00ff00'], [3, '#008c00'],
+  [5, '#ffe100'], [10, '#ff6600'], [20, '#d20000'], [30, '#e0a9ff'],
+  [50, '#b329ff'], [70, '#b3b4de'], [80, '#4c4eb1'], [90, '#000390'],
+  [110, '#333333'],
 ];
 
 function lattice(x, y) {
