@@ -44,8 +44,8 @@ map:
   camera:
     center:
       - 127.8
-      - 38.1
-    zoom: 5.2
+      - 38.2
+    zoom: 5.55
 cuts:
   # 오프닝 고지 동안 기존 뉴스·문자·채팅을 각각의 시각에 쌓는다.
   - id: history-notice
