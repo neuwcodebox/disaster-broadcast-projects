@@ -12,6 +12,7 @@ agencies:
   cheongju: 청주시
   wonju: 원주시
   yeoju: 여주시
+  donghae: 동해시
 assets:
   radar-1329:
     path: output/maps/radar-1329.json
@@ -51,6 +52,46 @@ assets:
     license: CC0
   radar-0740-2:
     path: output/maps/radar-0740-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2010:
+    path: output/maps/radar-2010.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2010-2:
+    path: output/maps/radar-2010-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0530:
+    path: output/maps/radar-0530.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0530-2:
+    path: output/maps/radar-0530-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0530-3:
+    path: output/maps/radar-0530-3.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0530-4:
+    path: output/maps/radar-0530-4.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0535:
+    path: output/maps/radar-0535.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0535-2:
+    path: output/maps/radar-0535-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0535-3:
+    path: output/maps/radar-0535-3.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-0535-4:
+    path: output/maps/radar-0535-4.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
 map:
@@ -115,13 +156,13 @@ cuts:
     duration: 50
     storyTime: 2031-07-20T07:40:00+09:00
     clockTransition: 4
-  - id: survey
+  - id: coastal-supply
     duration: 44
-    storyTime: 2031-07-21T10:00:00+09:00
+    storyTime: 2031-07-20T20:10:00+09:00
     clockTransition: 4
-  - id: recovery
+  - id: ongoing-response
     duration: 49
-    storyTime: 2031-08-18T16:00:00+09:00
+    storyTime: 2031-07-21T05:34:40+09:00
     clockTransition: 4
 events:
   - id: live-chat
@@ -186,7 +227,7 @@ events:
     type: legend
     cut: ordinary
     at: 22
-    duration: 485
+    duration: 570
     layout: colorbar
     position: top-right
     unit: mm/h
@@ -837,79 +878,183 @@ events:
     author: 목포밤바다
     text: 연료차 도착했다는 거 방금 보셨죠? 약품차는 아직 대기래요.
     color: "#b6abc7"
-  - id: news-15
+  - id: news-corridor-lost
     type: news
-    cut: survey
+    cut: coastal-supply
     at: 8
-    duration: 16
+    duration: 13
     source: news
-    headline: 직접 낙수 종료 확인…무너진 제방 밖으로 범람 계속
-  - id: chat-travel-control
-    type: chat-message
-    chat: live-chat
-    cut: survey
-    at: 12
-    author: 제주퇴근길
-    text: 지도에서 비 색은 빠졌는데 길은 계속 막혀 있네요.
-    color: "#a6c4af"
-  - id: alert-return-restricted
-    type: alert
-    cut: survey
-    at: 18
-    sender: county
-    level: 안전안내
-    regions:
-      - "43760"
-    text: 청천면 달천변 위험구역은 범람과 지반 유실로 출입을 통제합니다. 대피하신 주민은 통제 해제 안내 전까지 주택이나 농경지로 돌아가지 마십시오.
-  - id: news-damage-survey
-    type: news
-    cut: survey
-    at: 24
-    duration: 9
-    source: news
-    headline: 중대본, 접근 가능한 곳부터 피해 조사…단절 지역은 산정 보류
-  - id: news-16
-    type: news
-    cut: survey
-    at: 33
-    duration: 19
-    source: news
-    headline: 대통령, 피해 확인 지역부터 특별재난지역 선포
+    headline: 물이 쏟아지는 구역 확대…아침에 열었던 중부 수송로 교량 유실
+  - id: camera-coast
+    type: camera
+    cut: coastal-supply
+    at: 8
+    duration: 5
+    to:
+      center:
+        - 127.86
+        - 36.48
+      zoom: 5.85
+  - id: radar-2010
+    type: grid
+    cut: coastal-supply
+    at: 8
+    asset: radar-2010
+    opacity: 1
+    duration: 44
     carry: true
-  - id: alert-salmi-water-continues
+  - id: radar-2010-2
+    type: grid
+    cut: coastal-supply
+    at: 8
+    asset: radar-2010-2
+    opacity: 1
+    duration: 44
+    carry: true
+  - id: alert-salmi-water-suspended
     type: alert
-    cut: survey
-    at: 33
+    cut: coastal-supply
+    at: 14
     sender: city
     level: 안전안내
     regions:
       - "43130"
-    text: 살미면 일부 단수가 계속되고 있습니다. 급수가 재개될 때까지 살미면 행정복지센터에서 생수를 받으실 수 있습니다.
-  - id: news-17
+    text: 살미면 행정복지센터 진입로 침수로 생수 배부를 중단합니다. 센터로 이동하지 마십시오. 대체 배부 장소는 접근로 확인 뒤 안내하겠습니다.
+  - id: news-sea-supply-planned
     type: news
-    cut: recovery
-    at: 8
-    duration: 13
-    source: news
-    headline: 괴산군, 귀환 통제 유지…임시청사서 청천면 장기 임시주거 신청 접수
-  - id: news-recovery-plan
-    type: news
-    cut: recovery
+    cut: coastal-supply
     at: 21
-    duration: 14
+    duration: 17
     source: news
-    headline: 정부 복구계획 확정…병원·수용시설에 전력·급수 우선, 임시 정수시설 운영
-  - id: news-18
-    type: news
-    cut: recovery
-    at: 35
-    duration: 14
-    source: news
-    headline: 중부 간선철도, 한 달째 운행 중단
-  - id: chat-recovery-registration
+    headline: 해수부, 동해항 접안·하역 가능 확인…중대본, 해상 보급 준비
+  - id: chat-salmi-notice-changed
     type: chat-message
+    cut: coastal-supply
+    at: 25
     chat: live-chat
-    cut: recovery
-    at: 41
-    author: 느티
-    text: 임시주거 접수한다고 공지 떴네요. 아침에 임시청사 가봐야겠어요.
+    author: 분리수거
+    text: 충주 방금 또 왔어요. 아까 생수 준다고 했던 센터로 지금은 가지 말래요.
+    color: "#c2ad91"
+  - id: alert-donghae-port-road
+    type: alert
+    cut: coastal-supply
+    at: 31
+    sender: donghae
+    level: 안전안내
+    regions:
+      - "51170"
+    text: 동해항 진입로 일부를 구호 수송에 사용합니다. 일반 차량은 통제 구간에 들어가지 말고 현장 경찰 안내에 따라 우회해 주십시오.
+  - id: alert-area-donghae
+    type: region
+    cut: coastal-supply
+    at: 31
+    duration: 62
+    carry: true
+    regions:
+      - "51170"
+    color: "#e4dbc5"
+    fillOpacity: 0.24
+    strokeWidth: 0
+    fadeIn: 0.5
+  - id: news-shore-transfer-only
+    type: news
+    cut: coastal-supply
+    at: 38
+    duration: 14
+    source: news
+    headline: 동해항에서 해안 병원까지 통행 확인…내륙행 약품차는 회차
+    carry: true
+  - id: news-first-aid-berthing
+    type: news
+    cut: ongoing-response
+    at: 8
+    duration: 14
+    source: news
+    headline: 첫 구호선 04:20 동해항 접안…해수부, 하역 확인
+  - id: radar-0530
+    type: grid
+    cut: ongoing-response
+    at: 8
+    asset: radar-0530
+    opacity: 1
+    duration: 25
+  - id: radar-0530-2
+    type: grid
+    cut: ongoing-response
+    at: 8
+    asset: radar-0530-2
+    opacity: 1
+    duration: 25
+  - id: radar-0530-3
+    type: grid
+    cut: ongoing-response
+    at: 8
+    asset: radar-0530-3
+    opacity: 1
+    duration: 25
+  - id: radar-0530-4
+    type: grid
+    cut: ongoing-response
+    at: 8
+    asset: radar-0530-4
+    opacity: 1
+    duration: 25
+  - id: alert-songjeong-evacuate
+    type: alert
+    cut: ongoing-response
+    at: 17
+    sender: donghae
+    level: 긴급재난
+    regions:
+      - "51170"
+    text: 대피명령. 송정동 저지대 침수 우려가 있습니다. 항만 진입로와 잠긴 도로를 피하고 현장 안내에 따라 가까운 고지대로 대피하십시오.
+  - id: news-coastal-fuel-received
+    type: news
+    cut: ongoing-response
+    at: 22
+    duration: 15
+    source: news
+    headline: 동해안 응급의료기관 2곳, 비상발전기 연료 인수…05:21 확인
+  - id: chat-coast-and-inland
+    type: chat-message
+    cut: ongoing-response
+    at: 29
+    chat: live-chat
+    author: 분리수거
+    text: 충주 쪽 도로는 언제 열릴지 말이 없네요. 동해항에 들어온 배 소식만 떠요.
+    color: "#c2ad91"
+  - id: radar-0535
+    type: grid
+    cut: ongoing-response
+    at: 33
+    asset: radar-0535
+    opacity: 1
+    duration: 16
+  - id: radar-0535-2
+    type: grid
+    cut: ongoing-response
+    at: 33
+    asset: radar-0535-2
+    opacity: 1
+    duration: 16
+  - id: radar-0535-3
+    type: grid
+    cut: ongoing-response
+    at: 33
+    asset: radar-0535-3
+    opacity: 1
+    duration: 16
+  - id: radar-0535-4
+    type: grid
+    cut: ongoing-response
+    at: 33
+    asset: radar-0535-4
+    opacity: 1
+    duration: 16
+  - id: news-response-ongoing
+    type: news
+    cut: ongoing-response
+    at: 37
+    duration: 12
+    source: news
+    headline: 새벽에도 낙수 범위 확대…고립된 내륙 시군 보급로 미확보
