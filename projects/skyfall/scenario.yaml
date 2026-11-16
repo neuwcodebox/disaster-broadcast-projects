@@ -398,7 +398,7 @@ events:
     duration: 24
     carry: true
     source: news
-    headline: 군, 달천변 교량 통제…구조 출동과 도청 보고 병행
+    headline: 경찰, 달천변 교량 긴급 통제…괴산군은 저지대 대피명령
   - id: news-3
     type: news
     cut: access
