@@ -6,8 +6,8 @@
 
 ## 작품과 집필 근거
 
-- [scenario.yaml](scenario.yaml) — 9분 34초 시나리오와 연출 원본.
-- [broadcast-draft.md](broadcast-draft.md) — 본편 11개 장면의 조치·보고·공개 순서와 결말.
+- [scenario.yaml](scenario.yaml) — 10분 22초 시나리오와 연출 원본.
+- [broadcast-draft.md](broadcast-draft.md) — 본편 13개 장면의 조치·보고·공개 순서와 결말.
 - [research.md](research.md) — 낙수와 범람의 물리적 전제, 기관별 역할과 장면별 제도 근거.
 - [제도 중심 역할극 기록](src/writing/response-roleplay.md) — 역할에 전달한 정보, 제안, 후속 회신과 채택한 전개.
 
