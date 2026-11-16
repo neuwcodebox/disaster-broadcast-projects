@@ -6,9 +6,7 @@ seed: 11
 agencies:
   county: 괴산군
   city: 충주시
-  province: 충북도 재난안전대책본부
   news: 동부뉴스
-  central: 중앙재난안전대책본부
 assets:
   radar-1315:
     path: output/maps/radar-1315.json
@@ -362,19 +360,25 @@ events:
     type: news
     cut: access
     at: 26
-    duration: 37
-    carry: true
+    duration: 16
     source: news
     headline: 소방 “낙수가 폭포처럼 이어져”…동측 진입로 유실
-  - id: briefing-access
-    type: bulletin
+  - id: alert-approach-closed
+    type: alert
     cut: access
     at: 33
-    duration: 19
+    sender: county
+    level: 안전안내
+    regions: ["43760"]
+    text: 청천면 달천 동쪽 진입로가 유실됐습니다. 통제 구간과 하천에 접근하지 마십시오. 고립된 분은 119에 현재 위치를 알려 주십시오.
+  - id: news-rescue-access
+    type: news
+    cut: access
+    at: 42
+    duration: 21
+    carry: true
     source: news
-    heading: 괴산소방서 현장 브리핑
-    text: 북사면에서 퇴로가 확인된 구간부터 구조대가 접근합니다. 고립 신고 42건은 위치와 중복 여부를 대조 중입니다.
-    sound: false
+    headline: 괴산소방서, 북사면으로 구조 접근…고립 신고 42건 중복 확인 중
   - id: news-5
     type: news
     cut: province
@@ -404,24 +408,22 @@ events:
     type: news
     cut: province
     at: 28
-    duration: 35
-    carry: true
+    duration: 15
     source: news
     headline: 괴산에서 출발한 첫 이송차 도착…충주 임시대피소 접수 시작
-  - id: briefing-province
-    type: bulletin
+  - id: news-shelter-capacity
+    type: news
     cut: province
-    at: 34
-    duration: 18
-    source: city
-    heading: 충주 임시대피소 운영 안내
-    text: 현재 기준 최대 600명을 수용할 수 있습니다. 도착할 때 실제 입소 인원을 등록합니다. 시 보건소 의료지원반이 진료와 병원 이송을 연계합니다.
-    sound: false
+    at: 43
+    duration: 20
+    carry: true
+    source: news
+    headline: 충주시, 체육관 600명 수용 준비…보건소가 진료·이송 연계
   - id: news-7
     type: news
     cut: shelter
     at: 8
-    duration: 33
+    duration: 16
     source: news
     headline: 충주 상수원 취수 중단…체육관 신규 배정도 중단
   - id: radar-2035
@@ -441,15 +443,13 @@ events:
     regions:
       - "43130"
     text: 충주 임시대피소 신규 접수를 중단합니다. 충주시 저지대 대피 대상 주민은 현장 안내에 따라 이동하고 침수도로에 진입하지 마십시오.
-  - id: briefing-shelter
-    type: bulletin
+  - id: news-shelter-capacity-revised
+    type: news
     cut: shelter
-    at: 22
-    duration: 29
-    source: province
-    heading: 충주 임시대피소 수용 정정
-    text: 17시 수용 가능 600명 → 20:38 신규 배정 중단. 입소 214명 기준 식수 약 8시간분. 북부 공공시설은 280명 수용 가능, 이동 경로 확인 중.
-    sound: false
+    at: 24
+    duration: 17
+    source: news
+    headline: 충주 대피소 214명·식수 8시간분…280명 수용 대체시설은 통행 확인 중
   - id: news-8
     type: news
     cut: shelter
@@ -462,7 +462,7 @@ events:
     type: news
     cut: central
     at: 8
-    duration: 34
+    duration: 16
     source: news
     headline: 3개 도 14개 시군 피해 보고…국무총리가 중대본 지휘
   - id: camera-central
@@ -483,15 +483,13 @@ events:
     duration: 110
     carry: true
     asset: radar-2315
-  - id: briefing-central
-    type: bulletin
+  - id: news-patient-transfers
+    type: news
     cut: central
-    at: 19
-    duration: 36
-    source: central
-    heading: 23시 브리핑 · 환자 이송
-    text: 이송 요청 700명 접수. 타 권역에서 180병상 수용 가능 회신. 보건복지부와 소방이 필요한 진료와 이동 경로를 대조해 병원과 출발 시간을 정하고 있습니다.
-    sound: false
+    at: 24
+    duration: 18
+    source: news
+    headline: 중대본, 이송 요청 700명·수용 회신 180병상…진료·이송로 대조 중
   - id: news-10
     type: news
     cut: central
@@ -514,15 +512,6 @@ events:
     duration: 13
     source: news
     headline: 강수 레이더 갱신 중단…7월 18일 23시 15분 영상이 마지막
-  - id: briefing-continuity
-    type: bulletin
-    cut: continuity
-    at: 17
-    duration: 27
-    source: county
-    heading: 대체 상황실에서 첫 상황보고
-    text: 대피·통제 안내, 구조 요청 전달, 대피소 업무를 재개했습니다. 두 면은 마지막 연락 이후 상황을 확인하지 못했습니다. 피해 합계는 수신 자료 기준입니다.
-    sound: false
   - id: news-12
     type: news
     cut: continuity
@@ -530,14 +519,14 @@ events:
     duration: 23
     carry: true
     source: news
-    headline: 괴산군 “구조 요청·대피소 업무 재개”…두 면 연락 두절
+    headline: 괴산군, 구조 요청·대피소 업무 재개…연락 두절 두 면 집계 보류
   - id: news-13
     type: news
     cut: rationing
     at: 8
-    duration: 34
+    duration: 16
     source: news
-    headline: 수도권·중부 기간망 광범위 단절…긴급 수송 통로 한 곳
+    headline: 수도권·중부 기간망 단절…긴급 수송 통로 한 곳, 11개 지자체 보고 미수신
   - id: camera-rationing
     type: camera
     cut: rationing
@@ -556,15 +545,13 @@ events:
     duration: 60
     carry: true
     asset: radar-0740
-  - id: briefing-rationing
-    type: bulletin
+  - id: news-transport-priority
+    type: news
     cut: rationing
-    at: 18
-    duration: 31
-    source: central
-    heading: 긴급 수송축 통행 배정
-    text: 응급환자 이송차와 병원 발전기 연료차를 먼저 통과시킵니다. 정수 약품은 후속 차량에 배정했습니다. 11개 지자체 상황은 미수신입니다.
-    sound: false
+    at: 24
+    duration: 18
+    source: news
+    headline: 중대본, 환자·병원 연료 우선 통행…정수 약품은 후속 배정
   - id: news-14
     type: news
     cut: rationing
@@ -577,18 +564,24 @@ events:
     type: news
     cut: survey
     at: 8
-    duration: 28
+    duration: 16
     source: news
     headline: 직접 낙수 종료 확인…무너진 제방 밖으로 범람 계속
-  - id: briefing-survey
-    type: bulletin
+  - id: alert-return-restricted
+    type: alert
     cut: survey
     at: 18
-    duration: 31
-    source: central
-    heading: 낙수 종료 뒤 현장조사
-    text: 어제 19시대 이후 직접 낙수는 추가 확인되지 않았습니다. 하류 범람과 지반 유실로 위험구역 통제는 유지합니다. 접근이 막힌 지역은 피해액 산정을 보류합니다.
-    sound: false
+    sender: county
+    level: 안전안내
+    regions: ["43760"]
+    text: 청천면 달천변 위험구역은 범람과 지반 유실로 출입을 통제합니다. 대피하신 주민은 통제 해제 안내 전까지 주택이나 농경지로 돌아가지 마십시오.
+  - id: news-damage-survey
+    type: news
+    cut: survey
+    at: 24
+    duration: 12
+    source: news
+    headline: 중대본, 접근 가능한 곳부터 피해 조사…단절 지역은 산정 보류
   - id: news-16
     type: news
     cut: survey
@@ -601,22 +594,20 @@ events:
     type: news
     cut: recovery
     at: 8
-    duration: 31
+    duration: 14
     source: news
-    headline: 침수 생활권 귀환 통제 유지…괴산군 임시청사서 민원 접수
-  - id: briefing-recovery
-    type: bulletin
+    headline: 괴산군, 귀환 통제 유지…임시청사서 청천면 장기 임시주거 신청 접수
+  - id: news-recovery-plan
+    type: news
     cut: recovery
-    at: 18
-    duration: 36
-    source: central
-    heading: 제1차 복구계획 확정분
-    text: 전력과 급수는 병원·수용시설이 있는 거점부터 연결합니다. 정수장 유실 지역은 임시 정수시설을 운영합니다. 청천면 장기 임시주거는 괴산군 임시청사에서 접수합니다.
-    sound: false
+    at: 22
+    duration: 17
+    source: news
+    headline: 정부 복구계획 확정…병원·수용시설에 전력·급수 우선, 임시 정수시설 운영
   - id: news-18
     type: news
     cut: recovery
     at: 39
     duration: 26
     source: news
-    headline: 중부 간선철도 운행 중단 한 달…대체 급수·임시주거 확정
+    headline: 중부 간선철도, 한 달째 운행 중단
