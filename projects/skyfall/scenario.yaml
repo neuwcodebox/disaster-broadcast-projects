@@ -248,6 +248,18 @@ events:
     publishedAt: 2031-07-18T13:34:03+09:00
     regions: ["43760"]
     text: 13:34 충북 괴산군 호우경보 발효. 하천변과 계곡, 급경사지 출입을 피하고 대피 안내를 받으면 즉시 이동하십시오.
+  - id: alert-area-goesan
+    type: region
+    cut: weather-advisory
+    at: 7
+    duration: 551
+    carry: true
+    regions: ["43760"]
+    color: "#e4dbc5"
+    fillOpacity: 0.1
+    strokeOpacity: 0.85
+    strokeWidth: 2.5
+    fadeIn: 0.5
   - id: news-heavy-rain-warning
     type: news
     cut: weather-advisory
@@ -501,6 +513,18 @@ events:
     regions:
       - "43130"
     text: 충주 임시대피소 신규 접수를 중단합니다. 충주시 저지대 대피 대상 주민은 현장 안내에 따라 이동하고 침수도로에 진입하지 마십시오.
+  - id: alert-area-chungju
+    type: region
+    cut: shelter
+    at: 14
+    duration: 336
+    carry: true
+    regions: ["43130"]
+    color: "#e4dbc5"
+    fillOpacity: 0.1
+    strokeOpacity: 0.85
+    strokeWidth: 2.5
+    fadeIn: 0.5
   - id: news-shelter-capacity-revised
     type: news
     cut: shelter
