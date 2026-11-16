@@ -2,9 +2,10 @@ import { mkdir, writeFile } from 'node:fs/promises';
 
 // Synthetic radar frames for SKYFALL. Palette stops are sampled from the supplied KMA legend.
 const output = new URL('../../output/maps/', import.meta.url);
-const longitudeStep = 0.008;
-const latitudeStep = 0.0064;
-const maxTileCells = 256;
+const longitudeStep = 0.064;
+const latitudeStep = 0.0512;
+const westOrigin = 127.708;
+const southOrigin = 36.6344;
 const scans = [
   { name: '1329', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.732, 36.64], reach: [0.031, 0.033], rate: 18 },
   { name: '1331', bounds: [127.40, 36.40, 128.08, 36.96], core: [127.735, 36.65], reach: [0.046, 0.041], rate: 33 },
@@ -52,41 +53,28 @@ function cellColor(longitude, latitude, scan) {
   return palette.findLast(([minimum]) => estimate >= minimum)?.[1] ?? null;
 }
 
-function* scanTiles(scan) {
+function scanGrid(scan) {
   const [west, south, east, north] = scan.bounds;
-  const left = Math.floor(west / longitudeStep);
-  const right = Math.ceil(east / longitudeStep);
-  const bottom = Math.floor(south / latitudeStep);
-  const top = Math.ceil(north / latitudeStep);
-
-  for (let tileNorth = top; tileNorth > bottom; tileNorth -= maxTileCells) {
-    const tileSouth = Math.max(bottom, tileNorth - maxTileCells);
-    for (let tileWest = left; tileWest < right; tileWest += maxTileCells) {
-      const tileEast = Math.min(right, tileWest + maxTileCells);
-      const cells = Array.from({ length: tileNorth - tileSouth }, (_, row) => {
-        const latitude = (tileNorth - row - 0.5) * latitudeStep;
-        return Array.from({ length: tileEast - tileWest }, (_, column) => {
-          const longitude = (tileWest + column + 0.5) * longitudeStep;
-          return cellColor(longitude, latitude, scan);
-        });
-      });
-      if (cells.some(row => row.some(cell => cell !== null))) {
-        const bounds = [
-          tileWest * longitudeStep, tileSouth * latitudeStep,
-          tileEast * longitudeStep, tileNorth * latitudeStep,
-        ];
-        yield { bounds, cells };
-      }
-    }
-  }
+  const left = Math.floor((west - westOrigin) / longitudeStep);
+  const right = Math.ceil((east - westOrigin) / longitudeStep);
+  const bottom = Math.floor((south - southOrigin) / latitudeStep);
+  const top = Math.ceil((north - southOrigin) / latitudeStep);
+  const bounds = [
+    westOrigin + left * longitudeStep, southOrigin + bottom * latitudeStep,
+    westOrigin + right * longitudeStep, southOrigin + top * latitudeStep,
+  ];
+  const cells = Array.from({ length: top - bottom }, (_, row) => {
+    const latitude = southOrigin + (top - row - 0.5) * latitudeStep;
+    return Array.from({ length: right - left }, (_, column) => {
+      const longitude = westOrigin + (left + column + 0.5) * longitudeStep;
+      return cellColor(longitude, latitude, scan);
+    });
+  });
+  return { bounds, cells };
 }
 
 await mkdir(output, { recursive: true });
 for (const scan of scans) {
-  const tiles = [...scanTiles(scan)];
-  for (const [index, tile] of tiles.entries()) {
-    const file = 'radar-' + scan.name + '-' + (index + 1) + '.json';
-    await writeFile(new URL(file, output), JSON.stringify(tile) + '\n');
-  }
-  console.log(scan.name + ' ' + tiles.length);
+  const file = 'radar-' + scan.name + '.json';
+  await writeFile(new URL(file, output), JSON.stringify(scanGrid(scan)) + '\n');
 }

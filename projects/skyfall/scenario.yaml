@@ -10,64 +10,40 @@ agencies:
   weather: 기상청
   news: 동부뉴스
 assets:
-  radar-1329-1:
-    path: output/maps/radar-1329-1.json
+  radar-1329:
+    path: output/maps/radar-1329.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-1331-1:
-    path: output/maps/radar-1331-1.json
+  radar-1331:
+    path: output/maps/radar-1331.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-1340-1:
-    path: output/maps/radar-1340-1.json
+  radar-1340:
+    path: output/maps/radar-1340.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-1345-1:
-    path: output/maps/radar-1345-1.json
+  radar-1345:
+    path: output/maps/radar-1345.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-1405-1:
-    path: output/maps/radar-1405-1.json
+  radar-1405:
+    path: output/maps/radar-1405.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-1740-1:
-    path: output/maps/radar-1740-1.json
+  radar-1740:
+    path: output/maps/radar-1740.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-2035-1:
-    path: output/maps/radar-2035-1.json
+  radar-2035:
+    path: output/maps/radar-2035.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-2035-2:
-    path: output/maps/radar-2035-2.json
+  radar-2315:
+    path: output/maps/radar-2315.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-2315-1:
-    path: output/maps/radar-2315-1.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-2315-2:
-    path: output/maps/radar-2315-2.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-2315-3:
-    path: output/maps/radar-2315-3.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-0740-1:
-    path: output/maps/radar-0740-1.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-0740-2:
-    path: output/maps/radar-0740-2.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-0740-3:
-    path: output/maps/radar-0740-3.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
-  radar-0740-4:
-    path: output/maps/radar-0740-4.json
+  radar-0740:
+    path: output/maps/radar-0740.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
 map:
@@ -235,20 +211,20 @@ events:
       - text: "0.1"
         color: "#009bf5"
     carry: true
-  - id: radar-1329-1
+  - id: radar-1329
     type: grid
     cut: ordinary
     at: 22
-    asset: radar-1329-1
+    asset: radar-1329
     opacity: 1
     fadeIn: 0.7
     duration: 18
     carry: true
-  - id: radar-1331-1
+  - id: radar-1331
     type: grid
     cut: shower
     at: 8
-    asset: radar-1331-1
+    asset: radar-1331
     opacity: 1
     duration: 60
     carry: true
@@ -330,11 +306,11 @@ events:
     duration: 27
     source: news
     headline: 괴산군 “청천면 달천 급상승”…저지대 침수 신고에 대피로 확인
-  - id: radar-1340-1
+  - id: radar-1340
     type: grid
     cut: warning
     at: 7
-    asset: radar-1340-1
+    asset: radar-1340
     opacity: 1
     duration: 69
   - id: evacuate-cheongcheon
@@ -395,11 +371,11 @@ events:
     author: 청천장날
     text: 밖에 나와 있어요. 빗줄기가 아니라 수도꼭지 틀어놓은 물처럼 떨어져요.
     color: "#d2b192"
-  - id: radar-1345-1
+  - id: radar-1345
     type: grid
     cut: warning
     at: 76
-    asset: radar-1345-1
+    asset: radar-1345
     opacity: 1
     duration: 58
     carry: true
@@ -450,11 +426,11 @@ events:
     duration: 14
     source: news
     headline: 기상청, 청천 관측소 13:39부터 결측…인접 관측과 레이더 확인 중
-  - id: radar-1405-1
+  - id: radar-1405
     type: grid
     cut: access
     at: 8
-    asset: radar-1405-1
+    asset: radar-1405
     opacity: 1
     duration: 50
     carry: true
@@ -507,11 +483,11 @@ events:
         - 127.85
         - 36.85
       zoom: 9
-  - id: radar-1740-1
+  - id: radar-1740
     type: grid
     cut: province
     at: 12
-    asset: radar-1740-1
+    asset: radar-1740
     opacity: 1
     duration: 42
     carry: true
@@ -575,19 +551,11 @@ events:
     duration: 16
     source: news
     headline: 충주 상수원 취수 중단…체육관 신규 배정도 중단
-  - id: radar-2035-1
+  - id: radar-2035
     type: grid
     cut: shelter
     at: 8
-    asset: radar-2035-1
-    opacity: 1
-    duration: 51
-    carry: true
-  - id: radar-2035-2
-    type: grid
-    cut: shelter
-    at: 8
-    asset: radar-2035-2
+    asset: radar-2035
     opacity: 1
     duration: 51
     carry: true
@@ -640,27 +608,11 @@ events:
         - 127.98
         - 37.08
       zoom: 7.4
-  - id: radar-2315-1
+  - id: radar-2315
     type: grid
     cut: central
     at: 8
-    asset: radar-2315-1
-    opacity: 1
-    duration: 87
-    carry: true
-  - id: radar-2315-2
-    type: grid
-    cut: central
-    at: 8
-    asset: radar-2315-2
-    opacity: 1
-    duration: 87
-    carry: true
-  - id: radar-2315-3
-    type: grid
-    cut: central
-    at: 8
-    asset: radar-2315-3
+    asset: radar-2315
     opacity: 1
     duration: 87
     carry: true
@@ -733,35 +685,11 @@ events:
         - 127.72
         - 36.45
       zoom: 6.5
-  - id: radar-0740-1
+  - id: radar-0740
     type: grid
     cut: rationing
     at: 8
-    asset: radar-0740-1
-    opacity: 1
-    duration: 50
-    carry: true
-  - id: radar-0740-2
-    type: grid
-    cut: rationing
-    at: 8
-    asset: radar-0740-2
-    opacity: 1
-    duration: 50
-    carry: true
-  - id: radar-0740-3
-    type: grid
-    cut: rationing
-    at: 8
-    asset: radar-0740-3
-    opacity: 1
-    duration: 50
-    carry: true
-  - id: radar-0740-4
-    type: grid
-    cut: rationing
-    at: 8
-    asset: radar-0740-4
+    asset: radar-0740
     opacity: 1
     duration: 50
     carry: true
