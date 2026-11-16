@@ -46,6 +46,10 @@ assets:
     path: output/maps/radar-0740.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
+  radar-0740-2:
+    path: output/maps/radar-0740-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
 map:
   camera:
     center:
@@ -690,6 +694,14 @@ events:
     cut: rationing
     at: 8
     asset: radar-0740
+    opacity: 1
+    duration: 50
+    carry: true
+  - id: radar-0740-2
+    type: grid
+    cut: rationing
+    at: 8
+    asset: radar-0740-2
     opacity: 1
     duration: 50
     carry: true

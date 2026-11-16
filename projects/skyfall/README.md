@@ -23,4 +23,4 @@ npx dbs validate scenario.yaml
 npx dbs preview scenario.yaml
 ```
 
-영상 파일이 필요한 경우 작품 폴더에서 `npx dbs render scenario.yaml --out output/film.mp4`를 실행한다. `src/maps/radar.mjs`가 `output/maps/`에 경도 0.064도·위도 0.0512도의 고정 격자로 합성 레이더를 아홉 시각에 걸쳐 만든다. 격자는 자체 제작 CC0이며 실제 관측값과 무관하다. 우측 강수 색상 막대는 첨부 레이더 이미지에서 [기상청 레이더 범례](https://www.weather.go.kr/down/e-learning/hands/hands_46.pdf)의 색상과 구간 하한 13개를 골라 쓴다. 단위는 mm/h이며 110 이상은 짙은 회색이다. 영상, 생성 자산과 출처 파일은 `output/`에 둔다.
+영상 파일이 필요한 경우 작품 폴더에서 `npx dbs render scenario.yaml --out output/film.mp4`를 실행한다. `src/maps/radar.mjs`가 `output/maps/`에 경도 0.016도·위도 0.0128도의 고정 격자로 합성 레이더를 아홉 시각에 걸쳐 만든다. 격자는 자체 제작 CC0이며 실제 관측값과 무관하다. 우측 강수 색상 막대는 첨부 레이더 이미지에서 [기상청 레이더 범례](https://www.weather.go.kr/down/e-learning/hands/hands_46.pdf)의 색상과 구간 하한 13개를 골라 쓴다. 단위는 mm/h이며 110 이상은 짙은 회색이다. 영상, 생성 자산과 출처 파일은 `output/`에 둔다.
