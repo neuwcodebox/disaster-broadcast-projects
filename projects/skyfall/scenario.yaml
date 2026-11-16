@@ -47,9 +47,22 @@ map:
       - 38.1
     zoom: 5.2
 cuts:
+  # 오프닝 고지 동안 기존 뉴스·문자·채팅을 각각의 시각에 쌓는다.
+  - id: history-notice
+    duration: 1
+    storyTime: 2031-07-18T11:30:08+09:00
+  - id: history-news
+    duration: 1
+    storyTime: 2031-07-18T13:06:11+09:00
+  - id: history-chat-question
+    duration: 1
+    storyTime: 2031-07-18T13:13:38+09:00
+  - id: history-chat-reply
+    duration: 1
+    storyTime: 2031-07-18T13:14:12+09:00
   - id: ordinary
-    duration: 40
-    storyTime: 2031-07-18T13:15:00+09:00
+    duration: 36
+    storyTime: 2031-07-18T13:15:04+09:00
   - id: shower
     duration: 24
     storyTime: 2031-07-18T13:28:00+09:00
@@ -93,22 +106,23 @@ cuts:
 events:
   - id: live-chat
     type: chat
-    cut: ordinary
+    cut: history-notice
     at: 0
     duration: 574
     carry: true
   - id: news-market
     type: news
-    cut: ordinary
+    cut: history-news
     at: 0
-    duration: 23
+    duration: 22
+    carry: true
     source: news
     publishedAt: 2031-07-18T13:06:00+09:00
     headline: 괴산 주말 농산물 직거래장터…토요일 오전 10시 개장
   - id: prior-heat-advice
     type: alert
     sender: county
-    cut: ordinary
+    cut: history-notice
     at: 0
     level: 안전안내
     publishedAt: 2031-07-18T11:30:00+09:00
@@ -119,7 +133,7 @@ events:
   - id: chat-market-question
     type: chat-message
     chat: live-chat
-    cut: ordinary
+    cut: history-chat-question
     at: 0
     author: 제주퇴근길
     text: 저 장터에 옥수수도 팔아요?
@@ -127,7 +141,7 @@ events:
   - id: chat-market
     type: chat-message
     chat: live-chat
-    cut: ordinary
+    cut: history-chat-reply
     at: 0
     author: 느티
     text: 네 저번에 샀어요. 점심 먹고 다시 가니 다 팔렸던데요.
@@ -135,14 +149,14 @@ events:
     type: chat-message
     chat: live-chat
     cut: ordinary
-    at: 20
+    at: 16
     author: 분리수거
     text: 충주는 볕 좋아서 오랜만에 이불 널었어요.
     color: "#c2ad91"
   - id: news-library
     type: news
     cut: ordinary
-    at: 23
+    at: 19
     duration: 30
     carry: true
     source: news
@@ -150,7 +164,7 @@ events:
   - id: radar-1315
     type: grid
     cut: ordinary
-    at: 26
+    at: 22
     opacity: 1
     duration: 22
     fadeIn: 0.7
@@ -159,7 +173,7 @@ events:
   - id: radar-scale
     type: legend
     cut: ordinary
-    at: 26
+    at: 22
     duration: 436
     carry: true
     layout: colorbar
