@@ -77,6 +77,97 @@ cuts:
     storyTime: 2031-08-18T16:00:00+09:00
     clockTransition: 4
 events:
+  - id: live-chat
+    type: chat
+    cut: warning
+    at: 7
+    duration: 503
+    carry: true
+  - id: chat-jeju-weather
+    type: chat-message
+    chat: live-chat
+    cut: warning
+    at: 10
+    author: 제주퇴근길
+    text: 여긴 해 쨍한데 괴산 쪽만 저렇게 오는 거예요?
+    color: "#a6c4af"
+  - id: chat-alert-in-county
+    type: chat-message
+    chat: live-chat
+    cut: warning
+    at: 28
+    author: 느티
+    text: 괴산읍에서도 문자 왔어요. 본문엔 청천면 하천가라고 돼 있어요.
+  - id: chat-radar-reception
+    type: chat-message
+    chat: live-chat
+    cut: access
+    at: 17
+    author: 분리수거
+    text: 관측소 끊겼다는데 지도에 비는 계속 찍히네요.
+    color: "#c2ad91"
+  - id: chat-city-intake
+    type: chat-message
+    chat: live-chat
+    cut: province
+    at: 17
+    author: 분리수거
+    text: 충주인데 시청에 체육관 대피소 공지 올라왔어요.
+    color: "#c2ad91"
+  - id: chat-remote-viewing
+    type: chat-message
+    chat: live-chat
+    cut: province
+    at: 25
+    author: 제주퇴근길
+    text: 점심때 괴산 뉴스인 줄 알고 켰는데 벌써 충주까지 갔네요.
+    color: "#a6c4af"
+  - id: chat-notice-revised
+    type: chat-message
+    chat: live-chat
+    cut: shelter
+    at: 17
+    author: 분리수거
+    text: 충주 방금 문자 왔어요. 아까 올린 체육관 공지 공유하신 분 새 문자도 같이 봐요.
+    color: "#c2ad91"
+  - id: chat-no-local-alert
+    type: chat-message
+    chat: live-chat
+    cut: central
+    at: 12
+    author: 목포밤바다
+    text: 목포는 오늘 별일 없었어요. 뉴스 켜기 전엔 이렇게 번진 줄 몰랐네요.
+    color: "#b6abc7"
+  - id: chat-offline-office
+    type: chat-message
+    chat: live-chat
+    cut: continuity
+    at: 12
+    author: 느티
+    text: 어젯밤 공지 링크 아직 안 열려요. 옮긴 상황실 공지는 어디 올라와요?
+  - id: chat-last-received
+    type: chat-message
+    chat: live-chat
+    cut: rationing
+    at: 51
+    author: 목포밤바다
+    text: 연료차 도착했다는 거 방금 보셨죠? 약품차는 아직 대기래요.
+    color: "#b6abc7"
+  - id: chat-travel-control
+    type: chat-message
+    chat: live-chat
+    cut: survey
+    at: 12
+    author: 제주퇴근길
+    text: 지도에서 비 색은 빠졌는데 길은 계속 막혀 있네요.
+    color: "#a6c4af"
+  - id: chat-recovery-registration
+    type: chat-message
+    chat: live-chat
+    cut: recovery
+    at: 55
+    author: 느티
+    text: 임시주거 접수한다고 공지 떴네요. 아침에 임시청사 가봐야겠어요.
   - id: news-1
     type: news
     cut: warning
