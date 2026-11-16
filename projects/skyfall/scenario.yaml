@@ -265,9 +265,8 @@ events:
     regions:
       - "43760"
     color: "#e4dbc5"
-    fillOpacity: 0.1
-    strokeOpacity: 0.85
-    strokeWidth: 2.5
+    fillOpacity: 0.24
+    strokeWidth: 0
     fadeIn: 0.5
     carry: true
   - id: news-heavy-rain-warning
@@ -503,9 +502,8 @@ events:
     regions:
       - "43130"
     color: "#e4dbc5"
-    fillOpacity: 0.1
-    strokeOpacity: 0.85
-    strokeWidth: 2.5
+    fillOpacity: 0.24
+    strokeWidth: 0
     fadeIn: 0.5
     carry: true
   - id: alert-chungju-downstream
