@@ -420,7 +420,7 @@ events:
     at: 26
     duration: 16
     source: news
-    headline: 소방 “낙수가 폭포처럼 이어져”…동측 진입로 유실
+    headline: 괴산소방서 “낙수가 폭포처럼 이어져”…동쪽 진입로 유실
   - id: alert-approach-closed
     type: alert
     cut: access
@@ -515,7 +515,7 @@ events:
     duration: 27
     carry: true
     source: news
-    headline: 지원버스 4대 중 2대 진입 불가…도, 대체 차량 요청
+    headline: 지원버스 4대 중 2대 진입 불가…충북도, 대체 차량 요청
   - id: news-9
     type: news
     cut: central

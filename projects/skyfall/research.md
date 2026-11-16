@@ -261,3 +261,11 @@
 - [재난문자방송 기준 및 운영규정](https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000274384) · [행안부 발신 호우경보 실제 문자](https://www.safetydata.go.kr/disaster-data/disasterNotificationDetail?sn=269948)
 - [기상청 재난성호우 문자 추가 운영 발표](https://www.weather.go.kr/kmadev/news/press_01.jsp?mode=view&num=1194645) · [대전지방기상청 호우 긴급재난문자 전달 체계](https://www.kma.go.kr/kma/servlet/NeoboardProcess?bid=press2&callback=&fno=2&k=ATC202505291433482_95ad5922-79e0-4d96-933e-c5b9174d6504.pdf&mode=download&num=12939&ses=USER_SESSION)
 - [행안부 호우 대처상황 점검회의, 2026-07-09](https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=127678) · [재난 및 안전관리 기본법](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282883)
+
+## 11. 실제 보도의 지자체 표기
+
+- 뉴시스는 괴산의 집중호우 대응을 다룬 기사 제목과 첫 문장에 ‘괴산군’을 쓴다. 본문에서 이미 등장한 기관을 다시 가리킬 때 ‘군은’, ‘군 관계자’로 줄인다. 이탄교 월류에 대비한 조치는 대피 권고로 보도했다. [뉴시스, 2025-07-22](https://www.newsis.com/view/NISX20250722_0003261183)
+- 같은 매체는 지역 소식 묶음 제목에서 ‘[괴산소식]군, 안전한국훈련 실시 등’이라고 썼다. 제목의 말머리가 어느 군인지 알려주고, 본문 첫 문장에는 ‘충북 괴산군’이 나온다. [뉴시스, 2026-09-08](https://www.newsis.com/view/NISX20260908_0003781315)
+- YTN의 괴산댐 속보는 제목에서 괴산댐과 주민 대피령을 먼저 전하고, 현장 기자는 위치를 충북 괴산군 칠성면으로 특정한다. 별도의 충북 호우 보도에서는 제목에 궁평2 지하차도 통제를 놓고, 본문에서 홍수경보의 금강홍수통제소와 대피명령의 청주시를 각각 밝힌다. [YTN 괴산댐 현장, 2023-07-15](https://www.ytn.co.kr/_ln/0115_202307150954019474) · [YTN 충북 호우, 2025-07-17](https://www.ytn.co.kr/_ln/0115_202507171449599210)
+
+SKYFALL의 하단 뉴스는 중간에 들어온 시청자도 한 줄로 관할을 파악할 수 있게 쓴다. 대피령의 발령 주체는 ‘괴산군’, 대체 차량 요청은 ‘충북도’, 현장 확인을 공개한 소방서는 ‘괴산소방서’로 표기한다.
