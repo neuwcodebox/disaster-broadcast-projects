@@ -76,10 +76,6 @@ assets:
     path: output/maps/radar-2020.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
-  radar-2020-2:
-    path: output/maps/radar-2020-2.json
-    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
-    license: CC0
   radar-2110:
     path: output/maps/radar-2110.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
@@ -1173,14 +1169,6 @@ events:
     cut: evacuation-crossing
     at: 8
     asset: radar-2020
-    opacity: 1
-    duration: 35
-    carry: true
-  - id: radar-2020-2
-    type: grid
-    cut: evacuation-crossing
-    at: 8
-    asset: radar-2020-2
     opacity: 1
     duration: 35
     carry: true
