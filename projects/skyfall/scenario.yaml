@@ -432,7 +432,7 @@ events:
     at: 7
     duration: 18
     source: news
-    headline: 괴산 청천면 달천 수위 급등…주택 침수 신고 잇따라
+    headline: 괴산 청천면서 급류가 농로 덮쳐…고립 신고 잇따라
   - id: radar-1340
     type: grid
     cut: warning
@@ -495,7 +495,7 @@ events:
     at: 51
     chat: live-chat
     author: 청천장날
-    text: 농로로 물 올라와요 차 놓고 갈게요
+    text: 큰길 쪽으로 물이 건너와요 차 놓고 올라가요
     color: "#d2b192"
   - id: radar-1345
     type: grid
@@ -513,20 +513,20 @@ events:
     level: 안전안내
     regions:
       - "43760"
-    text: 청천면 달천변 저지대 대피명령 중입니다. 침수된 동쪽 진입로에 접근하지 마십시오. 이동이 어려우면 물을 건너지 말고 119에 위치를 알리십시오.
+    text: 청천면 동쪽 진입로로 급류가 넘어왔습니다. 하천과 도로를 건너지 말고 가까운 높은 곳으로 이동하십시오.
   - id: news-first-damage-reports
     type: news
     cut: warning
     at: 61
     source: news
-    headline: 괴산소방서, 청천면 건물 파손·고립 신고 접수
+    headline: 괴산소방서, 청천면 주택 두 채 떠내려가…도로 구조대 후퇴
     duration: 14
   - id: news-first-confirmed-sheet
     type: news
     cut: warning
     at: 75
     source: news
-    headline: 청천면 동쪽 진입로 침수…괴산소방서, 북쪽 길로 우회 시도
+    headline: 괴산소방서, 동쪽 진입로 끊겨…북쪽 능선으로 구조대 이동
     duration: 14
     carry: true
   - id: alert-cheongcheon-structural-damage
@@ -576,7 +576,7 @@ events:
     at: 17
     duration: 11
     source: news
-    headline: 청천면 동쪽 도로 유실…소방, 북쪽 우회로 확인 중
+    headline: 괴산 청천면 급류, 제방 밖 논과 마을길로 번져
   - id: alert-approach-closed
     type: alert
     cut: access
@@ -592,14 +592,14 @@ events:
     at: 28
     duration: 12
     source: news
-    headline: 괴산소방서, 북사면 퇴로 확인…고립 신고 42건 위치 대조
+    headline: 괴산소방서, 북쪽 능선으로 접근…마을 진입은 급류에 막혀
     carry: true
   - id: news-water-open-field
     type: news
     cut: cause-check
     at: 7
     source: news
-    headline: 괴산 청천면 들판에 굵은 물기둥…취재진 현장 확인
+    headline: 괴산 청천면 들판서 물기둥 확인…하천 밖에서 급류 형성
     duration: 15
   - id: radar-1415
     type: grid
@@ -633,7 +633,7 @@ events:
     cut: cause-check
     at: 22
     source: news
-    headline: 괴산서 하늘에서 물 쏟아지는 이상 현상…기상청 조사 착수
+    headline: 기상청, 청천 낙수 원인 조사…한강홍수통제소는 달천 하류에 급류 전파
     duration: 17
     carry: true
   - id: alert-miwon-evacuate
@@ -663,7 +663,7 @@ events:
     at: 8
     duration: 15
     source: news
-    headline: 괴산·청주·충주 저지대 대피 확대…충북도, 시군별 수송 요청 접수
+    headline: 한강홍수통제소, 달천에서 충주 쪽으로 급류 접근…하류에 사전 통보
   - id: radar-1500
     type: grid
     cut: province
@@ -687,10 +687,10 @@ events:
     cut: province
     at: 17
     sender: city
-    level: 안전안내
+    level: 긴급재난
     regions:
       - "43130"
-    text: 달천 수위가 높아지고 있습니다. 충주시 달천변 산책로와 농경지에 접근하지 마십시오. 물이 찬 도로로 진입하지 마십시오.
+    text: 대피명령. 달천변 저지대 주민은 물이 올라오기 전에 하천에서 멀어지는 고지대로 즉시 이동하십시오.
   - id: alert-chungju-downstream-area
     type: region
     cut: province
@@ -717,7 +717,7 @@ events:
     at: 23
     duration: 17
     source: news
-    headline: 괴산 주민 이송 시작…충주 체육관서 외곽행 버스로 환승
+    headline: 충주시, 달천변에서 멀어지는 고지대 도로로 대피 버스 출발
     carry: true
   - id: chat-chungju-river
     type: chat-message
@@ -725,7 +725,7 @@ events:
     at: 28
     chat: live-chat
     author: 분리수거
-    text: 집에서 체육관 보이는데 버스가 계속 들어와요
+    text: 체육관 앞에서 차 돌려서 언덕 쪽으로 보내요
     color: "#c2ad91"
   - id: alert-suanbo-observed-extreme
     type: alert
@@ -759,14 +759,14 @@ events:
     level: 안전안내
     regions:
       - "43130"
-    text: 진입로 침수 우려로 충주 체육관에 오지 마십시오. 체육관에 계신 분은 현장 직원이 안내하는 외곽행 차량에 바로 탑승하십시오.
+    text: 진입로 급류로 충주 체육관 집결을 중단합니다. 하천을 건너거나 하천변 도로로 돌아가지 마십시오.
   - id: chat-notice-revised
     type: chat-message
     chat: live-chat
     cut: shelter
     at: 20
     author: 분리수거
-    text: 체육관 앞에 또 차 돌려보내네요
+    text: 창문 아래로 물 올라와요 1층 사람들 다 위로 올라오는 중
     color: "#c2ad91"
   - id: news-chungju-boarding
     type: news
@@ -774,7 +774,7 @@ events:
     at: 23
     duration: 17
     source: news
-    headline: 충주 체육관 진입로 침수 우려…주민 214명 외곽행 차량에 나눠 탑승
+    headline: 충주 달천변 급류가 2층 창까지…체육관 진입로 끊겨 환승 중단
     carry: true
   - id: alert-eumseong-lowlands
     type: alert
@@ -802,17 +802,17 @@ events:
     cut: shelter-shift
     at: 5
     sender: city
-    level: 안전안내
+    level: 긴급재난
     regions:
       - "43130"
-    text: 충주 체육관 외곽행 차량이 순차 출발합니다. 체육관에 계신 분은 현장 직원이 지정한 차량을 이용하십시오.
+    text: 대피명령. 충주 달천변에서 차량 이동이 막힌 주민은 현장 안내에 따라 하천 반대쪽 고지대로 이동하십시오.
   - id: news-8
     type: news
     cut: shelter-shift
     at: 7
     duration: 12
     source: news
-    headline: 침수로 돌아온 충주 대피자들, 다른 버스로 옮겨 세종 방면 출발
+    headline: 충북도, 충주 곳곳에서 버스 회차…걸어서 빠져나갈 고지대 통로 확보
   - id: radar-1620
     type: grid
     cut: shelter-shift
@@ -847,7 +847,7 @@ events:
     cut: shelter-shift
     at: 19
     source: news
-    headline: 충북도, 세종 방면 인계 지점 확보…군산시는 수용 가능 인원 회신
+    headline: 충북도, 외곽 여러 곳에 수용지 확보…이동 지원 필요한 요양시설부터 차량 연결
     duration: 14
     carry: true
   - id: alert-salmi-evacuate
@@ -865,7 +865,7 @@ events:
     at: 7
     duration: 10
     source: news
-    headline: 중대본 3단계 가동…기상청 “밤에도 강수대 더 넓어질 가능성”
+    headline: 총리가 중대본 지휘…남한강·금강 두 유역서 급류, 하류에 선제 대피 요청
   - id: radar-1705
     type: grid
     cut: central
@@ -901,7 +901,7 @@ events:
     cut: central
     at: 14
     author: 목포밤바다
-    text: 목포인데 퇴근하고 이제 켰어요. 이거 다 오늘 일이에요?
+    text: 목포는 아직 멀쩡한데 오늘 집 올라가는 버스 다 취소됐어요
     color: "#b6abc7"
   - id: camera-central
     type: camera
@@ -919,17 +919,22 @@ events:
     at: 17
     duration: 9
     source: news
-    headline: 청주 미원면 야산에도 하늘에서 물줄기…취재진 현장 확인
-  - id: alert-heungcheon-closure
+    headline: 낙수 범위, 달천 건너 보은까지…금강 지류 보청천서도 급류
+  - id: alert-namhan-critical
     type: alert
     cut: central
     at: 23
-    sender: yeoju
-    level: 안전안내
+    sender: ministry
+    level: 위급재난
     regions:
+      - "43130"
+      - "51130"
       - "41670"
-    text: 남한강 수위 상승으로 흥천대교 통행을 통제합니다. 교량 양쪽 진입로에 접근하지 말고 현장의 우회 안내를 따라 주십시오.
-  - id: alert-heungcheon-closure-area
+    text: 충주 달천 합류부와 원주·여주 남한강변에 급류 접근. 저지대 주민은 강을 건너지 말고 즉시 높은 곳으로 이동하십시오.
+    mapHighlight:
+      duration: 4
+      color: "#e8bb85"
+  - id: alert-namhan-critical-area
     type: region
     cut: central
     at: 23
@@ -947,14 +952,14 @@ events:
     at: 26
     duration: 14
     source: news
-    headline: 충주서 출발한 대피자 214명, 세종 방면 첫 통제 지점 통과
+    headline: 충북도, 간선도로 세 곳 동시에 끊겨…출발 마친 차량은 가까운 고지대로
     carry: true
   - id: news-contacts-fail
     type: news
     cut: switchboard
     at: 7
     source: news
-    headline: 괴산군청 상황실 전원 꺼져…17:59 이후 온라인 침수 신고 접수 중단
+    headline: 괴산군청 침수·정전…온라인 신고와 현장 차량 위치 확인 중단
     duration: 14
   - id: radar-1755
     type: grid
@@ -986,7 +991,7 @@ events:
     cut: switchboard
     at: 21
     source: news
-    headline: 충북도, 괴산군청 침수에 119·읍면으로 신고 우회…현장 대피 계속
+    headline: 충북 119, 도 비상 접수대와 읍면 무전으로 신고 받아…가까운 구조대에 전달
     duration: 13
     carry: true
   - id: alert-north-gyeongbuk
@@ -998,7 +1003,7 @@ events:
     regions:
       - "47280"
       - "47250"
-    text: 문경시·상주시 하천이 급격히 불어나고 있습니다. 하천변 농경지와 잠긴 도로 접근을 피하고, 마을별 대피 안내에 따르십시오.
+    text: 문경·상주 영강 합류부 저지대 침수 우려. 둔치에서 벗어나고 시군의 대피 안내를 따르십시오.
   - id: alert-north-gyeongbuk-area
     type: region
     cut: switchboard
@@ -1018,7 +1023,7 @@ events:
     at: 7
     duration: 10
     source: news
-    headline: 괴산군, 대체 상황실서 3개 읍면과 연락 복구…대피 인원 재확인
+    headline: 괴산군, 대체 상황실에서 마을 3곳 연락 복구…도착한 주민부터 확인
   - id: radar-1845
     type: grid
     cut: continuity
@@ -1049,7 +1054,7 @@ events:
     at: 17
     duration: 18
     source: news
-    headline: 괴산군, 연락 끊긴 2개 면 소방 수색 요청
+    headline: 괴산소방서, 차량이 닿지 않는 마을 수색…반대편 산길로 접근
     carry: true
   - id: alert-chungbuk-spread
     type: alert
@@ -1061,7 +1066,7 @@ events:
       - "43720"
       - "43745"
       - "43114"
-    text: 보은·증평·청원구 하천 범람 우려. 하천변과 지하차도에 접근하지 마십시오.
+    text: 보은·증평·청원구 하천 밖까지 급류 확산. 하천변과 지하차도에 접근하지 마십시오.
   - id: alert-chungbuk-spread-area
     type: region
     cut: network-fray
@@ -1081,7 +1086,7 @@ events:
     cut: network-fray
     at: 7
     source: news
-    headline: 괴산소방서, 연락 끊긴 청천면 마을에 우회 진입…주민 31명 구조
+    headline: 문경 영강, 급류가 제방 넘어 들판 가로질러…상주 합류부 주민 대피
     duration: 11
   - id: radar-1935
     type: grid
@@ -1105,7 +1110,7 @@ events:
     cut: network-fray
     at: 18
     source: news
-    headline: 부여 금강변 대피 준비…도로공사, 구룡천교 통행 여부 점검
+    headline: 금강홍수통제소, 백제교 위험수위보다 먼저 부여 양안 평야 침수 예상
     duration: 13
     carry: true
   - id: alert-buyeo-flood
@@ -1116,7 +1121,7 @@ events:
     level: 긴급재난
     regions:
       - "44760"
-    text: 대피명령. 금강 수위 상승으로 규암면 강변 저지대 주민은 가까운 고지대로 즉시 이동하십시오.
+    text: 대피명령. 규암면 금강변 저지대로 급류 접근. 강을 건너지 말고 가까운 고지대로 즉시 이동하십시오.
     mapHighlight:
       duration: 4
       color: "#e8bb85"
@@ -1165,7 +1170,7 @@ events:
     at: 7
     duration: 8
     source: news
-    headline: 도로공사, 구룡천교 일부 차로에 대피 차량 통행 허용
+    headline: 충북도 “보은 보청천변 일부 수심 20m 안팎”…맞은편 능선서 확인
   - id: radar-2020
     type: grid
     cut: evacuation-crossing
@@ -1190,7 +1195,7 @@ events:
     at: 15
     duration: 8
     source: news
-    headline: 금강홍수통제소, 밤 11시 반 백제교 위험수위 예상…충남도에 통보
+    headline: 금강홍수통제소, 금강 하류 수위 급등…도로 단절 예상 시각 두 도에 전파
   - id: alert-buron-evac-road
     type: alert
     cut: evacuation-crossing
@@ -1206,7 +1211,7 @@ events:
     at: 23
     duration: 8
     source: news
-    headline: 코레일, 충북선 침수로 열차 운행 중단…정차역서 승객 이동 지원
+    headline: 코레일, 충북선과 중부내륙선 일부 구간 운행 중지…침수 구간 밖에 정차
   - id: alert-chungbuk-southeast
     type: alert
     cut: evacuation-crossing
@@ -1240,7 +1245,7 @@ events:
     at: 31
     duration: 11
     source: news
-    headline: 충주 대피자 214명 탄 차량 구룡천교 통과…서천 방면으로 이동
+    headline: 소방청, 충청·경북에 다른 지역 구조대 투입…급류 바깥에서 진입로 확인
     carry: true
   - id: chat-mokpo-evacuation-news
     type: chat-message
@@ -1248,7 +1253,7 @@ events:
     cut: evacuation-crossing
     at: 34
     author: 목포밤바다
-    text: 전주는 지금 어때요 전화가 안 돼서
+    text: 문경 쪽 문자 받은 분 있어요? 전화가 안 돼서
     color: "#b6abc7"
   - id: alert-central-provinces
     type: alert
@@ -1309,7 +1314,7 @@ events:
     at: 7
     duration: 10
     source: news
-    headline: 구룡천교 진입부 유실…서천공주고속도로 부여 구간 양방향 통제
+    headline: 공주·부여 제방 밖으로 급류…서천공주고속도로·국도 여러 곳 끊겨
   - id: radar-2110
     type: grid
     cut: crossing-lost
@@ -1334,7 +1339,7 @@ events:
     level: 안전안내
     regions:
       - "44760"
-    text: 구룡천교 진입부 유실로 서천공주고속도로 부여 구간 통제 중입니다. 진입하지 말고 경찰 안내를 따르십시오.
+    text: 공주·부여 방면 고속도로와 국도 여러 곳 유실. 통제선을 넘지 말고 현장 경찰 안내를 따르십시오.
   - id: camera-rainfall-expansion
     type: camera
     cut: crossing-lost
@@ -1351,7 +1356,7 @@ events:
     at: 17
     duration: 12
     source: news
-    headline: 중대본, 범람 예상 지역 미리 대피 지시…충남·전북서 차량 전진 배치
+    headline: 중대본, 금강 하류 여러 시군에 선제 대피 지시…고지대별로 차량 분산
   - id: alert-chungju-west-route-lost
     type: alert
     cut: crossing-lost
@@ -1360,14 +1365,14 @@ events:
     level: 안전안내
     regions:
       - "43130"
-    text: 군산 방면 대피 차량 출발을 중지합니다. 충주 집결지에 계신 분은 현장 요원 안내에 따라 고지대로 이동하십시오.
+    text: 충주에서 다른 시군으로 나가는 대피차 출발을 중지합니다. 현장 요원 안내에 따라 가까운 고지대로 이동하십시오.
   - id: chat-returned-convoy
     type: chat-message
     cut: crossing-lost
     at: 26
     chat: live-chat
     author: 분리수거
-    text: 뒤쪽 오르막으로 오래요. 신발 그냥 두고 나옴
+    text: 아까 차 다니던 길이 안 보여요 물이 그냥 가로질러요
     color: "#c2ad91"
   - id: news-buyeo-small-vehicles
     type: news
@@ -1375,7 +1380,7 @@ events:
     at: 29
     duration: 13
     source: news
-    headline: 부여군, 회차 차량 고지대로 유도…큰 버스 못 들어가는 마을엔 승합차 투입
+    headline: 충남도, 시군간 차량 이동 중단된 곳부터 현지 고지대로 대피 전환
     carry: true
   - id: alert-eastern-gyeonggi
     type: alert
@@ -1425,7 +1430,7 @@ events:
       - "44230"
       - "44760"
       - "44770"
-    text: 충남·전북 일부 하천 범람 임박. 저지대 주민은 하천과 잠긴 길을 피하고 현장 안내에 따라 즉시 높은 곳으로 이동하십시오.
+    text: 충남·전북 일부 평야에 급류 접근. 저지대 주민은 강과 잠긴 도로를 건너지 말고 즉시 높은 곳으로 이동하십시오.
     mapHighlight:
       duration: 4
       color: "#e8bb85"
@@ -1488,13 +1493,13 @@ events:
     at: 7
     duration: 7
     source: news
-    headline: 중대본 “충남·전북 일부 하천 한 시간 안에 범람 우려”
+    headline: 중대본 “충남·전북 일부 평야에 급류 도달 임박”…저지대 즉시 이탈
   - id: news-buyeo-detour-open
     type: news
     cut: outer-routes
     at: 14
     source: news
-    headline: 충남도, 국도 4호선으로 회차 차량 빼내…서천 방면 이동 재개
+    headline: 충남도, 서천 쪽 임시 집결지 도착 확인…마지막 육상 진입로 점검
     duration: 12
     carry: true
   - id: alert-gangneung-vehicles
@@ -1556,7 +1561,7 @@ events:
     cut: emergency-lines
     at: 6
     source: news
-    headline: 충주 주민 214명 군산에 도착…서천은 대피 차량 맞다 자체 대피 준비
+    headline: 대피차량 도착하던 서천에도 급류…화양면 집결지 주민 다시 고지대로
     duration: 9
   - id: radar-2250
     type: grid
@@ -1596,7 +1601,7 @@ events:
     at: 15
     source: news
     duration: 9
-    headline: 소방청, 타 시·도 구조대 투입…충북 119 비상 접수대 가동
+    headline: 소방청, 강물 밖 헬기 접근 지점 확보…내륙 다수 지역은 기상·시야로 진입 불가
   - id: alert-seocheon-river
     type: alert
     cut: emergency-lines
@@ -1605,14 +1610,14 @@ events:
     level: 긴급재난
     regions:
       - "44770"
-    text: 대피명령. 화양면 금강변 저지대 주민은 현장 요원 안내에 따라 가까운 고지대로 즉시 대피하십시오.
+    text: 대피명령. 서천 화양면 금강변 집결지를 비우십시오. 주민과 탑승객은 현장 안내에 따라 즉시 고지대로 이동하십시오.
   - id: chat-no-headlights
     type: chat-message
     cut: emergency-lines
     at: 20
     chat: live-chat
     author: 분리수거
-    text: 아래쪽 신호등 다 꺼졌어요
+    text: 전화 안 되는데 여기서도 연달아 확성기 소리 나요
     color: "#c2ad91"
   - id: news-last-detour-floods
     type: news
@@ -1621,7 +1626,7 @@ events:
     source: news
     duration: 13
     carry: true
-    headline: 부여∼서천 국도에 물 차올라 통제…뒤따르던 차량 다시 회차
+    headline: 금강 하류 급류, 국도 너머 마을까지…충남소방 추가 진입 중지
   - id: alert-chungnam-detour-lost
     type: alert
     cut: emergency-lines
@@ -1631,7 +1636,7 @@ events:
     regions:
       - "44760"
       - "44770"
-    text: 부여∼서천 국도 4호선 일부 구간을 통제합니다. 해당 구간에 진입하지 말고 현장 경찰의 안내를 따르십시오.
+    text: 부여∼서천 국도와 마을길로 급류가 넘어왔습니다. 차량 진입을 중지하고 현장 요원의 안내를 따르십시오.
   - id: alert-southern-spread
     type: alert
     cut: ongoing-response
@@ -1668,7 +1673,7 @@ events:
     at: 5
     duration: 8
     source: news
-    headline: 금강 하류 수위 급등…경찰, 부여 저지대 진입로 추가 통제
+    headline: 여주·부여·상주 저지대 동시 고립…소방, 다수 현장 무전으로 전환
   - id: radar-2255
     type: grid
     cut: ongoing-response
@@ -1705,14 +1710,14 @@ events:
     level: 긴급재난
     regions:
       - "44760"
-    text: 홍수위험 심각. 부여 백제교 계획홍수위 도달. 하천변과 저지대에서 즉시 벗어나십시오.
+    text: 홍수위험 심각. 부여 백제교 계획홍수위 도달. 강변 저지대는 즉시 높은 곳으로 이동하십시오.
   - id: news-baekje-water-level
     type: news
     cut: ongoing-response
     at: 13
     duration: 8
     source: news
-    headline: 부여 백제교 계획홍수위 도달…통제소 전망보다 빠른 수위 상승
+    headline: 부여 백제교 수위계 곧바로 끊겨…제방 밖 여러 마을서 급류 확인
   - id: alert-national-keep-roads-clear
     type: alert
     cut: ongoing-response
@@ -1721,21 +1726,21 @@ events:
     level: 안전안내
     regions: []
     mapHighlight: false
-    text: 전국 안내. 충남·전북 통제 도로에 진입하지 말고 구조차 통행에 협조해 주십시오.
+    text: 전국 안내. 중부 피해권으로 이동을 자제하고 통제되지 않은 곳에서도 경찰의 우회 안내에 따르십시오.
   - id: news-last-field-contact
     type: news
     cut: ongoing-response
     at: 21
     source: news
     duration: 7
-    headline: 괴산 현장지휘소 연락 끊겨…충북소방, 후속 구조대 진입 중단
+    headline: 충북소방, 괴산 현장지휘소 연락 끊겨…앞서 접수한 옥상 신고도 미연결
   - id: chat-last-question
     type: chat-message
     cut: ongoing-response
     at: 23
     chat: live-chat
     author: 제주퇴근길
-    text: 충주 분들 아까 올라가신 데까지 물 들어왔어요?
+    text: 아까 충주에서 높은 데로 올라가던 분 아직 계세요?
     color: "#a6c4af"
   - id: news-voice-from-cars
     type: news
@@ -1743,7 +1748,7 @@ events:
     at: 28
     source: news
     duration: 8
-    headline: 괴산군, 전화 끊긴 마을서 차량 확성기로 대피 안내
+    headline: 괴산군, 마지막으로 접근 가능한 마을에 확성기 차량 보내
   - id: alert-goesan-last-call
     type: alert
     cut: ongoing-response
@@ -1759,5 +1764,5 @@ events:
     at: 32
     chat: live-chat
     author: 느티
-    text: 읍사무소 뒤에 확성기 차 왔어요. 걸어서 올라오래요
+    text: 읍사무소 뒤로 차 왔어요. 언덕 위로 더 올라가래요
     color: "#a6c4af"
