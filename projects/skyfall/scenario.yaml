@@ -24,6 +24,15 @@ agencies:
   seocheon: 서천군
   chungnam: 충청남도
   geum-river: 금강홍수통제소
+  yangpyeong: 양평군
+  sangju: 상주시
+  gumi: 구미시
+  hanam: 하남시
+  iksan: 익산시
+  gunsan: 군산시
+  yeongwol: 영월군
+  seoul: 서울특별시
+  gongju: 공주시
 assets:
   radar-1301:
     path: output/maps/radar-1301.json
@@ -141,6 +150,42 @@ assets:
     path: output/maps/radar-1845.json
     source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
     license: CC0
+  radar-1910:
+    path: output/maps/radar-1910.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2145-2:
+    path: output/maps/radar-2145-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2145-3:
+    path: output/maps/radar-2145-3.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2145-4:
+    path: output/maps/radar-2145-4.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2145:
+    path: output/maps/radar-2145.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2235-2:
+    path: output/maps/radar-2235-2.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2235-3:
+    path: output/maps/radar-2235-3.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2235-4:
+    path: output/maps/radar-2235-4.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
+  radar-2235:
+    path: output/maps/radar-2235.json
+    source: SKYFALL 합성 강수 레이더, 색상은 기상청 레이더 범례 참고
+    license: CC0
 map:
   camera:
     center:
@@ -164,43 +209,47 @@ cuts:
     duration: 28
     storyTime: 2031-07-18T13:01:04+09:00
   - id: shower
-    duration: 18
+    duration: 16
     storyTime: 2031-07-18T13:15:00+09:00
     clockTransition: 3
   - id: weather-advisory
-    duration: 18
+    duration: 17
     storyTime: 2031-07-18T13:34:00+09:00
     clockTransition: 3
   - id: extreme-rain
-    duration: 18
+    duration: 17
     storyTime: 2031-07-18T13:37:55+09:00
     clockTransition: 3
   - id: warning
-    duration: 82
+    duration: 31
     storyTime: 2031-07-18T13:43:50+09:00
     clockTransition: 4
+  - id: first-loss
+    duration: 26
+    storyTime: 2031-07-18T13:49:00+09:00
+    clockTransition: 2
   - id: access
-    duration: 33
+    duration: 29
     storyTime: 2031-07-18T13:55:00+09:00
     clockTransition: 4
   - id: cause-check
-    duration: 31
+    duration: 26
     storyTime: 2031-07-18T14:19:00+09:00
     clockTransition: 4
   - id: province
-    duration: 32
+    duration: 29
     storyTime: 2031-07-18T15:02:00+09:00
     clockTransition: 4
   - id: shelter
-    duration: 33
+    duration: 30
     storyTime: 2031-07-18T15:49:00+09:00
     clockTransition: 4
   - id: shelter-shift
-    duration: 26
+    duration: 25
     storyTime: 2031-07-18T16:24:00+09:00
     clockTransition: 3
   - id: central
-    duration: 33
+    duration: 31
     storyTime: 2031-07-18T17:08:00+09:00
     clockTransition: 4
   - id: switchboard
@@ -211,6 +260,10 @@ cuts:
     duration: 28
     storyTime: 2031-07-18T18:50:00+09:00
     clockTransition: 4
+  - id: banks-apart
+    duration: 17
+    storyTime: 2031-07-18T19:12:00+09:00
+    clockTransition: 2
   - id: network-fray
     duration: 24
     storyTime: 2031-07-18T19:40:00+09:00
@@ -223,10 +276,18 @@ cuts:
     duration: 35
     storyTime: 2031-07-18T21:18:00+09:00
     clockTransition: 4
+  - id: night-shift
+    duration: 16
+    storyTime: 2031-07-18T21:48:00+09:00
+    clockTransition: 2
   - id: outer-routes
     duration: 23
     storyTime: 2031-07-18T22:16:00+09:00
     clockTransition: 3
+  - id: estuary
+    duration: 17
+    storyTime: 2031-07-18T22:37:00+09:00
+    clockTransition: 2
   - id: emergency-lines
     duration: 32
     storyTime: 2031-07-18T22:50:00+09:00
@@ -241,7 +302,7 @@ events:
     type: chat
     cut: history-notice
     at: 0
-    duration: 596
+    duration: 599
     carry: true
   - id: prior-heat-advice
     type: alert
@@ -299,7 +360,7 @@ events:
     type: legend
     cut: ordinary
     at: 22
-    duration: 570
+    duration: 573
     layout: colorbar
     position: top-right
     unit: mm/h
@@ -346,13 +407,13 @@ events:
     at: 7
     asset: radar-1315
     opacity: 1
-    duration: 16
+    duration: 14
     carry: true
   - id: news-shower
     type: news
     cut: shower
     at: 9
-    duration: 21
+    duration: 19
     source: news
     headline: 괴산 남부에 소나기…오후 한때 천둥·번개
     carry: true
@@ -369,7 +430,7 @@ events:
     at: 5
     asset: radar-1330
     opacity: 1
-    duration: 38
+    duration: 36
     carry: true
   - id: alert-heavy-rain-warning
     type: alert
@@ -391,13 +452,13 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 539
+    duration: 544
     carry: true
   - id: news-heavy-rain-warning
     type: news
     cut: weather-advisory
     at: 12
-    duration: 17
+    duration: 16
     source: news
     headline: 청주기상지청, 괴산에 호우경보…좁은 구역에 강수대 정체
     carry: true
@@ -414,7 +475,7 @@ events:
     type: news
     cut: extreme-rain
     at: 11
-    duration: 14
+    duration: 13
     source: news
     headline: 청천면에 기상청 긴급문자…괴산군, 달천 수위 확인 중
     carry: true
@@ -430,16 +491,17 @@ events:
     type: news
     cut: warning
     at: 7
-    duration: 18
+    duration: 9
     source: news
-    headline: 괴산 청천면서 급류가 농로 덮쳐…고립 신고 잇따라
+    headline: 괴산 청천면 급류에 농로 잠겨…마을서 고립 신고
   - id: radar-1340
     type: grid
     cut: warning
     at: 7
     asset: radar-1340
     opacity: 1
-    duration: 48
+    duration: 28
+    carry: true
   - id: evacuate-cheongcheon
     type: alert
     cut: warning
@@ -450,34 +512,34 @@ events:
       - "43760"
     publishedAt: 2031-07-18T13:44:00+09:00
     text: 대피명령. 청천면 달천변 저지대 주민은 하천을 건너지 말고 가까운 고지대로 즉시 대피하십시오. 하천변 교량은 통제 중입니다.
+  - id: news-2
+    type: news
+    cut: warning
+    at: 16
+    duration: 9
+    source: news
+    headline: 경찰, 청천면 달천변 교량 통제…양쪽 진입로 막아
   - id: camera-cheongcheon
     type: camera
     cut: warning
-    at: 20
+    at: 18
     duration: 5
     to:
       center:
         - 127.738
         - 36.66
       zoom: 10.6
-  - id: news-2
-    type: news
-    cut: warning
-    at: 25
-    duration: 17
-    source: news
-    headline: 경찰, 달천변 교량 통제…괴산군, 저지대 주민에 대피명령
   - id: chat-alert-in-county
     type: chat-message
     chat: live-chat
     cut: warning
-    at: 30
+    at: 19
     author: 느티
     text: 괴산읍인데 청천면 대피 문자 왔어요. 청천 쪽 지금 어떤가요
   - id: chat-first-sheet
     type: chat-message
     cut: warning
-    at: 36
+    at: 23
     chat: live-chat
     author: 청천장날
     text: 논 한가운데 물이 기둥처럼 떨어져요. 저게 뭐예요
@@ -485,30 +547,31 @@ events:
   - id: news-first-unverified-clips
     type: news
     cut: warning
-    at: 42
+    at: 25
     source: news
-    headline: 괴산 청천면 논에 굵은 물줄기 떨어진다는 제보…소방 출동
-    duration: 19
+    headline: 괴산 청천면 들판에 굵은 물줄기…주민 영상 제보 잇따라
+    duration: 15
+    carry: true
+  - id: radar-1345
+    type: grid
+    cut: first-loss
+    at: 4
+    asset: radar-1345
+    opacity: 1
+    duration: 29
+    carry: true
   - id: chat-sheet-confirmation
     type: chat-message
-    cut: warning
-    at: 51
+    cut: first-loss
+    at: 5
     chat: live-chat
     author: 청천장날
     text: 큰길 쪽으로 물이 건너와요 차 놓고 올라가요
     color: "#d2b192"
-  - id: radar-1345
-    type: grid
-    cut: warning
-    at: 55
-    asset: radar-1345
-    opacity: 1
-    duration: 34
-    carry: true
   - id: alert-east-road-flooded
     type: alert
-    cut: warning
-    at: 57
+    cut: first-loss
+    at: 7
     sender: county
     level: 안전안내
     regions:
@@ -516,42 +579,42 @@ events:
     text: 청천면 동쪽 진입로로 급류가 넘어왔습니다. 하천과 도로를 건너지 말고 가까운 높은 곳으로 이동하십시오.
   - id: news-first-damage-reports
     type: news
-    cut: warning
-    at: 61
+    cut: first-loss
+    at: 9
     source: news
     headline: 괴산소방서, 청천면 주택 두 채 떠내려가…도로 구조대 후퇴
-    duration: 14
-  - id: news-first-confirmed-sheet
-    type: news
-    cut: warning
-    at: 75
-    source: news
-    headline: 괴산소방서, 동쪽 진입로 끊겨…북쪽 능선으로 구조대 이동
-    duration: 14
-    carry: true
+    duration: 10
   - id: alert-cheongcheon-structural-damage
     type: alert
-    cut: warning
-    at: 81
+    cut: first-loss
+    at: 18
     sender: county
     level: 안전안내
     regions:
       - "43760"
     text: 청천면 청천리 저지대에서 건물 파손이 확인됐습니다. 대피 중에는 파손된 건물과 담장에 가까이 가지 말고 현장 요원 안내에 따라 이동하십시오.
+  - id: news-first-confirmed-sheet
+    type: news
+    cut: first-loss
+    at: 19
+    source: news
+    headline: 괴산소방서, 끊어진 동쪽 진입로 대신 북쪽 능선으로 접근
+    duration: 14
+    carry: true
   - id: news-3
     type: news
     cut: access
     at: 7
     duration: 10
     source: news
-    headline: 청천 관측소, 한 시간에 72㎜ 기록…오후 1시 39분부터 자료 끊겨
+    headline: 청천 관측소, 1시간 72㎜ 기록 끝으로 오후 1시 39분부터 관측 중단
   - id: radar-1350
     type: grid
     cut: access
     at: 7
     asset: radar-1350
     opacity: 1
-    duration: 33
+    duration: 29
     carry: true
   - id: chat-distant-clarification
     type: chat-message
@@ -574,7 +637,7 @@ events:
     type: news
     cut: access
     at: 17
-    duration: 11
+    duration: 7
     source: news
     headline: 괴산 청천면 급류, 제방 밖 논과 마을길로 번져
   - id: alert-approach-closed
@@ -589,7 +652,7 @@ events:
   - id: news-rescue-access
     type: news
     cut: access
-    at: 28
+    at: 24
     duration: 12
     source: news
     headline: 괴산소방서, 북쪽 능선으로 접근…마을 진입은 급류에 막혀
@@ -600,14 +663,14 @@ events:
     at: 7
     source: news
     headline: 괴산 청천면 들판서 물기둥 확인…하천 밖에서 급류 형성
-    duration: 15
+    duration: 12
   - id: radar-1415
     type: grid
     cut: cause-check
     at: 7
     asset: radar-1415
     opacity: 1
-    duration: 32
+    duration: 27
     carry: true
   - id: camera-cause-check
     type: camera
@@ -622,7 +685,7 @@ events:
   - id: alert-hupyeong-evacuate
     type: alert
     cut: cause-check
-    at: 19
+    at: 15
     sender: county
     level: 긴급재난
     regions:
@@ -631,10 +694,10 @@ events:
   - id: news-weather-cannot-explain
     type: news
     cut: cause-check
-    at: 22
+    at: 19
     source: news
     headline: 기상청, 청천 낙수 원인 조사…한강홍수통제소는 달천 하류에 급류 전파
-    duration: 17
+    duration: 15
     carry: true
   - id: alert-miwon-evacuate
     type: alert
@@ -655,7 +718,7 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 357
+    duration: 398
     carry: true
   - id: news-5
     type: news
@@ -670,7 +733,7 @@ events:
     at: 8
     asset: radar-1500
     opacity: 1
-    duration: 32
+    duration: 29
     carry: true
   - id: camera-province
     type: camera
@@ -701,7 +764,7 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 347
+    duration: 388
     carry: true
   - id: chat-remote-viewing
     type: chat-message
@@ -709,23 +772,23 @@ events:
     cut: province
     at: 21
     author: 초록우산
-    text: 청주 미원 가는 버스 지금도 다니나요
+    text: 미원 가는 버스 기다리는 중인데 전광판에서 시간이 사라졌어요
     color: "#afbf99"
   - id: news-6
     type: news
     cut: province
     at: 23
-    duration: 17
+    duration: 14
     source: news
     headline: 충주시, 달천변에서 멀어지는 고지대 도로로 대피 버스 출발
     carry: true
   - id: chat-chungju-river
     type: chat-message
     cut: province
-    at: 28
+    at: 26
     chat: live-chat
     author: 분리수거
-    text: 체육관 앞에서 차 돌려서 언덕 쪽으로 보내요
+    text: 체육관 앞에서 버스 탔어요. 지금은 강 따라 안 가고 언덕길로 올라가요
     color: "#c2ad91"
   - id: alert-suanbo-observed-extreme
     type: alert
@@ -749,8 +812,15 @@ events:
     at: 8
     asset: radar-1545
     opacity: 1
-    duration: 33
+    duration: 30
     carry: true
+  - id: chat-bus-depot
+    type: chat-message
+    cut: shelter
+    at: 12
+    chat: live-chat
+    author: 터미널앞
+    text: 미원 가는 분 아까 계셨죠? 여기 매표소에도 운행 중단 붙었어요
   - id: suspend-gym
     type: alert
     cut: shelter
@@ -765,37 +835,36 @@ events:
     chat: live-chat
     cut: shelter
     at: 20
-    author: 분리수거
+    author: 강변빌라
     text: 창문 아래로 물 올라와요 1층 사람들 다 위로 올라오는 중
-    color: "#c2ad91"
   - id: news-chungju-boarding
     type: news
     cut: shelter
     at: 23
-    duration: 17
+    duration: 14
     source: news
     headline: 충주 달천변 급류가 2층 창까지…체육관 진입로 끊겨 환승 중단
     carry: true
   - id: alert-eumseong-lowlands
     type: alert
     cut: shelter
-    at: 27
+    at: 25
     sender: eumseong
     level: 긴급재난
     regions:
       - "43770"
-    text: 대피명령. 음성읍 하천변 저지대 주민은 물이 찬 도로와 교량을 피하고 현장 안내에 따라 높은 곳으로 즉시 대피하십시오.
+    text: 대피명령. 음성읍 하천변 저지대 주민은 잠긴 길과 교량을 피해 높은 곳으로 이동하십시오.
   - id: alert-eumseong-lowlands-area
     type: region
     cut: shelter
-    at: 27
+    at: 25
     regions:
       - "43770"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 305
+    duration: 351
     carry: true
   - id: alert-chungju-transfers
     type: alert
@@ -819,46 +888,69 @@ events:
     at: 8
     asset: radar-1620
     opacity: 1
-    duration: 26
+    duration: 25
     carry: true
+  - id: chat-lift
+    type: chat-message
+    cut: shelter-shift
+    at: 13
+    chat: live-chat
+    author: 충주서쪽
+    text: 버스에 휠체어 못 싣고 기다리던 분들 다른 차에 타셨어요
   - id: alert-jecheon-riverside
     type: alert
     cut: shelter-shift
-    at: 15
+    at: 13
     sender: jecheon
     level: 안전안내
     regions:
       - "43150"
-    text: 제천시 하천변 저지대 주민은 불어난 물에 접근하지 마십시오. 외출 중이라면 하천변 도로를 피하고 가까운 안전한 곳으로 이동하십시오.
+    text: 제천 시내 하천 수위가 오릅니다. 둔치에서 나오고 하천변 도로를 피하십시오.
   - id: alert-jecheon-riverside-area
     type: region
     cut: shelter-shift
-    at: 15
+    at: 13
     regions:
       - "43150"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 284
+    duration: 333
     carry: true
   - id: news-transfer-route-checked
     type: news
     cut: shelter-shift
     at: 19
     source: news
-    headline: 충북도, 외곽 여러 곳에 수용지 확보…이동 지원 필요한 요양시설부터 차량 연결
-    duration: 14
+    headline: 충북도, 충주 요양시설에 리프트 차량 배차…병원 이송은 119가 맡아
+    duration: 13
     carry: true
   - id: alert-salmi-evacuate
     type: alert
     cut: shelter-shift
-    at: 25
+    at: 22
     sender: city
     level: 안전안내
     regions:
       - "43130"
     text: 살미면 달천변 저지대는 범람 위험이 있습니다. 침수된 길을 피하고 가까운 고지대로 대피하십시오. 현장 안내에 따라 이동해 주십시오.
+  - id: alert-jeonbuk-mountains
+    type: alert
+    cut: central
+    at: 7
+    sender: jeonbuk
+    level: 안전안내
+    regions:
+      - "52730"
+      - "52720"
+      - "52740"
+      - "52710"
+      - "52111"
+      - "52113"
+      - "52210"
+      - "52750"
+    text: 무주·진안·장수·완주·전주·김제·임실 계곡물이 불어날 수 있습니다. 야영객은 계곡 밖으로 나가십시오.
   - id: news-9
     type: news
     cut: central
@@ -866,34 +958,32 @@ events:
     duration: 10
     source: news
     headline: 총리가 중대본 지휘…남한강·금강 두 유역서 급류, 하류에 선제 대피 요청
+  - id: alert-jeonbuk-mountains-area
+    type: region
+    cut: central
+    at: 7
+    regions:
+      - "52730"
+      - "52720"
+      - "52740"
+      - "52710"
+      - "52111"
+      - "52113"
+      - "52210"
+      - "52750"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 314
+    carry: true
   - id: radar-1705
     type: grid
     cut: central
     at: 8
     asset: radar-1705
     opacity: 1
-    duration: 33
-    carry: true
-  - id: alert-buron-evacuate
-    type: alert
-    cut: central
-    at: 10
-    sender: wonju
-    level: 긴급재난
-    regions:
-      - "51130"
-    text: 대피명령. 부론면 흥호리 남한강변 저지대 주민은 물이 찬 길을 건너지 말고 인근 고지대로 즉시 대피하십시오.
-  - id: alert-buron-evacuate-area
-    type: region
-    cut: central
-    at: 10
-    regions:
-      - "51130"
-    color: "#ab9d83"
-    fillOpacity: 0.18
-    strokeWidth: 0
-    fadeIn: 0.5
-    duration: 263
+    duration: 31
     carry: true
   - id: chat-no-local-alert
     type: chat-message
@@ -913,6 +1003,27 @@ events:
         - 127.98
         - 37.08
       zoom: 7.4
+  - id: alert-buron-evacuate
+    type: alert
+    cut: central
+    at: 16
+    sender: wonju
+    level: 긴급재난
+    regions:
+      - "51130"
+    text: 대피명령. 부론면 흥호리 강변 주민은 잠긴 길을 피해 즉시 고지대로 이동하십시오.
+  - id: alert-buron-evacuate-area
+    type: region
+    cut: central
+    at: 16
+    regions:
+      - "51130"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 305
+    carry: true
   - id: news-miwon-water-confirmed
     type: news
     cut: central
@@ -923,44 +1034,71 @@ events:
   - id: alert-namhan-critical
     type: alert
     cut: central
-    at: 23
+    at: 24
     sender: ministry
     level: 위급재난
     regions:
       - "43130"
       - "51130"
       - "41670"
-    text: 충주 달천 합류부와 원주·여주 남한강변에 급류 접근. 저지대 주민은 강을 건너지 말고 즉시 높은 곳으로 이동하십시오.
+    text: 충주 달천 합류부와 원주·여주 남한강변에 급류 접근. 강변 주민은 즉시 높은 곳으로 대피하십시오.
     mapHighlight:
       duration: 4
       color: "#e8bb85"
   - id: alert-namhan-critical-area
     type: region
     cut: central
-    at: 23
+    at: 24
     regions:
       - "41670"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 250
+    duration: 297
     carry: true
   - id: news-10
     type: news
     cut: central
     at: 26
-    duration: 14
+    duration: 12
     source: news
-    headline: 충북도, 간선도로 세 곳 동시에 끊겨…출발 마친 차량은 가까운 고지대로
+    headline: 충북도, 간선도로 3곳 유실…충주 떠난 대피버스 두 대 고갯마루에 정차
+    carry: true
+  - id: alert-chungbuk-southeast
+    type: alert
+    cut: switchboard
+    at: 2
+    sender: province
+    level: 안전안내
+    regions:
+      - "43730"
+      - "43740"
+      - "43800"
+      - "43750"
+    text: 옥천·영동·단양·진천 하천 수위 상승. 둔치와 낮은 도로를 벗어나 시군의 대피 안내를 따르십시오.
+  - id: alert-chungbuk-southeast-area
+    type: region
+    cut: switchboard
+    at: 2
+    regions:
+      - "43730"
+      - "43740"
+      - "43800"
+      - "43750"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 288
     carry: true
   - id: news-contacts-fail
     type: news
     cut: switchboard
     at: 7
     source: news
-    headline: 괴산군청 침수·정전…온라인 신고와 현장 차량 위치 확인 중단
-    duration: 14
+    headline: 괴산군청 침수로 정전…대피 차량 위치 확인하던 상황실도 철수
+    duration: 7
   - id: radar-1755
     type: grid
     cut: switchboard
@@ -978,6 +1116,13 @@ events:
     regions:
       - "43760"
     text: 괴산군청 상황실 침수로 온라인 접수가 중단됐습니다. 주민 대피는 읍·면과 현장 안내에 따르고, 인명 구조가 급하면 119에 위치를 알리십시오.
+  - id: news-first-patients
+    type: news
+    cut: switchboard
+    at: 14
+    source: news
+    headline: 충주 응급실 두 곳 진입로 침수…119, 이송 중인 환자 원주로
+    duration: 8
   - id: chat-link-offline
     type: chat-message
     cut: switchboard
@@ -986,14 +1131,6 @@ events:
     author: 느티
     text: 괴산군청 페이지 저만 안 열려요? 아까는 됐는데
     color: "#9fb8cb"
-  - id: news-fallback-coordinated
-    type: news
-    cut: switchboard
-    at: 21
-    source: news
-    headline: 충북 119, 도 비상 접수대와 읍면 무전으로 신고 받아…가까운 구조대에 전달
-    duration: 13
-    carry: true
   - id: alert-north-gyeongbuk
     type: alert
     cut: switchboard
@@ -1015,23 +1152,68 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 219
+    duration: 269
     carry: true
-  - id: news-11
+  - id: news-fallback-coordinated
+    type: news
+    cut: switchboard
+    at: 22
+    source: news
+    headline: 괴산 119 신고 폭주…충북소방, 읍면 무전으로 고립 마을 위치 확인
+    duration: 7
+    carry: true
+  - id: news-wonju-handover
     type: news
     cut: continuity
-    at: 7
-    duration: 10
+    at: 2
     source: news
-    headline: 괴산군, 대체 상황실에서 마을 3곳 연락 복구…도착한 주민부터 확인
+    headline: 충주서 돌린 구급차 원주 도착…응급환자 4명 인계
+    duration: 7
+  - id: alert-youngwol-valley
+    type: alert
+    cut: continuity
+    at: 2
+    sender: yeongwol
+    level: 긴급재난
+    regions:
+      - "51750"
+    text: 대피명령. 영월읍 동강변 저지대에 물이 넘치고 있습니다. 강변길을 벗어나 높은 곳으로 이동하십시오.
+  - id: alert-youngwol-valley-area
+    type: region
+    cut: continuity
+    at: 2
+    regions:
+      - "51750"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 261
+    carry: true
   - id: radar-1845
     type: grid
     cut: continuity
     at: 8
     asset: radar-1845
     opacity: 1
-    duration: 27
+    duration: 26
     carry: true
+  - id: news-11
+    type: news
+    cut: continuity
+    at: 9
+    duration: 9
+    source: news
+    headline: 괴산군, 대체 상황실 가동…끊겼던 마을 3곳과 무전 연결
+  - id: alert-goesan-contact
+    type: alert
+    cut: continuity
+    at: 10
+    sender: county
+    level: 안전안내
+    regions:
+      - "43760"
+    text: 군청 침수로 일부 집결지가 바뀌었습니다. 대피 버스는 마을 방송으로 알리는 새 장소에서 타십시오.
   - id: chat-offline-office
     type: chat-message
     chat: live-chat
@@ -1039,23 +1221,111 @@ events:
     at: 11
     author: 느티
     text: 읍사무소 앞에 왔어요. 직원한테 물어볼게요
-  - id: alert-goesan-contact
-    type: alert
-    cut: continuity
-    at: 14
-    sender: county
-    level: 안전안내
-    regions:
-      - "43760"
-    text: 군청 침수로 대피 차량 집결 장소가 변경된 마을이 있습니다. 이동 전 마을 방송을 확인하고 현장 요원이 안내하는 길을 이용하십시오.
   - id: news-12
     type: news
     cut: continuity
-    at: 17
-    duration: 18
+    at: 18
+    duration: 14
     source: news
-    headline: 괴산소방서, 차량이 닿지 않는 마을 수색…반대편 산길로 접근
+    headline: 영월읍 동강 둔치 물에 잠겨…강변 주택가 주민 대피
     carry: true
+  - id: alert-gumi-bank
+    type: alert
+    cut: continuity
+    at: 18
+    sender: gumi
+    level: 안전안내
+    regions:
+      - "47190"
+    text: 낙동강 상류에서 급류가 내려오고 있습니다. 해평면 둔치 이용객은 지금 강변을 벗어나십시오.
+  - id: alert-gumi-bank-area
+    type: region
+    cut: continuity
+    at: 18
+    regions:
+      - "47190"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 245
+    carry: true
+  - id: chat-yeongwol
+    type: chat-message
+    cut: continuity
+    at: 21
+    chat: live-chat
+    author: 동강댁
+    text: 영월이에요. 둔치 주차장은 다 잠기고 관리실 지붕만 보여요
+  - id: alert-ipo
+    type: alert
+    cut: continuity
+    at: 26
+    sender: yeoju
+    level: 안전안내
+    regions:
+      - "41670"
+    text: 이포대교 금사면 쪽 진입로 침수. 다리로 진입하지 말고 강을 건너는 버스는 운행 여부를 확인하십시오.
+  - id: news-ipo-bus
+    type: news
+    cut: banks-apart
+    at: 4
+    source: news
+    headline: 여주 이포대교 진입로 침수…시내버스 강 양쪽에서 회차
+    duration: 8
+  - id: radar-1910
+    type: grid
+    cut: banks-apart
+    at: 6
+    asset: radar-1910
+    opacity: 1
+    duration: 18
+    carry: true
+  - id: alert-yangpyeong
+    type: alert
+    cut: banks-apart
+    at: 6
+    sender: yangpyeong
+    level: 긴급재난
+    regions:
+      - "41830"
+    text: 대피명령. 강하면 강변 주민은 높은 곳으로 이동하십시오. 거동이 어려운 이웃은 현장 직원에게 알려 주십시오.
+  - id: alert-yangpyeong-area
+    type: region
+    cut: banks-apart
+    at: 6
+    regions:
+      - "41830"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 229
+    carry: true
+  - id: chat-ipo
+    type: chat-message
+    cut: banks-apart
+    at: 8
+    chat: live-chat
+    author: 이포가는길
+    text: 버스가 이포대교 앞에서 돌아요. 강 건너는 어디서 타요?
+  - id: news-yangpyeong-care
+    type: news
+    cut: banks-apart
+    at: 12
+    source: news
+    headline: 양평 강하면, 혼자 대피 못 한 주민 집마다 복지 담당자 동행
+    duration: 12
+    carry: true
+  - id: alert-sangju-bank
+    type: alert
+    cut: banks-apart
+    at: 15
+    sender: sangju
+    level: 긴급재난
+    regions:
+      - "47250"
+    text: 대피명령. 함창읍 영강변과 사벌국면 낙동강변 저지대 주민은 즉시 높은 곳으로 이동하십시오.
   - id: alert-chungbuk-spread
     type: alert
     cut: network-fray
@@ -1066,7 +1336,7 @@ events:
       - "43720"
       - "43745"
       - "43114"
-    text: 보은·증평·청원구 하천 밖까지 급류 확산. 하천변과 지하차도에 접근하지 마십시오.
+    text: 보은·증평·청주 청원구 급류가 제방 밖으로 번지고 있습니다. 하천과 지하차도에 접근하지 마십시오.
   - id: alert-chungbuk-spread-area
     type: region
     cut: network-fray
@@ -1079,7 +1349,7 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 179
+    duration: 212
     carry: true
   - id: news-cheongcheon-rescue-confirmed
     type: news
@@ -1096,6 +1366,13 @@ events:
     opacity: 1
     duration: 25
     carry: true
+  - id: chat-hamchang
+    type: chat-message
+    cut: network-fray
+    at: 11
+    chat: live-chat
+    author: 함창사거리
+    text: 함창도 방금 받았어요. 장 보던 사람들 가게 밖으로 다 나왔어요
   - id: alert-jeomdong-evacuate
     type: alert
     cut: network-fray
@@ -1110,7 +1387,7 @@ events:
     cut: network-fray
     at: 18
     source: news
-    headline: 금강홍수통제소, 백제교 위험수위보다 먼저 부여 양안 평야 침수 예상
+    headline: 금강홍수통제소 “부여 규암면, 백제교가 위험수위 되기 전에도 침수 우려”
     duration: 13
     carry: true
   - id: alert-buyeo-flood
@@ -1135,34 +1412,7 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 163
-    carry: true
-  - id: alert-gangwon-spread
-    type: alert
-    cut: evacuation-crossing
-    at: 6
-    sender: gangwon
-    level: 안전안내
-    regions:
-      - "51730"
-      - "51750"
-      - "51720"
-      - "51760"
-    text: 횡성·영월·홍천·평창 계곡과 하천 주변에 접근하지 마십시오. 침수·고립 우려 지역에서는 현장 안내를 받아 높은 곳으로 이동하십시오.
-  - id: alert-gangwon-spread-area
-    type: region
-    cut: evacuation-crossing
-    at: 6
-    regions:
-      - "51730"
-      - "51750"
-      - "51720"
-      - "51760"
-    color: "#ab9d83"
-    fillOpacity: 0.18
-    strokeWidth: 0
-    fadeIn: 0.5
-    duration: 155
+    duration: 196
     carry: true
   - id: news-13
     type: news
@@ -1170,7 +1420,7 @@ events:
     at: 7
     duration: 8
     source: news
-    headline: 충북도 “보은 보청천변 일부 수심 20m 안팎”…맞은편 능선서 확인
+    headline: 충북도 “보은 보청천변 도로 위 수심 20m 안팎”…맞은편 산에서 확인
   - id: radar-2020
     type: grid
     cut: evacuation-crossing
@@ -1178,6 +1428,32 @@ events:
     asset: radar-2020
     opacity: 1
     duration: 35
+    carry: true
+  - id: alert-gangwon-spread
+    type: alert
+    cut: evacuation-crossing
+    at: 9
+    sender: gangwon
+    level: 안전안내
+    regions:
+      - "51730"
+      - "51750"
+      - "51720"
+      - "51760"
+    text: 횡성·영월·홍천·평창 계곡물이 불어나고 있습니다. 계곡과 둔치에서 나와 높은 곳으로 이동하십시오.
+  - id: alert-gangwon-spread-area
+    type: region
+    cut: evacuation-crossing
+    at: 9
+    regions:
+      - "51730"
+      - "51720"
+      - "51760"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 185
     carry: true
   - id: camera-evacuation-crossing
     type: camera
@@ -1195,16 +1471,16 @@ events:
     at: 15
     duration: 8
     source: news
-    headline: 금강홍수통제소, 금강 하류 수위 급등…도로 단절 예상 시각 두 도에 전파
+    headline: 상주 사벌국면 강변도로 유실…대피버스 언덕에 멈춰 승객 하차
   - id: alert-buron-evac-road
     type: alert
     cut: evacuation-crossing
-    at: 17
+    at: 18
     sender: wonju
     level: 안전안내
     regions:
       - "51130"
-    text: 부론면 법천소공원 일대 강변 도로를 통제합니다. 대피 차량 통행에 협조하고 일반 차량은 현장 안내에 따라 우회하십시오.
+    text: 부론면 법천소공원 강변도로가 잠겼습니다. 차량을 돌려 강에서 멀어지십시오. 도보로도 진입하지 마십시오.
   - id: news-chungbuk-railway-stopped
     type: news
     cut: evacuation-crossing
@@ -1212,32 +1488,26 @@ events:
     duration: 8
     source: news
     headline: 코레일, 충북선과 중부내륙선 일부 구간 운행 중지…침수 구간 밖에 정차
-  - id: alert-chungbuk-southeast
+  - id: alert-gongju-river
     type: alert
     cut: evacuation-crossing
-    at: 27
-    sender: province
-    level: 안전안내
+    at: 26
+    sender: gongju
+    level: 긴급재난
     regions:
-      - "43730"
-      - "43740"
-      - "43800"
-      - "43750"
-    text: 옥천·영동·단양·진천 하천 수위가 오르고 있습니다. 하천변에 머물지 말고 낮은 도로를 피하십시오. 시군의 대피 지시에 따라 주십시오.
-  - id: alert-chungbuk-southeast-area
+      - "44150"
+    text: 대피명령. 금성동 금강변에 급류가 접근하고 있습니다. 강에서 먼 높은 곳으로 즉시 이동하십시오.
+  - id: alert-gongju-river-area
     type: region
     cut: evacuation-crossing
-    at: 27
+    at: 26
     regions:
-      - "43730"
-      - "43740"
-      - "43800"
-      - "43750"
+      - "44150"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 134
+    duration: 168
     carry: true
   - id: news-14
     type: news
@@ -1245,7 +1515,7 @@ events:
     at: 31
     duration: 11
     source: news
-    headline: 소방청, 충청·경북에 다른 지역 구조대 투입…급류 바깥에서 진입로 확인
+    headline: 여주, 이포대교 양쪽에 버스 따로 보내…발 묶인 승객 언덕으로
     carry: true
   - id: chat-mokpo-evacuation-news
     type: chat-message
@@ -1253,12 +1523,12 @@ events:
     cut: evacuation-crossing
     at: 34
     author: 목포밤바다
-    text: 문경 쪽 문자 받은 분 있어요? 전화가 안 돼서
+    text: 목포 터미널인데 충주 표는 내일까지 전부 막혔어요. 돌아갑니다
     color: "#b6abc7"
   - id: alert-central-provinces
     type: alert
-    cut: crossing-lost
-    at: 5
+    cut: evacuation-crossing
+    at: 34
     sender: ministry
     level: 안전안내
     regions:
@@ -1283,13 +1553,12 @@ events:
     text: 세종·대전·청주·천안·공주·논산·계룡·금산·김천·예천 호우. 하천변·지하차도 접근 금지.
   - id: alert-central-provinces-area
     type: region
-    cut: crossing-lost
-    at: 5
+    cut: evacuation-crossing
+    at: 34
     regions:
       - "36110"
       - "44131"
       - "44133"
-      - "44150"
       - "44230"
       - "44250"
       - "44710"
@@ -1306,13 +1575,13 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 121
+    duration: 160
     carry: true
   - id: news-corridor-lost
     type: news
     cut: crossing-lost
     at: 7
-    duration: 10
+    duration: 7
     source: news
     headline: 공주·부여 제방 밖으로 급류…서천공주고속도로·국도 여러 곳 끊겨
   - id: radar-2110
@@ -1321,7 +1590,7 @@ events:
     at: 8
     asset: radar-2110
     opacity: 1
-    duration: 34
+    duration: 33
     carry: true
   - id: radar-2110-2
     type: grid
@@ -1329,17 +1598,36 @@ events:
     at: 8
     asset: radar-2110-2
     opacity: 1
-    duration: 34
+    duration: 33
     carry: true
-  - id: alert-buyeo-bridge-closed
+  - id: alert-iksan-riverside
     type: alert
     cut: crossing-lost
-    at: 14
-    sender: buyeo
-    level: 안전안내
+    at: 10
+    sender: iksan
+    level: 긴급재난
     regions:
-      - "44760"
-    text: 공주·부여 방면 고속도로와 국도 여러 곳 유실. 통제선을 넘지 말고 현장 경찰 안내를 따르십시오.
+      - "52140"
+    text: 대피명령. 웅포·성당면 금강변 주민은 즉시 높은 곳으로 이동하십시오. 제방길로 대피하지 마십시오.
+  - id: alert-iksan-riverside-area
+    type: region
+    cut: crossing-lost
+    at: 10
+    regions:
+      - "52140"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 149
+    carry: true
+  - id: news-buyeo-transfer-stop
+    type: news
+    cut: crossing-lost
+    at: 14
+    duration: 7
+    source: news
+    headline: 익산시, 금강 건너편 범람 소식에 웅포·성당면 강변마을부터 비워
   - id: camera-rainfall-expansion
     type: camera
     cut: crossing-lost
@@ -1350,22 +1638,29 @@ events:
         - 127.86
         - 36.48
       zoom: 6.15
-  - id: news-buyeo-transfer-stop
+  - id: chat-iksan-dry
+    type: chat-message
+    cut: crossing-lost
+    at: 16
+    chat: live-chat
+    author: 웅포언덕
+    text: 밖이 너무 조용해서 자는 윗집도 깨웠어요. 우리 동네 이름이 문자에 있어요
+  - id: news-paldang-report
     type: news
     cut: crossing-lost
-    at: 17
-    duration: 12
+    at: 21
     source: news
-    headline: 중대본, 금강 하류 여러 시군에 선제 대피 지시…고지대별로 차량 분산
+    headline: 남양주 능내리 팔당호 산책로 난간까지 물 차…경기도, 하류에 통보
+    duration: 7
   - id: alert-chungju-west-route-lost
     type: alert
     cut: crossing-lost
-    at: 23
+    at: 21
     sender: city
     level: 안전안내
     regions:
       - "43130"
-    text: 충주에서 다른 시군으로 나가는 대피차 출발을 중지합니다. 현장 요원 안내에 따라 가까운 고지대로 이동하십시오.
+    text: 충주 달천변 대피 차량은 다른 시군으로 출발하지 않습니다. 현장 안내에 따라 인근 고지대로 이동하십시오.
   - id: chat-returned-convoy
     type: chat-message
     cut: crossing-lost
@@ -1377,15 +1672,15 @@ events:
   - id: news-buyeo-small-vehicles
     type: news
     cut: crossing-lost
-    at: 29
-    duration: 13
+    at: 28
+    duration: 10
     source: news
-    headline: 충남도, 시군간 차량 이동 중단된 곳부터 현지 고지대로 대피 전환
+    headline: 양평 강하면 어르신들 강 건너지 않고 이송…대기하던 돌봄 인력에 인계
     carry: true
   - id: alert-eastern-gyeonggi
     type: alert
     cut: crossing-lost
-    at: 32
+    at: 31
     sender: gyeonggi
     level: 안전안내
     regions:
@@ -1398,70 +1693,136 @@ events:
   - id: alert-eastern-gyeonggi-area
     type: region
     cut: crossing-lost
-    at: 32
+    at: 31
     regions:
       - "41500"
-      - "41830"
       - "41550"
       - "41461"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 94
+    duration: 128
+    carry: true
+  - id: news-gumi-water
+    type: news
+    cut: night-shift
+    at: 3
+    source: news
+    headline: 구미 해평취수장에 흙탕물 밀려와 취수량 줄여…생활용수는 배수지에서 공급
+    duration: 8
+  - id: radar-2145-2
+    type: grid
+    cut: night-shift
+    at: 6
+    asset: radar-2145-2
+    opacity: 1
+    duration: 17
+    carry: true
+  - id: radar-2145-3
+    type: grid
+    cut: night-shift
+    at: 6
+    asset: radar-2145-3
+    opacity: 1
+    duration: 17
+    carry: true
+  - id: radar-2145-4
+    type: grid
+    cut: night-shift
+    at: 6
+    asset: radar-2145-4
+    opacity: 1
+    duration: 17
+    carry: true
+  - id: radar-2145
+    type: grid
+    cut: night-shift
+    at: 6
+    asset: radar-2145
+    opacity: 1
+    duration: 17
+    carry: true
+  - id: alert-hanam-parks
+    type: alert
+    cut: night-shift
+    at: 8
+    sender: hanam
+    level: 안전안내
+    regions:
+      - "41450"
+    text: 팔당호 수위 급상승. 하남 한강변 공원을 통제합니다. 둔치 이용자는 가까운 지상 출구로 나가십시오.
+  - id: chat-hanam-walk
+    type: chat-message
+    cut: night-shift
+    at: 8
+    chat: live-chat
+    author: 미사한바퀴
+    text: 미사는 비도 약한데 공원 문 닫네요. 자전거 끌고 다 같이 나가는 중
+  - id: alert-hanam-parks-area
+    type: region
+    cut: night-shift
+    at: 8
+    regions:
+      - "41450"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 116
+    carry: true
+  - id: news-first-death-count
+    type: news
+    cut: night-shift
+    at: 11
+    source: news
+    headline: 중대본 “5개 시도에서 사망 87명 확인”…연락 끊긴 마을은 집계 못 해
+    duration: 10
     carry: true
   - id: alert-lower-basins-critical
     type: alert
     cut: outer-routes
-    at: 5
+    at: 4
     sender: ministry
     level: 위급재난
     regions:
-      - "52140"
-      - "52710"
-      - "52730"
-      - "52720"
-      - "52740"
-      - "52111"
-      - "52113"
-      - "52210"
-      - "52750"
       - "44150"
       - "44230"
       - "44760"
       - "44770"
-    text: 충남·전북 일부 평야에 급류 접근. 저지대 주민은 강과 잠긴 도로를 건너지 말고 즉시 높은 곳으로 이동하십시오.
+      - "52130"
+      - "52140"
+    text: 공주·논산·부여·서천·익산·군산 금강변에 대규모 급류. 저지대 주민은 즉시 높은 곳으로 대피하십시오.
     mapHighlight:
       duration: 4
       color: "#e8bb85"
   - id: alert-lower-basins-critical-area
     type: region
     cut: outer-routes
-    at: 5
+    at: 4
     regions:
-      - "52140"
-      - "52710"
-      - "52730"
-      - "52720"
-      - "52740"
-      - "52111"
-      - "52113"
-      - "52210"
-      - "52750"
       - "44770"
+      - "52130"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 86
+    duration: 104
     carry: true
+  - id: news-early-evacuation
+    type: news
+    cut: outer-routes
+    at: 5
+    duration: 8
+    source: news
+    headline: 중대본, 금강 양안 6개 시군에 위급문자…서천 화양면엔 부여 대피버스 도착
   - id: radar-2215
     type: grid
     cut: outer-routes
     at: 7
     asset: radar-2215
     opacity: 1
-    duration: 30
+    duration: 20
     carry: true
   - id: radar-2215-2
     type: grid
@@ -1469,7 +1830,7 @@ events:
     at: 7
     asset: radar-2215-2
     opacity: 1
-    duration: 30
+    duration: 20
     carry: true
   - id: radar-2215-3
     type: grid
@@ -1477,7 +1838,7 @@ events:
     at: 7
     asset: radar-2215-3
     opacity: 1
-    duration: 30
+    duration: 20
     carry: true
   - id: radar-2215-4
     type: grid
@@ -1485,48 +1846,161 @@ events:
     at: 7
     asset: radar-2215-4
     opacity: 1
-    duration: 30
+    duration: 20
     carry: true
-  - id: news-early-evacuation
-    type: news
+  - id: alert-gunsan-southbank
+    type: alert
     cut: outer-routes
-    at: 7
-    duration: 7
-    source: news
-    headline: 중대본 “충남·전북 일부 평야에 급류 도달 임박”…저지대 즉시 이탈
+    at: 12
+    sender: gunsan
+    level: 긴급재난
+    regions:
+      - "52130"
+    text: 대피명령. 성산면 금강변 주민은 하굿둑으로 가지 말고 강에서 먼 높은 곳으로 이동하십시오.
   - id: news-buyeo-detour-open
     type: news
     cut: outer-routes
-    at: 14
+    at: 13
     source: news
-    headline: 충남도, 서천 쪽 임시 집결지 도착 확인…마지막 육상 진입로 점검
+    headline: 코레일, 장항~군산 열차 운행 중지…양쪽 역에 승객 분산 하차
     duration: 12
     carry: true
+  - id: chat-janghang
+    type: chat-message
+    cut: outer-routes
+    at: 18
+    chat: live-chat
+    author: 창가자리
+    text: 장항역 방송 들었는데요 군산 가는 분도 여기서 전부 내리래요
   - id: alert-gangneung-vehicles
     type: alert
     cut: outer-routes
-    at: 16
+    at: 20
     sender: gangneung
     level: 안전안내
     regions:
       - "51150"
-    text: 경포천 저지대에 계신 분은 잠긴 도로에 들어가지 말고, 현장 요원 안내에 따라 가까운 고지대로 대피하십시오.
+    text: 경포천 저지대가 잠기고 있습니다. 물이 찬 도로를 피해 가까운 고지대로 대피하십시오.
   - id: alert-gangneung-vehicles-area
     type: region
     cut: outer-routes
-    at: 16
+    at: 20
     regions:
       - "51150"
     color: "#ab9d83"
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 75
+    duration: 88
     carry: true
+  - id: news-gumi-shift
+    type: news
+    cut: estuary
+    at: 2
+    source: news
+    headline: 구미 4산단 일부 공장 야간조 출근 보류…강 건너는 통근버스 멈춰
+    duration: 8
+  - id: radar-2235-2
+    type: grid
+    cut: estuary
+    at: 4
+    asset: radar-2235-2
+    opacity: 1
+    duration: 28
+    carry: true
+  - id: radar-2235-3
+    type: grid
+    cut: estuary
+    at: 4
+    asset: radar-2235-3
+    opacity: 1
+    duration: 28
+    carry: true
+  - id: radar-2235-4
+    type: grid
+    cut: estuary
+    at: 4
+    asset: radar-2235-4
+    opacity: 1
+    duration: 28
+    carry: true
+  - id: radar-2235
+    type: grid
+    cut: estuary
+    at: 4
+    asset: radar-2235
+    opacity: 1
+    duration: 28
+    carry: true
+  - id: alert-seoul-banks
+    type: alert
+    cut: estuary
+    at: 5
+    sender: seoul
+    level: 안전안내
+    regions:
+      - "11740"
+      - "11710"
+      - "11215"
+    text: 광나루·잠실·뚝섬한강공원을 통제합니다. 둔치 이용자는 가까운 지상 출구로 나가십시오.
+  - id: alert-seoul-banks-area
+    type: region
+    cut: estuary
+    at: 5
+    regions:
+      - "11740"
+      - "11710"
+      - "11215"
+    color: "#ab9d83"
+    fillOpacity: 0.18
+    strokeWidth: 0
+    fadeIn: 0.5
+    duration: 80
+    carry: true
+  - id: chat-gumi-gate
+    type: chat-message
+    cut: estuary
+    at: 7
+    chat: live-chat
+    author: 옥계동
+    text: 오늘 야간인데 회사 버스 오지 않는다고 방금 연락 왔어요
+  - id: news-estuary-gates
+    type: news
+    cut: estuary
+    at: 10
+    source: news
+    headline: 금강하굿둑 수문 열어도 상류 수위 계속 올라…서천·군산 양안 대피
+    duration: 12
+    carry: true
+  - id: alert-estuary-approach
+    type: alert
+    cut: estuary
+    at: 13
+    sender: seocheon
+    level: 긴급재난
+    regions:
+      - "44770"
+    text: 대피명령. 마서면 하굿둑 주변 주민은 즉시 고지대로 이동하십시오. 둔치에 주차한 차는 두고 가십시오.
+  - id: alert-seocheon-river
+    type: alert
+    cut: emergency-lines
+    at: 4
+    sender: seocheon
+    level: 긴급재난
+    regions:
+      - "44770"
+    text: 대피명령. 화양면 금강변 집결지에 물이 들었습니다. 주민과 탑승객은 즉시 인근 고지대로 이동하십시오.
+  - id: news-gunsan-arrival-check
+    type: news
+    cut: emergency-lines
+    at: 5
+    source: news
+    headline: 서천 화양면 집결지까지 급류…부여서 온 주민들 버스 두고 다시 대피
+    duration: 7
   - id: alert-gyeongbuk-expansion
     type: alert
     cut: emergency-lines
-    at: 5
+    at: 12
     sender: gyeongbuk
     level: 안전안내
     regions:
@@ -1539,14 +2013,20 @@ events:
       - "47730"
       - "47840"
       - "47900"
-    text: 김천·안동·구미·영주·상주·문경·의성·성주·예천에 강한 비가 이어집니다. 하천변 접근을 피하고, 시군의 대피 안내에 따라 주십시오.
+    text: 김천·안동·구미·영주·상주·문경·의성·성주·예천 호우. 하천에서 벗어나 대피 안내를 따르십시오.
+  - id: news-extra-dispatchers
+    type: news
+    cut: emergency-lines
+    at: 12
+    source: news
+    duration: 7
+    headline: 장항역에 발 묶인 승객 서천군이 이송…군산역에서도 시내로 버스 출발
   - id: alert-gyeongbuk-expansion-area
     type: region
     cut: emergency-lines
-    at: 5
+    at: 12
     regions:
       - "47170"
-      - "47190"
       - "47210"
       - "47730"
       - "47840"
@@ -1554,15 +2034,15 @@ events:
     fillOpacity: 0.18
     strokeWidth: 0
     fadeIn: 0.5
-    duration: 63
+    duration: 56
     carry: true
-  - id: news-gunsan-arrival-check
-    type: news
+  - id: chat-seoul-exit
+    type: chat-message
     cut: emergency-lines
-    at: 6
-    source: news
-    headline: 대피차량 도착하던 서천에도 급류…화양면 집결지 주민 다시 고지대로
-    duration: 9
+    at: 14
+    chat: live-chat
+    author: 잠실저녁
+    text: 잠실 쪽도 나가는 문만 열어 놨어요. 강 쪽으로는 못 내려가요
   - id: radar-2250
     type: grid
     cut: emergency-lines
@@ -1595,22 +2075,22 @@ events:
     opacity: 1
     duration: 23
     carry: true
-  - id: news-extra-dispatchers
+  - id: news-eastern-hospital
     type: news
     cut: emergency-lines
-    at: 15
+    at: 19
     source: news
-    duration: 9
-    headline: 소방청, 강물 밖 헬기 접근 지점 확보…내륙 다수 지역은 기상·시야로 진입 불가
-  - id: alert-seocheon-river
+    headline: 원주로 온 충주 환자 가운데 중환자 2명, 병상 확보한 수도권으로 재이송
+    duration: 7
+  - id: alert-sangju-second
     type: alert
     cut: emergency-lines
-    at: 16
-    sender: seocheon
+    at: 20
+    sender: sangju
     level: 긴급재난
     regions:
-      - "44770"
-    text: 대피명령. 서천 화양면 금강변 집결지를 비우십시오. 주민과 탑승객은 현장 안내에 따라 즉시 고지대로 이동하십시오.
+      - "47250"
+    text: 사벌국면 강변 진입로 유실. 대피한 주민은 강으로 내려가지 말고 현장 구조대 안내를 따르십시오.
   - id: chat-no-headlights
     type: chat-message
     cut: emergency-lines
@@ -1622,21 +2102,21 @@ events:
   - id: news-last-detour-floods
     type: news
     cut: emergency-lines
-    at: 24
+    at: 26
     source: news
-    duration: 13
+    duration: 11
     carry: true
-    headline: 금강 하류 급류, 국도 너머 마을까지…충남소방 추가 진입 중지
+    headline: 서천 국도 너머 마을까지 급류…충남소방 “어두워 헬기도 접근 못 해”
   - id: alert-chungnam-detour-lost
     type: alert
     cut: emergency-lines
-    at: 26
+    at: 28
     sender: chungnam
     level: 안전안내
     regions:
       - "44760"
       - "44770"
-    text: 부여∼서천 국도와 마을길로 급류가 넘어왔습니다. 차량 진입을 중지하고 현장 요원의 안내를 따르십시오.
+    text: 부여~서천 국도와 마을길에 급류가 넘쳤습니다. 차량을 돌리고 경찰의 통제를 따르십시오.
   - id: alert-southern-spread
     type: alert
     cut: ongoing-response
@@ -1650,7 +2130,7 @@ events:
       - "44790"
       - "51110"
       - "51770"
-    text: 거창·함양·합천·청양·춘천·정선 호우. 하천과 지하차도에 접근하지 마십시오.
+    text: 거창·함양·합천·청양·춘천·정선 하천 수위 급상승. 둔치와 지하차도에 접근하지 마십시오.
   - id: alert-southern-spread-area
     type: region
     cut: ongoing-response
@@ -1673,7 +2153,7 @@ events:
     at: 5
     duration: 8
     source: news
-    headline: 여주·부여·상주 저지대 동시 고립…소방, 다수 현장 무전으로 전환
+    headline: 여주·부여·상주 강변마을 고립…구조 신고 접수 뒤에도 진입 못 해
   - id: radar-2255
     type: grid
     cut: ongoing-response
@@ -1717,7 +2197,7 @@ events:
     at: 13
     duration: 8
     source: news
-    headline: 부여 백제교 수위계 곧바로 끊겨…제방 밖 여러 마을서 급류 확인
+    headline: 부여 백제교 수위 관측 중단…인근 마을은 지붕만 물 위로
   - id: alert-national-keep-roads-clear
     type: alert
     cut: ongoing-response
@@ -1726,21 +2206,21 @@ events:
     level: 안전안내
     regions: []
     mapHighlight: false
-    text: 전국 안내. 중부 피해권으로 이동을 자제하고 통제되지 않은 곳에서도 경찰의 우회 안내에 따르십시오.
+    text: 전국 안내. 가족을 찾으러 중부 침수 지역에 진입하지 마십시오. 구조차량에 길을 양보하십시오.
   - id: news-last-field-contact
     type: news
     cut: ongoing-response
     at: 21
     source: news
     duration: 7
-    headline: 충북소방, 괴산 현장지휘소 연락 끊겨…앞서 접수한 옥상 신고도 미연결
+    headline: 충북소방, 괴산 현장지휘소와 무전 끊겨…옥상 구조 요청자도 연락 두절
   - id: chat-last-question
     type: chat-message
     cut: ongoing-response
     at: 23
     chat: live-chat
-    author: 제주퇴근길
-    text: 아까 충주에서 높은 데로 올라가던 분 아직 계세요?
+    author: 한강북쪽
+    text: 서울인데 저도 문자 받았어요. 중부 쪽 차 가지고 들어가지 말라고요
     color: "#a6c4af"
   - id: news-voice-from-cars
     type: news
@@ -1748,7 +2228,7 @@ events:
     at: 28
     source: news
     duration: 8
-    headline: 괴산군, 마지막으로 접근 가능한 마을에 확성기 차량 보내
+    headline: 중대본 “마을 26곳 접근 불가”…괴산읍은 확성기로 추가 대피
   - id: alert-goesan-last-call
     type: alert
     cut: ongoing-response
@@ -1757,7 +2237,7 @@ events:
     level: 긴급재난
     regions:
       - "43760"
-    text: 대피명령. 괴산읍 하천변 저지대 주민은 현장 확성기 안내에 따라 즉시 대피하십시오.
+    text: 대피명령. 괴산읍 강변 주민은 현장 확성기 안내에 따라 즉시 고지대로 이동하십시오.
   - id: chat-local-loudspeaker
     type: chat-message
     cut: ongoing-response
