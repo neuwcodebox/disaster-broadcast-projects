@@ -500,7 +500,7 @@ events:
     at: 11
     duration: 11.15
     source: news
-    headline: 괴산 청천면에 호우 긴급재난문자…1시간 강수량 72㎜
+    headline: 괴산 청천면 한 시간 72㎜…기상청, 인근 주민에 긴급재난문자
     carry: true
   - id: chat-jeju-weather
     type: chat-message
@@ -565,14 +565,14 @@ events:
     at: 23
     chat: live-chat
     author: 청천장날
-    text: 논 한가운데 물이 기둥처럼 떨어져요. 저게 뭐예요
+    text: 빗줄기가 저렇게 한자리에 서 있나요? 아까부터 같은 논에 떨어져요
     color: "#d2b192"
   - id: news-first-unverified-clips
     type: news
     cut: warning
     at: 25
     source: news
-    headline: 괴산 청천면 들판에 굵은 물줄기…주민 영상 제보 잇따라
+    headline: 괴산 청천면 들판에 쏟아지는 굵은 물줄기…주민 촬영 영상 잇따라
     duration: 11
     carry: true
   - id: radar-1345
@@ -589,7 +589,7 @@ events:
     at: 5
     chat: live-chat
     author: 청천장날
-    text: 큰길 쪽으로 물이 건너와요 차 놓고 올라가요
+    text: 차 세우고 나왔어요. 위에서 보니까 아까 그 논 양쪽으로 물이 갈라져 나가요
     color: "#d2b192"
   - id: alert-east-road-flooded
     type: alert
@@ -630,7 +630,7 @@ events:
     at: 7
     duration: 10
     source: news
-    headline: 괴산 청천면 한 시간에 72㎜…오후 1시 39분부터 관측 중단
+    headline: 괴산 청천 관측소, 오후 1시 39분부터 강수량 자료 끊겨…마지막 한 시간 72㎜
   - id: radar-1350
     type: grid
     cut: access
@@ -645,7 +645,7 @@ events:
     at: 11
     chat: live-chat
     author: 제주퇴근길
-    text: 밥하고 왔는데 청천장날님 글 더 올라왔어요?
+    text: 다른 분이 올린 영상에도 같은 데가 찍혔네요. 처음엔 렌즈에 물 묻은 줄 알았어요
     color: "#a6c4af"
   - id: alert-cheongcheon-power
     type: alert
@@ -662,7 +662,7 @@ events:
     at: 17
     duration: 6.85
     source: news
-    headline: 괴산 청천면 급류, 제방 밖 논과 마을길로 번져
+    headline: 달천에서 떨어진 논에도 새 물길…청천면 농로 포장 뜯겨 나가
   - id: alert-approach-closed
     type: alert
     cut: access
@@ -685,7 +685,7 @@ events:
     cut: cause-check
     at: 7
     source: news
-    headline: 괴산 청천면, 하늘에서 들판으로 쏟아지는 거대한 물줄기 확인
+    headline: 괴산 청천면 논 한복판에 폭포 같은 물기둥…무너진 논둑 너머로 흙탕물 쏟아져
     duration: 12
   - id: radar-1415
     type: grid
@@ -719,7 +719,7 @@ events:
     cut: cause-check
     at: 19
     source: news
-    headline: 기상청 “청천면 들판에 쏟아지는 물줄기, 원인 조사 중”
+    headline: 기상청 “청천면 물기둥 원인 조사 중…쏟아지는 물의 양 추정 어려워”
     duration: 10
     carry: true
   - id: alert-miwon-evacuate
@@ -803,7 +803,7 @@ events:
     at: 22
     duration: 12
     source: news
-    headline: 충주시, 달천변 주민 태운 대피 버스 고지대로 보내
+    headline: 충주 달천변 주민 태운 첫 대피 버스, 고지대로 출발
     carry: true
   - id: chat-chungju-river
     type: chat-message
@@ -828,7 +828,7 @@ events:
     at: 8
     duration: 15
     source: news
-    headline: 상당·수안보 관측소 자료 끊겨…직전 3시간 강수량 238㎜·180㎜
+    headline: 청주 상당 3시간 238㎜·충주 수안보 180㎜…두 관측소 모두 자료 끊겨
   - id: radar-1545
     type: grid
     cut: shelter
@@ -843,7 +843,7 @@ events:
     at: 12
     chat: live-chat
     author: 터미널앞
-    text: 미원 가는 분 아까 계셨죠? 여기 매표소에도 운행 중단 붙었어요
+    text: 미원행 기다리시던 분, 매표소에 오늘 막차까지 못 간다고 종이 붙었어요
   - id: suspend-gym
     type: alert
     cut: shelter
@@ -904,7 +904,7 @@ events:
     at: 7
     duration: 12
     source: news
-    headline: 충주 달천변 대피 버스 곳곳에서 발 묶여…주민들 산길로 대피
+    headline: 충주 달천변 대피 버스 앞뒤 도로 침수…승객들 내려 산길로
   - id: radar-1620
     type: grid
     cut: shelter-shift
@@ -1120,7 +1120,7 @@ events:
     cut: switchboard
     at: 7
     source: news
-    headline: 괴산군청 침수로 정전…대피 차량 위치 확인하던 상황실도 철수
+    headline: 괴산군청 상황실 침수·정전…읍면에 대피 차량 위치 다시 파악 요청
     duration: 8.05
   - id: radar-1755
     type: grid
@@ -1144,7 +1144,7 @@ events:
     cut: switchboard
     at: 15.05
     source: news
-    headline: 충주 응급실 두 곳 진입로 침수…구급차 원주로 우회
+    headline: 충주 응급실 두 곳 진입로 침수…중증환자 태운 구급차 원주로
     duration: 9.85
   - id: chat-link-offline
     type: chat-message
@@ -1228,7 +1228,7 @@ events:
     at: 11.55
     duration: 10.55
     source: news
-    headline: 괴산군, 임시 상황실 가동…연락 끊겼던 마을 세 곳과 다시 연결
+    headline: 괴산군, 임시 상황실에서 마을 세 곳과 다시 연락…고립 주민 위치 확인
   - id: alert-goesan-contact
     type: alert
     cut: continuity
@@ -1244,7 +1244,7 @@ events:
     cut: continuity
     at: 14.85
     author: 느티
-    text: 읍사무소 앞에 왔어요. 직원한테 물어볼게요
+    text: 읍사무소 앞 종이에 우리 마을 이름 있어요. 옆집 어르신한테 읽어 드렸어요
   - id: news-12
     type: news
     cut: continuity
@@ -1296,7 +1296,7 @@ events:
     at: 4
     source: news
     headline: 여주 점동면 주민들 언덕으로 대피…뒤이어 강변 주택 두 채 떠내려가
-    duration: 8
+    duration: 5.75
     publishedAt: 2031-07-18T19:11:36+09:00
   - id: radar-1910
     type: grid
@@ -1334,14 +1334,14 @@ events:
     chat: live-chat
     author: 점동언덕
     text: 다 올라온 줄 알았는데 이장님이 한 집씩 다시 이름 부르고 있어요
-  - id: news-yangpyeong-care
+  - id: news-wonju-patients
     type: news
     cut: banks-apart
-    at: 12
+    at: 9.75
     source: news
-    headline: 양평 강하면 강변 마을도 대피…거동 불편한 주민은 대피지원반이 방문
-    duration: 13
-    carry: true
+    headline: 충주에서 이송한 중증환자 2명, 원주 응급실 도착
+    publishedAt: 2031-07-18T19:10:52+09:00
+    duration: 5.75
   - id: alert-sangju-bank
     type: alert
     cut: banks-apart
@@ -1351,6 +1351,14 @@ events:
     regions:
       - "47250"
     text: 대피명령. 함창읍 영강변과 사벌국면 낙동강변 저지대 주민은 즉시 높은 곳으로 이동하십시오.
+  - id: news-yangpyeong-care
+    type: news
+    cut: banks-apart
+    at: 15.5
+    source: news
+    headline: 양평 강하면 강변 마을도 대피…거동 불편한 주민은 대피지원반이 방문
+    duration: 9.5
+    carry: true
   - id: alert-chungbuk-spread
     type: alert
     cut: network-fray
@@ -1549,7 +1557,7 @@ events:
     cut: evacuation-crossing
     at: 34
     author: 목포밤바다
-    text: 목포는 조용해요. 아까 원주에 서른여덟 명 올라갔다는 데는 더 소식 없나요
+    text: 목포는 비 한 방울 안 와요. 터미널엔 중부 쪽 차편 물어보는 줄이 밖까지 나왔어요
     color: "#b6abc7"
   - id: alert-central-provinces
     type: alert
@@ -1937,7 +1945,7 @@ events:
     cut: outer-routes
     at: 21.1
     source: news
-    headline: 중대본 “사망 87명 확인”…고립 마을 집계 중
+    headline: 중대본 “밤 10시 기준 사망 87명”…고립 마을 피해 규모는 아직 파악 중
     publishedAt: 2031-07-18T22:10:00+09:00
     duration: 6.15
     carry: true
@@ -2030,7 +2038,7 @@ events:
     cut: estuary
     at: 10
     source: news
-    headline: 서천 화양면 집결지 비우기 시작…부여에서 온 주민들 다시 대피
+    headline: 서천 화양면 집결지에도 대피령…부여서 강 건너온 주민들 다시 산으로
     duration: 14.25
     carry: true
   - id: alert-habin-before-front
@@ -2062,13 +2070,13 @@ events:
     level: 긴급재난
     regions:
       - "44770"
-    text: 대피명령. 화양면 금강변 집결지가 침수되고 있습니다. 주민과 탑승객은 즉시 고지대로 이동하십시오.
+    text: 대피명령. 화양면 금강변 집결지 침수 중. 등록 전이라도 즉시 안내에 따라 고지대로 이동하십시오.
   - id: news-gunsan-arrival-check
     type: news
     cut: emergency-lines
     at: 5.8
     source: news
-    headline: 서천 화양면 집결지 담장 붕괴…남아 있던 주민들은 산길로 대피
+    headline: 서천 화양면 집결지 담장 무너져…마지막 대피 행렬은 산길로 빠져나와
     duration: 7.25
   - id: alert-gyeongbuk-expansion
     type: alert
@@ -2172,6 +2180,13 @@ events:
     author: 분리수거
     text: 전화 안 되는데 여기서도 연달아 확성기 소리 나요
     color: "#c2ad91"
+  - id: chat-city-registration
+    type: chat-message
+    cut: emergency-lines
+    at: 24
+    chat: live-chat
+    author: 부여나루
+    text: 부여에서 이름 썼는데 여기 고개에서 또 부르네요. 아까 먼저 간 차도 여기 왔나요
   - id: news-last-detour-floods
     type: news
     cut: emergency-lines
@@ -2189,7 +2204,7 @@ events:
     regions:
       - "44760"
       - "44770"
-    text: 부여·서천 금강변 마을길 유실. 고립된 주민은 119에 위치를 알리고 현장의 구조 안내를 따르십시오.
+    text: 가족을 찾으러 화양면 집결지로 돌아가지 마십시오. 고지대에서 인솔 직원에게 알려 주십시오.
   - id: alert-southern-spread
     type: alert
     cut: ongoing-response
@@ -2274,9 +2289,17 @@ events:
     type: news
     cut: ongoing-response
     at: 14.85
-    duration: 8.05
+    duration: 5.4
     source: news
     headline: 부여 백제교 수위 관측 중단…주변 마을은 지붕만 물 위로 드러나
+  - id: news-seocheon-recount
+    type: news
+    cut: ongoing-response
+    at: 20.25
+    source: news
+    headline: 부여서 대피한 뒤 소재 몰랐던 일가족 4명, 서천 화양면 고개서 확인
+    publishedAt: 2031-07-18T22:54:38+09:00
+    duration: 5.6
   - id: alert-national-keep-roads-clear
     type: alert
     cut: ongoing-response
@@ -2286,13 +2309,6 @@ events:
     regions: []
     mapHighlight: false
     text: 전국 안내. 가족을 찾으러 중부 침수 지역에 진입하지 마십시오. 구조차량에 길을 양보하십시오.
-  - id: news-sangju-rescuers
-    type: news
-    cut: ongoing-response
-    at: 22.9
-    source: news
-    duration: 7.25
-    headline: 상주 뒷산에 고립됐던 주민 11명, 반대편 능선에서 구조대 만나
   - id: chat-last-question
     type: chat-message
     cut: ongoing-response
@@ -2301,14 +2317,13 @@ events:
     author: 한강북쪽
     text: 서울인데 저도 문자 받았어요. 중부 쪽 차 가지고 들어가지 말라고요
     color: "#a6c4af"
-  - id: news-voice-from-cars
+  - id: news-sangju-rescuers
     type: news
     cut: ongoing-response
-    at: 30.15
+    at: 25.85
     source: news
-    duration: 8
-    headline: 중대본 “고립 마을 26곳에 구조대 진입 못 해”…괴산 현장지휘소도 철수
-    carry: true
+    duration: 6.15
+    headline: 상주 뒷산 고립 주민 11명, 구조대가 올라온 능선 따라 하산 시작
   - id: alert-goesan-last-call
     type: alert
     cut: ongoing-response
@@ -2318,6 +2333,14 @@ events:
     regions:
       - "43760"
     text: 대피명령. 괴산읍 강변 주민은 현장 확성기 안내에 따라 즉시 고지대로 이동하십시오.
+  - id: news-voice-from-cars
+    type: news
+    cut: ongoing-response
+    at: 32
+    source: news
+    duration: 6.15
+    headline: 중대본 “고립 마을 26곳에 구조대 진입 못 해”…괴산 현장지휘소도 철수
+    carry: true
   - id: chat-local-loudspeaker
     type: chat-message
     cut: ongoing-response
@@ -2331,7 +2354,7 @@ events:
     cut: rooftop
     at: 4
     source: news
-    headline: 서울 강동구 강일동 주택가 침수…제방 안쪽 골목까지 한강물 밀려와
+    headline: 서울 강일동 제방 안쪽 아파트 침수…지하 전기실 잠겨 세 동 정전
     publishedAt: 2031-07-18T23:05:53+09:00
     duration: 8
   - id: alert-seoul-expanded
@@ -2342,13 +2365,20 @@ events:
     level: 긴급재난
     regions:
       - "11740"
-    text: 대피명령. 강일동 제방 안쪽 저지대까지 침수됐습니다. 강변에서 떨어진 주택가 주민도 즉시 고지대로 대피하십시오.
+    text: 대피명령. 강일동 제방 안쪽 저지대도 침수됐습니다. 고지대로 대피하되 밖으로 나가는 길이 잠겼으면 건물 위층으로 올라가십시오.
+  - id: chat-gangil-outage
+    type: chat-message
+    cut: rooftop
+    at: 9
+    chat: live-chat
+    author: 강일동창가
+    text: 옆 동도 불 꺼졌어요. 여기는 계단 비상등만 들어와요
   - id: news-waegwan-withdrawal
     type: news
     cut: rooftop
     at: 12
     source: news
-    headline: 왜관 제방도로까지 급류…옥상 고립 주민에게 접근하던 구조대 철수
+    headline: 왜관 옥상으로 향하던 구조대, 제방도로까지 물살 덮쳐 철수
     publishedAt: 2031-07-18T23:06:31+09:00
     duration: 10
   - id: chat-high-ground-lights
@@ -2358,6 +2388,15 @@ events:
     chat: live-chat
     author: 왜관저녁
     text: 제방 위에 있던 소방차가 우리 있는 데까지 올라왔어요
+  - id: alert-waegwan-road-lost
+    type: alert
+    cut: rooftop
+    at: 18.5
+    sender: chilgok
+    level: 긴급재난
+    regions:
+      - "47850"
+    text: 왜관읍 제방도로가 잠겼습니다. 언덕에 대피한 주민은 제방 쪽으로 내려오지 마십시오. 고립된 분은 119에 건물 위치와 층수를 알려 주십시오.
   - id: news-rooftop-submerged
     type: news
     cut: rooftop
